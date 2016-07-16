@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716161348) do
+ActiveRecord::Schema.define(version: 20160716172055) do
+
+  create_table "user_infos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "height"
+    t.integer  "dress_size_form_number"
+    t.integer  "shirt_size_form_number"
+    t.integer  "pants_size"
+    t.integer  "jean_waist_size"
+    t.integer  "skirt_size"
+    t.float    "shoe_size"
+    t.string   "shirt_size_form_sml"
+    t.string   "dress_size_form_sml"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
