@@ -1,0 +1,2 @@
+class PositionCategory < ApplicationRecord
+end
