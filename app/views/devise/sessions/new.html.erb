@@ -1,10 +1,31 @@
 <h2>Log in</h2>
+<%# so the js here will let you get to the log in with amazon page but then it will error out be cause of something.
+
+ASK JAMES ABOUT THIS TOMORROW!!!
+  here is the error:
+
+  2016-07-17 14:49:59 -0400: HTTP parse error, malformed request (): #<Pu
+  ma::HttpParserError: Invalid HTTP format, parsing fails.>
+  2016-07-17 14:49:59 -0400: ENV: {"rack.version"=>[1, 3], "rack.errors"=
+  >#<IO:<STDERR>>, "rack.multithread"=>true, "rack.multiprocess"=>false,
+  "rack.run_once"=>false, "SCRIPT_NAME"=>"", "QUERY_STRING"=>"", "SERVER_
+  PROTOCOL"=>"HTTP/1.1", "SERVER_SOFTWARE"=>"puma 3.4.0 Owl Bowl Brawl",
+  "GATEWAY_INTERFACE"=>"CGI/1.2"}
+
+  to recreate the problem. open an incognito window.
+  Click the sign in with amazon button
+  try to sign in
+  get "this site cant provide a secure connection" error
+  refresh the page back to localhost:3000
+  click on amazon button again
+  get the same error instantly.
+  %>
 
 <div id="amazon-root"></div>
 <script type="text/javascript">
 
   window.onAmazonLoginReady = function() {
-    amazon.Login.setClientId(ENV['AWS_CLIENT_ID']);
+    amazon.Login.setClientId("AMAZONKEYWILLGOHERE can you put Ruby/Figaro in with JS????");
   };
   (function(d) {
     var a = d.createElement('script'); a.type = 'text/javascript';
