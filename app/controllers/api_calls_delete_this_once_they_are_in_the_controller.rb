@@ -39,13 +39,10 @@ place = place.strip.gsub(/\s/,'+') #this makes it so it can be used in the HTML.
 
 #AMAZON---------
 #example amazon API lookup.
-HTTParty.get "http://webservices.amazon.com/onca/xml?
-  Service=AWSECommerceService
-  &Operation=ItemSearch
-  &ResponseGroup=Small
-  &SearchIndex=All
-  &Keywords=harry_potter
-  &AWSAccessKeyId=[Your_AWSAccessKeyID]
-  &AssociateTag=[Your_AssociateTag]
-  &Timestamp=[YYYY-MM-DDThh:mm:ssZ]
-  &Signature=[Request_Signature]"
+HTTParty.get "http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=AKIAJWPU6CZINZUMPJ4A&
+AssociateTag=pratt0923-20&
+Operation=ItemSearch&
+Keywords=the%20hunger%20games&
+SearchIndex=Books&
+Timestamp=#{Time.now.utc.iso8601}&
+Signature=[Request Signature]"

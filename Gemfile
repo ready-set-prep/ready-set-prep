@@ -19,6 +19,8 @@ gem 'devise'
 gem 'pry-rails'
 gem 'pundit'
 gem 'httparty'
+gem 'omniauth-amazon'
+gem 'omniauth'
 
 
 group :development, :test do

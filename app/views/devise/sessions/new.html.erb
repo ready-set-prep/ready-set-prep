@@ -1,5 +1,6 @@
 <h2>Log in</h2>
 <%# so the js here will let you get to the log in with amazon page but then it will error out be cause of something.
+This seems to be a Puma error maybe?
 
 ASK JAMES ABOUT THIS TOMORROW!!!
   here is the error:
@@ -12,7 +13,8 @@ ASK JAMES ABOUT THIS TOMORROW!!!
   PROTOCOL"=>"HTTP/1.1", "SERVER_SOFTWARE"=>"puma 3.4.0 Owl Bowl Brawl",
   "GATEWAY_INTERFACE"=>"CGI/1.2"}
 
-  to recreate the problem. open an incognito window.
+  to recreate the problem:
+  open an incognito window(or if you have not logged in you can open a normal one)
   Click the sign in with amazon button
   try to sign in
   get "this site cant provide a secure connection" error
@@ -25,7 +27,7 @@ ASK JAMES ABOUT THIS TOMORROW!!!
 <script type="text/javascript">
 
   window.onAmazonLoginReady = function() {
-    amazon.Login.setClientId("AMAZONKEYWILLGOHERE can you put Ruby/Figaro in with JS????");
+    amazon.Login.setClientId("amzn1.application-oa2-client.a5c727db89be45f995a54d3f291d0e43");
   };
   (function(d) {
     var a = d.createElement('script'); a.type = 'text/javascript';
@@ -67,7 +69,7 @@ ASK JAMES ABOUT THIS TOMORROW!!!
 
   document.getElementById('LoginWithAmazon').onclick = function() {
     options = { scope : 'profile' };
-    amazon.Login.authorize(options, 'https://localhost:3000/handle_login.php');
+    amazon.Login.authorize(options, 'http://localhost:3000//auth/:provider/callback');
     return false;
   };
 
