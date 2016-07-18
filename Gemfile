@@ -22,6 +22,9 @@ gem 'httparty'
 gem 'omniauth-amazon'
 gem 'omniauth'
 gem 'aws-sdk', '~> 2'
+gem 'aws-sdk-rails'
+gem 'amazon-ecs'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -35,14 +35,3 @@ place = place.strip.gsub(/\s/,'+') #this makes it so it can be used in the HTML.
   &avoid=tolls|highways" allowfullscreen>
 </iframe>
 #need to replace the origin and destination with user params.
-
-
-#AMAZON---------
-#example amazon API lookup.
-HTTParty.get "http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=AKIAJWPU6CZINZUMPJ4A&
-AssociateTag=pratt0923-20&
-Operation=ItemSearch&
-Keywords=the%20hunger%20games&
-SearchIndex=Books&
-Timestamp=#{Time.now.utc.iso8601}&
-Signature=[Request Signature]"
