@@ -7,6 +7,9 @@
 <% end %>
 <script type="text/javascript">
 
+
+
+
   window.onAmazonLoginReady = function() {
     amazon.Login.setClientId("amzn1.application-oa2-client.a5c727db89be45f995a54d3f291d0e43");
   };
@@ -32,10 +35,4 @@
     return false;
   };
 
-</script>
-
-<script type="text/javascript">
-  document.getElementById('Logout').onclick = function() {
-    amazon.Login.logout();
-};
 </script>
