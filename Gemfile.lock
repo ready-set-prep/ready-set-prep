@@ -294,11 +294,9 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen (~> 3.0.5)
-
   omniauth
   omniauth-amazon
   pg
-
   pony
   pry-rails
   puma (~> 3.0)
