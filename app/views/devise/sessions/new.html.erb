@@ -72,6 +72,11 @@
 </script>
 
 <%= render "devise/shared/links" %>
+<% if current_user %>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete%>
+<% else %>
+    <li class="nav-link"><a href="/users/sign_in">Log In</a></li>
+<% end %>
 </nav>
 
 </header>
