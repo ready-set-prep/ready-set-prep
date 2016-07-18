@@ -40,6 +40,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.0.0)
+    aws-sdk (2.3.14)
+      aws-sdk-resources (= 2.3.14)
+    aws-sdk-core (2.3.14)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.3.14)
+      aws-sdk-core (= 2.3.14)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -94,11 +100,14 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
     figaro (1.1.1)
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hashie (3.4.4)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -106,11 +115,15 @@ GEM
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jmespath (1.2.4)
+      json_pure (>= 1.8.1)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.0.1)
+    json_pure (1.8.3)
+    jwt (1.5.4)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.0.8)
@@ -128,10 +141,26 @@ GEM
     minitest (5.9.0)
     multi_json (1.12.1)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    oauth2 (1.2.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.3.1)
+      hashie (>= 1.2, < 4)
+      rack (>= 1.0, < 3)
+    omniauth-amazon (1.0.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-oauth2 (1.4.0)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
@@ -252,6 +281,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk (~> 2)
   better_errors
   binding_of_caller
   byebug
@@ -265,6 +295,8 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen (~> 3.0.5)
+  omniauth
+  omniauth-amazon
   pg
   pony
   pry-rails
