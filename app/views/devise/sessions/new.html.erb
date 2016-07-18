@@ -14,6 +14,13 @@
   })(document);
 </script>
 
+
+<% if current_user%>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <li class="nav-link"><a href="/users/sign_in">Log In</a></li>
+<% end %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
