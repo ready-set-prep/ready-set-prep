@@ -18,5 +18,15 @@
     </ul>
   </div>
 
+
+
   </body>
+
+  <div class="searchform">
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Search for Company:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("search") %>
+    <% end %>
+  </div>
 </html>

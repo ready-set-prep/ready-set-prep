@@ -2,6 +2,8 @@ body{
   margin: 0;
   padding: 0;
   background: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8");
+  background-size: cover;
+  background-repeat: no-repeat;
 
 
 .overlay{
@@ -9,7 +11,7 @@ body{
     top:0; left:0;
     width:100%;
     background: none;
-    height:32em;
+    height:38em;
     padding-bottom:14%;
     overflow:hidden;
     z-index:1;
@@ -29,4 +31,14 @@ body{
     box-shadow: 0px 0px 0px 9999px #fff;
     z-index:-2;
 }
+}
+
+.searchform {
+  color: #ECEAE9;
+  height: 300px;
+  width: 200px;
+  z-index: 5;
+  top: 300px;
+  left: 400px;
+  position: relative;
 }
