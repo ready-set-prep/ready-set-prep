@@ -21,3 +21,12 @@ data["response"]["employers"].first["industry"] #industry of company
 data["response"]["employers"].first["overallRating"] #rating of company
 data["response"]["employers"].first["workLifeBalanceRating"] #workLifeBalanceRating
 data["response"]["employers"].first["compensationAndBenefitsRating"]
+
+
+HTTParty.get "http://api.glassdoor.com/api/api.htm?
+t.p=79116&t.k=n	egO9dZxo9rW&
+userip=127.0.0.1&
+useragent=Mozilla/5.0 (Linux; Android 4.4.2); Nexus 5 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Mobile Safari/537.36 OPR/20.0.1396.72047&
+format=json&
+v=1&
+action=employers"
