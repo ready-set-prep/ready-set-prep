@@ -18,6 +18,7 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'pry-rails'
 gem 'pundit'
+gem 'httparty'
 
 
 group :development, :test do
