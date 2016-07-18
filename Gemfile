@@ -19,7 +19,9 @@ gem 'devise'
 gem 'pry-rails'
 gem 'pundit'
 gem 'httparty'
-
+gem 'omniauth-amazon'
+gem 'omniauth'
+gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'byebug', platform: :mri

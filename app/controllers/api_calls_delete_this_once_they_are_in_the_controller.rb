@@ -1,6 +1,6 @@
 
-#Glassdoor API
-data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1
+#GLASSDOOR API ------------------
+@data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1
 &format=json
 &t.p=#{ENV['PARTNER_ID']}
 &t.k=#{ENV['GLASSDOOR_KEY']}
@@ -10,23 +10,39 @@ data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1
 &useragent=Chrome/%2F4.0"
 #this works if you replace the id and key with the ones in the yml file. I don't know why it does not work with env.
 
-#I don't know if we have to replace the ip or what we have to do with that.
-
 #info of company
-data["response"]["employers"].first["name"] #name of company
-data["response"]["employers"].first["industry"] #industry of company
-
+@data["response"]["employers"].first["name"] #name of company
+@data["response"]["employers"].first["industry"] #industry of company
 
 #ratings of company
-data["response"]["employers"].first["overallRating"] #rating of company
-data["response"]["employers"].first["workLifeBalanceRating"] #workLifeBalanceRating
-data["response"]["employers"].first["compensationAndBenefitsRating"]
+@data["response"]["employers"].first["overallRating"] #rating of company
+@data["response"]["employers"].first["workLifeBalanceRating"] #workLifeBalanceRating
+@data["response"]["employers"].first["compensationAndBenefitsRating"]
+
+#GOOGLE places API call------------
+place = place.strip.gsub(/\s/,'+') #this makes it so it can be used in the HTML.
+#current location finder? is there anything else that does this that does not use swift or C??
+#https://developers.google.com/places/ios-api/current-place google knows the answer!
+
+#HTML for embeded map. There might be a way that we can do this with javascript but I dont know how easy it is.
+#hopefully there will be a way that we find the current users location and replace it with the orign params.
+<iframe
+  width="600"
+  height="450"
+  src="https://www.google.com/maps/embed/v1/directions?key=KEYGOESHERE
+  &origin=Oslo+Norway
+  &destination=Telemark+Norway
+  &avoid=tolls|highways" allowfullscreen>
+</iframe>
+#need to replace the origin and destination with user params.
 
 
-HTTParty.get "http://api.glassdoor.com/api/api.htm?
-t.p=79116&t.k=n	egO9dZxo9rW&
-userip=127.0.0.1&
-useragent=Mozilla/5.0 (Linux; Android 4.4.2); Nexus 5 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Mobile Safari/537.36 OPR/20.0.1396.72047&
-format=json&
-v=1&
-action=employers"
+#AMAZON---------
+#example amazon API lookup.
+HTTParty.get "http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&AWSAccessKeyId=AKIAJWPU6CZINZUMPJ4A&
+AssociateTag=pratt0923-20&
+Operation=ItemSearch&
+Keywords=the%20hunger%20games&
+SearchIndex=Books&
+Timestamp=#{Time.now.utc.iso8601}&
+Signature=[Request Signature]"
