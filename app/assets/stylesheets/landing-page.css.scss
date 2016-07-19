@@ -1,6 +1,4 @@
 
-
-
 .overlay{
     position:fixed;
     top:0; left:0;
@@ -25,7 +23,8 @@
 
     box-shadow: 0px 0px 0px 9999px #fff;
     z-index:-2;
- }
+
+}
 
 .searchform {
   background-color: #fff;
@@ -43,6 +42,10 @@
   form{
     padding-left: 0.5em;
   }
+  label{
+    color: black;
+    font-weight: bold;
+  }
   input#position{
     color: black;
     background-color: grey;
@@ -57,11 +60,15 @@
   }
 
 }
+
+
 button{
   border-radius: 100%;
+  // font-size: 30px;
   background-color: black;
-  margin-top: 20em;
-  margin-left: 44em;
+  font-weight: bold;
+  margin-top: 3em;
+  margin-left: 9em;
   cursor: pointer;
   color: #fff;
 
