@@ -26,13 +26,19 @@
       <%= text_field_tag(:company) %>
       <% end %>
 
-      <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:position, "Position:") %>
-      <%= text_field_tag(:position) %>
-      <% end %>
-    </div>
+  <div class="searchform">
+
+    <%= form_for :q, url: interview_index_path do |f| %>
+      <%= f.text_field :q, placeholder: "Company" %>
+    <% end %>
+
+    <%= form_for :position, url: interview_index_path do |f| %>
+    <%= f.text_field :position, placeholder: "Position" %>
+    <% end %>
+      <button>Submit</button>
+
   </div>
-  <button>Submit</button>
+
 
 
 
