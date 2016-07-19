@@ -1,16 +1,4 @@
-<<<<<<< HEAD
 
-ul{
-  width:100%
-
-}
-=======
-body{
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
->>>>>>> 843e208db084c31c02dfc354a8d01025f1488bed
 
 
 .overlay{
@@ -39,13 +27,14 @@ body{
     z-index:-2;
 }
 
-.backdrop{
-  opacity: 0.65;
+// .backdrop{
+//   opacity: 0.65;
 
 
 
 .searchform {
   background-color: #fff;
+  opacity: 0.65;
   border:2px solid black;
   height: 220px;
   width: 244px;
@@ -59,6 +48,10 @@ body{
   form{
     padding-left: 0.5em;
   }
+  label{
+    color: black;
+    font-weight: bold;
+  }
   input#position{
     color: black;
     background-color: grey;
@@ -71,14 +64,16 @@ body{
     margin-top: 1em;
     margin-left: 0.5em;
   }
+}
 
-}
-}
+
 button{
   border-radius: 100%;
+  // font-size: 30px;
   background-color: black;
-  margin-top: 20em;
-  margin-left: 44em;
+  font-weight: bold;
+  margin-top: 3em;
+  margin-left: 9em;
   cursor: pointer;
   color: #fff;
 

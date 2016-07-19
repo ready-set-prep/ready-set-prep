@@ -21,7 +21,7 @@
 
 
 
-<div class="backdrop">
+<!-- <div class="backdrop"> -->
   <div class="searchform">
     <%= form_tag("/search", method: "get") do %>
       <%= label_tag(:q, "Company:") %>
@@ -32,9 +32,10 @@
     <%= label_tag(:position, "Position:") %>
     <%= text_field_tag(:position) %>
     <% end %>
+      <button>Submit</button>
   </div>
-</div>
-  <button>Submit</button>
+<!-- </div> -->
+  <!-- <button>Submit</button> -->
 
   </body>
 </html>
