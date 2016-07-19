@@ -7,15 +7,15 @@ end
 
 class InterviewController < ApplicationController
   def index
-    @params = params[:q].strip.gsub(/\s/,'+')
-    glassdoor_api_call
-    @name = @data["response"]["employers"].first["name"]
-    @industry = @data["response"]["employers"].first["industry"]
-    @total_rating = @data["response"]["employers"].first["overallRating"]
-    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
-    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
-    @review = @data["response"]["employers"].first["featuredReview"]
-    #this works I just don't want to make a call over and over again while I make the glassdoor calls
+    # @params = params[:q].strip.gsub(/\s/,'+')
+    # glassdoor_api_call
+    # @name = @data["response"]["employers"].first["name"]
+    # @industry = @data["response"]["employers"].first["industry"]
+    # @total_rating = @data["response"]["employers"].first["overallRating"]
+    # @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
+    # @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
+    # @review = @data["response"]["employers"].first["featuredReview"]
+
     # amazon_API_call
     # @res.items.each do |item|
     # @URL = item.get('DetailPageURL')
@@ -31,7 +31,7 @@ class InterviewController < ApplicationController
 
   private
   def amazon_API_call #need to add in the params once we get that down but for now the call is made!!!
-    @res = Amazon::Ecs.item_search('ruby', {:response_group => 'Images, ItemAttributes, Offers', :sort => 'salesrank', :search_index => 'Apparel'})
+    @res = Amazon::Ecs.item_search('ruby', {:response_group => 'Images, ItemAttributes, Offers', :sort => 'reviewrank', :search_index => 'Apparel', :brand => 'Sony'})
     @res.is_valid_request?
     @res.has_error?
     @res.error
