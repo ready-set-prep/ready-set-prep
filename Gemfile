@@ -24,6 +24,7 @@ gem 'omniauth'
 gem 'aws-sdk', '~> 2'
 gem 'aws-sdk-rails'
 gem 'amazon-ecs'
+gem 'geocoder'
 
 
 group :development, :test do

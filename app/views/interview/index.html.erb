@@ -1,0 +1,28 @@
+<h1>index interview</h1>
+<p><%= @name %></p>
+<p><%= @industry %></p>
+
+<div class="glassdoorCard ratings">
+  <p><%= @total_rating %></p>
+  <% unless @balance_rating == nil %>
+    <p><%= @balance_rating %></p>
+  <% end %>
+  <% unless @benefits_rating == nil %>
+    <p><%= @benefits_rating %></p>
+  <% end %>
+</div>
+
+<div class="glassdoorCard reviews">
+  <p><%= @review["headline"] %></p>
+  <p><%= @review["pros"] %></p>
+  <p><%= @review["cons"] %></p>
+</div>
+
+<div class="amazonCard">
+  <div class="image">
+
+  </div>
+  <div class="amazondetails">
+
+  </div>
+</div>
