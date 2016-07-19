@@ -7,15 +7,18 @@ end
 
 class InterviewController < ApplicationController
   def index
-    # @params = params[:q].strip.gsub(/\s/,'+')
-    # glassdoor_api_call
-    # @name = @data["response"]["employers"].first["name"]
-    # @industry = @data["response"]["employers"].first["industry"]
-    # @total_rating = @data["response"]["employers"].first["overallRating"]
-    # @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
-    # @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
-    # @review = @data["response"]["employers"].first["featuredReview"]
-
+    @params = params[:q].strip.gsub(/\s/,'+')
+    if @params
+      glassdoor_api_call
+      @name = @data["response"]["employers"].first["name"]
+      @industry = @data["response"]["employers"].first["industry"]
+      @total_rating = @data["response"]["employers"].first["overallRating"]
+      @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
+      @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
+      @review = @data["response"]["employers"].first["featuredReview"]
+      @sector = @data["response"]["employers"].first["sectorName"] #this is what we want for finding amazon info
+    end
+    # @attire = Sector_relations.where(sector_name: @sector).attire_category
     # amazon_API_call
     # @res.items.each do |item|
     # @URL = item.get('DetailPageURL')
