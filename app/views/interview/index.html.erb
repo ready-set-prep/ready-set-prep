@@ -1,0 +1,13 @@
+<h1>index interview</h1>
+<p><%= @name %></p>
+<p><%= @industry %></p>
+<p><%= @total_rating %></p>
+<% unless @balance_rating == nil %>
+  <p><%= @balance_rating %></p>
+<% end %>
+<% unless @benefits_rating == nil %>
+  <p><%= @benefits_rating %></p>
+<% end %>
+<p><%= @review["headline"] %></p>
+<p><%= @review["pros"] %></p>
+<p><%= @review["cons"] %></p>

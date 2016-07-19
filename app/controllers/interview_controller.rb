@@ -7,14 +7,25 @@ end
 
 class InterviewController < ApplicationController
   def index
-    amazon_API_call
-    @res.items.each do |item|
-    @URL = item.get('DetailPageURL')
-    item_attributes = item.get_element('ItemAttributes')
-    @name = item_attributes.get_unescaped('Title')
-    @price = item_attributes.get_hash('ListPrice')["FormattedPrice"]
-    @image = item.get_hash('LargeImage')["URL"]
-    end
+    @params = params[:q].strip.gsub(/\s/,'+')
+    glassdoor_api_call
+    @name = @data["response"]["employers"].first["name"]
+    @industry = @data["response"]["employers"].first["industry"]
+    @total_rating = @data["response"]["employers"].first["overallRating"]
+    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
+    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
+    @review = @data["response"]["employers"].first["featuredReview"]
+    #this works I just don't want to make a call over and over again while I make the glassdoor calls
+    # amazon_API_call
+    # @res.items.each do |item|
+    # @URL = item.get('DetailPageURL')
+    # item_attributes = item.get_element('ItemAttributes')
+    # @name = item_attributes.get_unescaped('Title')
+    #   if item_attributes.get_hash('ListPrice')
+    #     @price = item_attributes.get_hash('ListPrice')["FormattedPrice"]
+    #   end
+    #   @image = item.get_hash('LargeImage')["URL"]
+    # end
   end
 
 
@@ -27,5 +38,13 @@ class InterviewController < ApplicationController
     @res.total_pages
     @res.total_results
     @res.item_page
+  end
+
+
+  def glassdoor_api_call
+    #It does not like it when I enter in the rest of the lines so its just going to stay like this.
+    @data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=#{ENV['PARTNER_ID']}&t.k=#{ENV['GLASSDOOR_KEY']}&action=employers&q=#{@params}
+    &userip=192.168.43.42
+    &useragent=Chrome/%2F4.0"
   end
 end
