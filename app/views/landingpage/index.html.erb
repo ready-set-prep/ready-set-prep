@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-  <html>
+<html>
 
-    <body class="backgroundimg" background= "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8">
-      <div class="overlay">
+<body class="backgroundimg" background= "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8">
+  <div class="overlay">
 
     <ul>
       <li><a class="active" href="#home">Home</a></li>
@@ -11,17 +11,15 @@
       <li><a href="#about">About</a></li>
 
       <% if current_user%>
-        <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
       <% else %>
-        <li class="signin"><a href="/users/sign_in">Log In</a></li>
+      <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
     </ul>
+
   </div>
 
 
-
-
-<!-- <div class="backdrop"> -->
   <div class="searchform">
 
     <%= form_for :q, url: interview_index_path do |f| %>
@@ -32,9 +30,11 @@
     <%= f.text_field :position, placeholder: "Position" %>
     <% end %>
       <button>Submit</button>
-  </div>
-<!-- </div> -->
-  <!-- <button>Submit</button> -->
 
-  </body>
+  </div>
+
+
+
+
+</body>
 </html>
