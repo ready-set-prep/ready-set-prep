@@ -5,10 +5,10 @@
   <div class="overlay">
 
     <ul>
-      <li><a class="active" href="#home">Home</a></li>
+      <li><a class="active" href="/">Home</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="/aboutus">About</a></li>
 
       <% if current_user%>
       <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
