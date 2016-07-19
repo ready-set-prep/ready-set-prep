@@ -8,8 +8,8 @@ end
 
 class InterviewController < ApplicationController
   def index
-    # @params = params[:q].strip.gsub(/\s/,'+') #position
-    # @otherparams = params[:company].strip.gsub(/\s/,'+') #company
+    # @otherparams = params[:position].strip.gsub(/\s/,'+') #position
+    # @params = params[:company].strip.gsub(/\s/,'+') #company
     #
     #   glassdoor_api_call
     #   @name = @data["response"]["employers"].first["name"]

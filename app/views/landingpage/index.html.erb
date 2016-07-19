@@ -22,8 +22,8 @@
   <div class="backdrop">
     <div class="searchform">
       <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Company:") %>
-      <%= text_field_tag(:q) %>
+      <%= label_tag(:company, "Company:") %>
+      <%= text_field_tag(:company) %>
       <% end %>
 
       <%= form_tag("/search", method: "get") do %>
