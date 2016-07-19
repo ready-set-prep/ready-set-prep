@@ -1,9 +1,8 @@
-body{
-  margin: 0;
-  padding: 0;
-  background: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8");
-  background-size: cover;
-  background-repeat: no-repeat;
+
+ul{
+  width:100%
+
+}
 
 
 .overlay{
@@ -20,7 +19,7 @@ body{
     content:'';
     position:absolute;
     left:-600%;
-    right: -700%;
+    // right: -700%;
     width:1300%;
     padding-bottom:6300%;
 
@@ -31,14 +30,48 @@ body{
     box-shadow: 0px 0px 0px 9999px #fff;
     z-index:-2;
 }
-}
+
+.backdrop{
+  opacity: 0.65;
+
+
 
 .searchform {
-  color: #ECEAE9;
-  height: 300px;
-  width: 200px;
-  top: 300px;
-  left: 400px;
-  position: relative;
+  background-color: #fff;
+  border:2px solid black;
+  height: 220px;
+  width: 244px;
+  padding-right: 1em;
+  padding-top: 2em;
   z-index: 5;
+  top: 248px;
+  left: 386px;
+  position: relative;
+  border-radius: 6px;
+  form{
+    padding-left: 0.5em;
+  }
+  input#position{
+    color: black;
+    background-color: grey;
+    margin-top: 1em;
+    margin-left: 0.5em;
+  }
+  input#q{
+    color: black;
+    background-color: grey;
+    margin-top: 1em;
+    margin-left: 0.5em;
+  }
+
+}
+}
+button{
+  border-radius: 100%;
+  background-color: black;
+  margin-top: 20em;
+  margin-left: 44em;
+  cursor: pointer;
+  color: #fff;
+>>>>>>> rhonda
 }
