@@ -6,13 +6,9 @@ class User_info < ApplicationRecord
             :jean_waist_size,
             :skirt_size,
             :shoe_size,
-            numericality: { only_integer: true },
+            :shirt_size_form_sml,
+            :dress_size_form_sml,
             presence: true
-
-
-  # t.string   "shirt_size_form_sml"
-  # t.string   "dress_size_form_sml"
-
 
   belongs_to :user
 end
