@@ -35,45 +35,54 @@
 .searchform {
   background-color: #fff;
   opacity: 0.65;
-  border:2px solid black;
-  height: 220px;
-  width: 244px;
+  // border:2px solid black;
+  height: 195px;
+  width: 331px;
   padding-right: 1em;
-  padding-top: 2em;
+  padding-top: 1em;
   z-index: 5;
-  top: 248px;
-  left: 386px;
+  top: 162px;
+  left: 366px;
   position: relative;
   border-radius: 6px;
   form{
-    padding-left: 0.5em;
+    padding-left: 6.5em;
+      color: black;
+      font-weight: bold;
   }
-  label{
-    color: black;
-    font-weight: bold;
-  }
+  // label{
+  //   color: black;
+  //   font-weight: bold;
+  // }
   input#position{
     color: black;
     background-color: grey;
     margin-top: 1em;
-    margin-left: 0.5em;
+    margin-left: -2.3em;
+    font-size: 18px;
+    padding-left: 1em;
   }
-  input#q{
+  input#q_q{
     color: black;
     background-color: grey;
     margin-top: 1em;
-    margin-left: 0.5em;
+    font-size: 18px;
+    margin-left: -2.3em;
+    padding-left: 1em;
   }
 }
 
 
 button{
-  border-radius: 100%;
+  border-radius:100%;
+  width: 52px;
+  height: 52px;
   // font-size: 30px;
   background-color: black;
   font-weight: bold;
-  margin-top: 3em;
-  margin-left: 9em;
+  margin-top: 1em;
+  margin-left: 13em;
+  padding-right: 0.2em;
   cursor: pointer;
   color: #fff;
 

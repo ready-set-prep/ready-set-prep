@@ -23,14 +23,13 @@
 
 <!-- <div class="backdrop"> -->
   <div class="searchform">
-    <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Company:") %>
-      <%= text_field_tag(:q) %>
+
+    <%= form_for :q, url: interview_index_path do |f| %>
+      <%= f.text_field :q, placeholder: "Company" %>
     <% end %>
 
-    <%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:position, "Position:") %>
-    <%= text_field_tag(:position) %>
+    <%= form_for :position, url: interview_index_path do |f| %>
+    <%= f.text_field :position, placeholder: "Position" %>
     <% end %>
       <button>Submit</button>
   </div>
