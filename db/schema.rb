@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718175817) do
+ActiveRecord::Schema.define(version: 20160719184349) do
 
   create_table "company_saveds", force: :cascade do |t|
     t.integer  "user_id"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20160718175817) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sector_relations", force: :cascade do |t|
+    t.string   "sector_name"
+    t.string   "attire_category"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "user_infos", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "height"
@@ -50,6 +57,8 @@ ActiveRecord::Schema.define(version: 20160718175817) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.boolean  "admin"
+    t.string   "amazon_key"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -2,30 +2,31 @@
 <html>
 <body class="backgroundColor">
 
-  <p><%# @name %> ST </p>
-  <p><%# @industry %>Accounting</p>
+  <p><%= @name %> </p>
+  <p><%= @industry %></p>
+  <p><%= @sector %></p>
 
   <div class="glassdoorCard ratings totalRating">
-    <p><%# @total_rating %>3.4</p>
+    <p><%= @total_rating %></p>
   </div>
   <div class="glassdoorCard ratings balanceRating">
-    <%# unless @balance_rating == nil %>
-    <p><%# @balance_rating %>3.5</p>
-    <%# end %>
+    <% unless @balance_rating == nil %>
+    <p><%= @balance_rating %></p>
+    <% end %>
   </div>
   <div class="glassdoorCard ratings benefitsRating">
-    <%# unless @benefits_rating == nil %>
-    <p><%# @benefits_rating %>3.2</p>
-    <%# end %>
+    <% unless @benefits_rating == nil %>
+    <p><%= @benefits_rating %></p>
+    <% end %>
   </div>
   </div>
 
   <div class="glassdoorCard reviews">
-    <%# unless @review == nil %>
-    <p><%# @review["headline"] %>ST Employment</p>
-    <p><%# @review["pros"] %>Good benefits Supportive co-workers and management</p>
-    <p><%# @review["cons"] %>Lower pay than competing banks</p>
-    <%# end %>
+    <% unless @review == nil %>
+    <p><%= @review["headline"] %></p>
+    <p><%= @review["pros"] %></p>
+    <p><%= @review["cons"] %></p>
+    <% end %>
   </div>
 
   <div class="amazonCard">

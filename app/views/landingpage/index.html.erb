@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-  <html>
+<html>
 
-    <body class="backgroundimg" background= "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8">
-      <div class="overlay">
+<body class="backgroundimg" background= "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8">
+  <div class="overlay">
 
     <ul>
       <li><a class="active" href="#home">Home</a></li>
@@ -11,23 +11,36 @@
       <li><a href="#about">About</a></li>
 
       <% if current_user%>
-        <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
       <% else %>
-        <li class="signin"><a href="/users/sign_in">Log In</a></li>
+      <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
     </ul>
+
   </div>
 
-
-
-
+<<<<<<< HEAD
+  <div class="backdrop">
+    <div class="searchform">
+      <%= form_tag("/search", method: "get") do %>
+=======
 <!-- <div class="backdrop"> -->
   <div class="searchform">
     <%= form_tag("/search", method: "get") do %>
+>>>>>>> 09311befaa879337acd65a6b9352995741a5bcce
       <%= label_tag(:q, "Company:") %>
       <%= text_field_tag(:q) %>
-    <% end %>
+      <% end %>
 
+<<<<<<< HEAD
+      <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:position, "Position:") %>
+      <%= text_field_tag(:position) %>
+      <% end %>
+    </div>
+  </div>
+  <button>Submit</button>
+=======
     <%= form_tag("/search", method: "get") do %>
     <%= label_tag(:position, "Position:") %>
     <%= text_field_tag(:position) %>
@@ -36,6 +49,8 @@
   </div>
 <!-- </div> -->
   <!-- <button>Submit</button> -->
+>>>>>>> 09311befaa879337acd65a6b9352995741a5bcce
 
-  </body>
+
+</body>
 </html>

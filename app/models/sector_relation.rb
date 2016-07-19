@@ -1,0 +1,2 @@
+class SectorRelation < ApplicationRecord
+end
