@@ -1,15 +1,26 @@
+img{
+  width: 3.5em;
+  height: 3.5em;
+}
+ul{
+  display:inline-block;
+}
+
+body{
+  // height: 25em;
+
 .aboutus-wrapper{
-  margin:0em 2em 0em 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  // padding-top: 0.5em;
+  // padding-bottom: 1em;
   background-color: #DEDEDE;
   border-radius: 5px;
 
 .alyssa{
-  margin-left: 7em;
-  margin-top: 4em;
-  img{
-    width: 50px;
-    height: 50px;
-  }
+  margin-left: 10em;
+  // margin-top: 0.2em;
+
     h2{
       font-size: 2em;
       font-weight: lighter;
@@ -17,6 +28,7 @@
       color: black;
     }
     p{
+      top: 0;
       margin-left: 1.5em;
       font-weight: lighter;
       color:black;
@@ -25,7 +37,7 @@
 
 
 .mary{
-  margin-left: 15em;
+  margin-left: 20em;
   // margin-top: 4em;
   h3{
     font-size: 2em;
@@ -42,7 +54,7 @@
 
 
 .rhonda{
-  margin-left: 22em;
+  margin-left: 30em;
   // margin-top: 3em;
 
   h4{
@@ -51,10 +63,12 @@
     font-family: "Helvetica", Verdana, sans-serif;
     color: black;
   }
+
   p{
     margin-left: 1.5em;
     font-weight: lighter;
     color:black;
   }
+}
 }
 }
