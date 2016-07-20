@@ -5,7 +5,7 @@
 
   <section class="wrapper">
     <ul class="tabs">
-      <li class="something">Interview Tips</li>
+      <li class="active">Interview Tips</li>
       <li>Attire</li>
     </ul>
 
@@ -43,9 +43,20 @@
 
     <li>
       <div class="content__wrapper">
-        <p>
-          THIS IS WHERE THE AMAZON DATA GOES
-        </p>
+
+        <% @items.each do |r| %>
+          <div class="cards">
+            <%# r.url %>
+            <div class="insideimage">
+              <img src=<%= r.image %>></img>
+            </div>
+            <div class="insidetext">
+              <%= r.clothing_title %>
+              <%= r.price %>
+            </div>
+          </div>
+          <% end %>
+
       </div>
     </li>
 

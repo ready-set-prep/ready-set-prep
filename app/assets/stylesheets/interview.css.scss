@@ -2,8 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.show {
-  display:block;
+.cards {
+  width: 10em;
+  height: 20em;
+  display: inline-block;
+  background-color: #DCDCDC;
+  border-radius: 1em;
+}
+
+.insideimage {
+  width: 9em;
+  height: 18em;
+  margin: auto;
+  margin-top: 1em;
+  border-radius: 1em;
+}
+
+.insidetext {
+  margin: auto;
+  margin-top: -3em;
 }
 
 *{
