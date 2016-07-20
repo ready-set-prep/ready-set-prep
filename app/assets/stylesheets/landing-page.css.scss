@@ -2,6 +2,7 @@
   text-align: right;
   padding-right: 2em;
   padding-top: 0.5em;
+
   // background-color: black;
 }
 .overlay{
@@ -30,12 +31,16 @@
 
 }
 
+
+
+
 .buttonTo {
   background-color: lightgrey;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
   font-weight: bold;
+
 }
 
 
@@ -59,8 +64,8 @@
     font-weight: bold;
 
     input.go{
-      margin-left: 3em;
-      margin-top: 2em;
+      margin-left: 1.3em;
+      margin-top: 1em;
       background-color: black;
       border-radius:100%;
       width: 52px;
@@ -89,7 +94,9 @@
     padding-left: 1em;
     outline: none;
   }
-
+  .submit{
+    font-size: 11em;
+  }
   }
 }
 
