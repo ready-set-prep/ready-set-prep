@@ -13,12 +13,6 @@ class Amazonclass
 
   def search
     @res = Amazon::Ecs.item_search(@amazonparams, {:response_group => 'Images, ItemAttributes, Offers', :sort => 'salesrank', :search_index => 'Apparel'})
-    @res.is_valid_request?
-    @res.has_error?
-    @res.error
-    @res.total_pages
-    @res.total_results
-    @res.item_page
     @res.items.map { |json| SearchResult.new(json) }
   end
 end
