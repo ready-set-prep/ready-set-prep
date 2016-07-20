@@ -1,4 +1,9 @@
-
+.button_to{
+  text-align: right;
+  padding-right: 2em;
+  padding-top: 0.5em;
+  // background-color: black;
+}
 .overlay{
     position:fixed;
     top:0; left:0;
@@ -25,13 +30,20 @@
 
 }
 
+.buttonTo {
+  background-color: lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+}
+
 
 
 
 .searchform {
   background-color: #fff;
   opacity: 0.65;
-  // border:2px solid black;
   height: 195px;
   width: 339px;
   padding-right: 1em;
@@ -61,7 +73,7 @@
     }
   input#q_position{
     color: black;
-    background-color: grey;
+    background-color: oldlace;
     margin-top: 1em;
     margin-left: -2.3em;
     font-size: 18px;
@@ -70,7 +82,7 @@
   }
   input#q_q{
     color: black;
-    background-color: grey;
+    background-color: oldlace;
     margin-top: 1em;
     font-size: 18px;
     margin-left: -2.3em;
@@ -81,20 +93,20 @@
   }
 }
 
-
+/***  BUTTON FOR LOGIN PAGE *******/
 button{
   border-radius:100%;
-  width: 52px;
-  height: 52px;
-  // font-size: 30px;
+  width: 136px;
+  height: 136px;
   background-color: black;
   font-weight: bold;
   margin-top: 1em;
-  margin-left: 13em;
+  margin-left: -0.5em;
   padding-right: 0.2em;
   cursor: pointer;
   color: #fff;
   outline: none;
-  // box-shadow: none;
+  font-size: 22px;
+  font-family: 'Aquatico', Verdana, sans-serif;
 
 }
