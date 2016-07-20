@@ -5,10 +5,10 @@
   <div class="overlay">
 
     <ul>
-      <li><a class="active" href="#home">Home</a></li>
+      <li><a class="active" href="/">Home</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="/aboutus">About</a></li>
 
       <% if current_user%>
       <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
@@ -19,23 +19,27 @@
 
   </div>
 
+  
 
 
-  <div class="searchform">
-
-    <%= form_for :q, url: interview_index_path do |f| %>
+    <div class="searchform">
+    <% if current_user %>
+      <%= form_for :q, url: interview_index_path do |f| %>
       <%= f.text_field :q, placeholder: "Company" %>
+      <% end %>
+
+      <%= form_for :position, url: interview_index_path do |f| %>
+      <%= f.text_field :position, placeholder: "Position" %>
+      <% end %>
+      <form action="/interview", method="GET">
+        <button>Submit</button>
+      </form>
+    <% else %>
+    <form action="/users/sign_in", method="GET">
+      <button> LOGIN </button>
+    </form>
     <% end %>
-
-    <%= form_for :position, url: interview_index_path do |f| %>
-    <%= f.text_field :position, placeholder: "Position" %>
-    <% end %>
-      <button>Submit</button>
-
-  </div>
-
-
-
+    </div>
 
 
 </body>

@@ -2,30 +2,30 @@
 <html>
 <body class="backgroundColor">
 
-  <p><%= @name %> </p>
-  <p><%= @industry %></p>
-  <p><%= @sector %></p>
+  <p><%= @name %> name</p>
+  <p><%= @industry %>industry</p>
+  <p><%= @sector %>sector</p>
 
   <div class="glassdoorCard ratings totalRating">
-    <p><%= @total_rating %></p>
+    <p><%= @total_rating %>total rating</p>
   </div>
   <div class="glassdoorCard ratings balanceRating">
     <% unless @balance_rating == nil %>
-    <p><%= @balance_rating %></p>
+    <p><%= @balance_rating %>balancerating</p>
     <% end %>
   </div>
   <div class="glassdoorCard ratings benefitsRating">
     <% unless @benefits_rating == nil %>
-    <p><%= @benefits_rating %></p>
+    <p><%= @benefits_rating %>benefits rating</p>
     <% end %>
   </div>
   </div>
 
   <div class="glassdoorCard reviews">
     <% unless @review == nil %>
-    <p><%= @review["headline"] %></p>
-    <p><%= @review["pros"] %></p>
-    <p><%= @review["cons"] %></p>
+    <p><%= @review["headline"] %>headline</p>
+    <p><%= @review["pros"] %>pros</p>
+    <p><%= @review["cons"] %>cons</p>
     <% end %>
   </div>
 
