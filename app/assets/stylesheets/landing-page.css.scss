@@ -42,12 +42,24 @@
   position: relative;
   border-radius: 6px;
   form{
-    padding-left: 6.5em;
+    padding-left: 7.5em;
     color: black;
     font-weight: bold;
-  }
 
-  input#position_position{
+    input.go{
+      margin-left: 3em;
+      margin-top: 2em;
+      background-color: black;
+      border-radius:100%;
+      width: 52px;
+      height: 52px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      outline: none;
+
+    }
+  input#q_position{
     color: black;
     background-color: grey;
     margin-top: 1em;
@@ -64,6 +76,8 @@
     margin-left: -2.3em;
     padding-left: 1em;
     outline: none;
+  }
+
   }
 }
 

@@ -19,7 +19,7 @@
 
   </div>
 
-  
+
 
 
     <div class="searchform">
@@ -28,7 +28,7 @@
       <%= f.text_field :q, placeholder: "Company" %>
 
       <%= f.text_field :position, placeholder: "Position" %>
-      <%= f.submit "submit" %>
+      <%= f.submit "submit", :class => "go" %>
       <% end %>
     <% else %>
     <form action="/users/sign_in", method="GET">
