@@ -26,7 +26,7 @@ header:after {
     top:80%;
     background:none;
     border-radius:50%;
-    box-shadow: 0px 0px 0px 9999px lightgrey;
+    box-shadow: 0px 0px 0px 9999px #C9C9C9;
     z-index:-2;
 }
 
@@ -37,6 +37,7 @@ h1{
   padding-left: 1.5em;
   height: 2em;
   color: #fff;
+  font-weight: lighter;
 }
 i{
   color: #fff;
@@ -45,38 +46,45 @@ i{
 
 
 .bar{
-  text-align: right;
-  .clothes{
-    padding-top: 2em;
-    padding-left: 3em;
-    // text-align: center;
-    width: 14em;
-  }
+  text-align:center;
+
   .field{
     text-align: center;
     padding-top: 1em;
     padding-right: 5em;
   }
 
-    h2{
-      padding-right: 5em;
-      font-size: 22px;
-      text-align: center;
-    }
+    // h2{
+    //   padding-right: 5em;
+    //   font-size: 22px;
+    //   text-align: center;
+    // }
 
     label{
       padding-right: 0.5em;
+      font-size: 20px;
     }
     #user_email{
       width: 15em;
+      height: 1.5em;
+      outline: none;
     }
     #user_password{
       width: 15em;
+      height: 1.5em;
+      outline: none;
     }
     .actions{
       padding-right: 4em;
-    }
-
+      input{
+        font-size: 20px;
+        margin-top: 0.5em;
+        margin-right: 1em;
+        background-color: black;
+        color: #fff;
+        border-radius: 5px;
+      }
+}
     #LoginWithAmazon{
       padding-top: 0.5em;
       padding-right: 0em;
@@ -84,13 +92,12 @@ i{
         text-align: center;
       }
     }
-    a{
-      padding-right: 2em;
-    }
-    img{
-      padding-top: 1em;
-      padding-right: 0em;
 
+    img{
+      padding-top: 1.5em;
+      padding-right: 2.5em;
+      width: 156px;
+      height: 32px;
       }
-    
+
 }
