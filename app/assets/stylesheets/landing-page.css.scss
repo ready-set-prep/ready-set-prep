@@ -54,6 +54,7 @@
     margin-left: -2.3em;
     font-size: 18px;
     padding-left: 1em;
+    outline: none;
   }
   input#q_q{
     color: black;
@@ -62,6 +63,7 @@
     font-size: 18px;
     margin-left: -2.3em;
     padding-left: 1em;
+    outline: none;
   }
 
 }
@@ -79,5 +81,7 @@ button{
   padding-right: 0.2em;
   cursor: pointer;
   color: #fff;
+  outline: none;
+  // box-shadow: none;
 
 }
