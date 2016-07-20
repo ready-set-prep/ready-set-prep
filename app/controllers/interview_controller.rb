@@ -7,18 +7,11 @@ end
 
 
 class InterviewController < ApplicationController
-  def index
-    # @otherparams = params[:position].strip.gsub(/\s/,'+') #position
-    # @params = params[:company].strip.gsub(/\s/,'+') #company
-    #
-    #   glassdoor_api_call
-    #   @name = @data["response"]["employers"].first["name"]
-    #   @industry = @data["response"]["employers"].first["industry"]
-    #   @total_rating = @data["response"]["employers"].first["overallRating"]
-    #   @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
-    #   @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
-    #   @review = @data["response"]["employers"].first["featuredReview"]
-    #   @sector = @data["response"]["employers"].first["sectorName"] #this is what we want for finding amazon info
+  def create
+    # @amazonparams = params[:position].strip.gsub(/\s/,'+') #position #amazon
+    @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
+    glassdoor_api_call
+    glassdoor_data
     # amazon_API_call
     # @res.items.each do |item|
     # @URL = item.get('DetailPageURL')
@@ -45,9 +38,18 @@ class InterviewController < ApplicationController
 
 
   def glassdoor_api_call
-    #It does not like it when I enter in the rest of the lines so its just going to stay like this.
     @data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=#{ENV['PARTNER_ID']}&t.k=#{ENV['GLASSDOOR_KEY']}&action=employers&q=#{@params}
     &userip=192.168.43.42
     &useragent=Chrome/%2F4.0"
+  end
+
+  def glassdoor_data
+    @name = @data["response"]["employers"].first["name"]
+    @industry = @data["response"]["employers"].first["industry"]
+    @total_rating = @data["response"]["employers"].first["overallRating"]
+    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
+    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
+    @review = @data["response"]["employers"].first["featuredReview"]
+    @sector = @data["response"]["employers"].first["sectorName"]
   end
 end
