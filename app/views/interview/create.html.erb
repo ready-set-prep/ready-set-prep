@@ -46,18 +46,18 @@
       <div class="content__wrapper">
 
         <% @items.each do |r| %>
-          <div class="cards" >
+        <div class="cards" >
+          <div class="insideimage">
             <a href=<%= r.url %>>
-            <div class="insideimage">
               <img src=<%= r.image %>></img>
-            </div>
-            <div class="insidetext">
-              <%= r.clothing_title %>
-              <%= r.price %>
-            </div>
-          </a>
+            </a>
           </div>
-          <% end %>
+          <div class="insidetext">
+            <%= r.clothing_title %>
+            <%= r.price %>
+          </div>
+        </div>
+        <% end %>
 
       </div>
     </li>
