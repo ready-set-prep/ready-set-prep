@@ -21,21 +21,25 @@
 
   <div class="backdrop">
 
-  <div class="searchform">
 
-    <%= form_for :q, url: interview_index_path do |f| %>
+    <div class="searchform">
+    <% if current_user %>
+      <%= form_for :q, url: interview_index_path do |f| %>
       <%= f.text_field :q, placeholder: "Company" %>
+      <% end %>
+
+      <%= form_for :position, url: interview_index_path do |f| %>
+      <%= f.text_field :position, placeholder: "Position" %>
+      <% end %>
+      <form action="/interview", method="GET">
+        <button>Submit</button>
+      </form>
+    <% else %>
+    <form action="/users/sign_in", method="GET">
+      <button> LOGIN </button>
+    </form>
     <% end %>
+    </div>
 
-    <%= form_for :position, url: interview_index_path do |f| %>
-    <%= f.text_field :position, placeholder: "Position" %>
-    <% end %>
-      <button>Submit</button>
-
-  </div>
-
-
-
-
-</body>
-</html>
+  </body>
+  </html>
