@@ -10,18 +10,20 @@ class InterviewController < ApplicationController
   def create
     # @amazonparams = params[:position].strip.gsub(/\s/,'+') #position #amazon
     @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
-    glassdoor_api_call
-    glassdoor_data
-    # amazon_API_call
-    # @res.items.each do |item|
-    # @URL = item.get('DetailPageURL')
-    # item_attributes = item.get_element('ItemAttributes')
-    # @name = item_attributes.get_unescaped('Title')
-    #   if item_attributes.get_hash('ListPrice')
-    #     @price = item_attributes.get_hash('ListPrice')["FormattedPrice"]
-    #   end
-    #   @image = item.get_hash('LargeImage')["URL"]
-    # end
+    if @params && @amazonparams
+      glassdoor_api_call
+      glassdoor_data
+      amazon_API_call
+      amazon_data
+    elsif @params
+      glassdoor_api_call
+      glassdoor_data
+    elsif @amazonparams
+      amazon_API_call
+      amazon_data
+    else
+      redirect_to landingpage_index_path
+    end
   end
 
 
@@ -34,6 +36,18 @@ class InterviewController < ApplicationController
     @res.total_pages
     @res.total_results
     @res.item_page
+  end
+
+  def amazon_data
+    @res.items.each do |item|
+    @URL = item.get('DetailPageURL')
+    item_attributes = item.get_element('ItemAttributes')
+    @name = item_attributes.get_unescaped('Title')
+      if item_attributes.get_hash('ListPrice')
+        @price = item_attributes.get_hash('ListPrice')["FormattedPrice"]
+      end
+      @image = item.get_hash('LargeImage')["URL"]
+    end
   end
 
 

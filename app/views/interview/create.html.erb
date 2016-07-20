@@ -2,41 +2,61 @@
 <html>
 <body class="backgroundColor">
 
-  <p><%= @name %> name</p>
-  <p><%= @industry %>industry</p>
-  <p><%= @sector %>sector</p>
 
-  <div class="glassdoorCard ratings totalRating">
-    <p><%= @total_rating %>total rating</p>
-  </div>
-  <div class="glassdoorCard ratings balanceRating">
-    <% unless @balance_rating == nil %>
-    <p><%= @balance_rating %>balancerating</p>
-    <% end %>
-  </div>
-  <div class="glassdoorCard ratings benefitsRating">
-    <% unless @benefits_rating == nil %>
-    <p><%= @benefits_rating %>benefits rating</p>
-    <% end %>
-  </div>
-  </div>
+  <section class="wrapper">
+    <ul class="tabs">
+      <li class="something">Interview Tips</li>
+      <li>Attire</li>
+    </ul>
 
-  <div class="glassdoorCard reviews">
-    <% unless @review == nil %>
-    <p><%= @review["headline"] %>headline</p>
-    <p><%= @review["pros"] %>pros</p>
-    <p><%= @review["cons"] %>cons</p>
-    <% end %>
-  </div>
+    <ul class="tab__content">
 
-  <div class="amazonCard">
-    <div class="image">
+      <li class="active">
+        <div class="content__wrapper">
+          <p><%= @name %> name</p>
+          <p><%= @industry %>industry</p>
+          <p><%= @sector %>sector</p>
+          <div class="glassdoorCard ratings totalRating">
+            <p><%= @total_rating %>total rating</p>
+          </div>
+          <div class="glassdoorCard ratings balanceRating">
+            <% unless @balance_rating == nil %>
+            <p><%= @balance_rating %>balancerating</p>
+            <% end %>
+          </div>
+          <div class="glassdoorCard ratings benefitsRating">
+            <% unless @benefits_rating == nil %>
+            <p><%= @benefits_rating %>benefits rating</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="glassdoorCard reviews">
+          <% unless @review == nil %>
+          <p><%= @review["headline"] %>headline</p>
+          <p><%= @review["pros"] %>pros</p>
+          <p><%= @review["cons"] %>cons</p>
+          <% end %>
+        </div>
+      </div>
+    </li>
 
-    </div>
-    <div class="amazondetails">
 
-    </div>
-  </div>
+    <li>
+      <div class="content__wrapper">
+        <p>
+          THIS IS WHERE THE AMAZON DATA GOES
+        </p>
+      </div>
+    </li>
+
+
+  </ul>
+</section>
+
+
+
+
+
 </body>
 
 </html>

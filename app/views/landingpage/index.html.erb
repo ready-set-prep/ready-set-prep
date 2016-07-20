@@ -19,23 +19,20 @@
 
   </div>
 
-  
-
-
-    <div class="searchform">
+  <div class="searchform">
     <% if current_user %>
-      <%= form_for :q, url: interview_index_path do |f| %>
-      <%= f.text_field :q, placeholder: "Company" %>
+    <%= form_for :q, url: interview_index_path do |f| %>
+    <%= f.text_field :q, placeholder: "Company" %>
 
-      <%= f.text_field :position, placeholder: "Position" %>
-      <%= f.submit "submit" %>
-      <% end %>
+    <%= f.text_field :position, placeholder: "Position" %>
+    <%= f.submit "submit" %>
+    <% end %>
     <% else %>
     <form action="/users/sign_in", method="GET">
       <button> LOGIN </button>
     </form>
     <% end %>
-    </div>
+  </div>
 
 
 </body>
