@@ -6,8 +6,6 @@ class ReviewsController < ApplicationController
       pros: params[:reviews][:pros],
       cons: params[:reviews][:cons]
       )
-      if r.save!
-        redirect_to interview_index_path
-      end
+      r.save!
   end
 end

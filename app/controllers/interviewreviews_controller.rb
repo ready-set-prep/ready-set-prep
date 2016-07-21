@@ -6,9 +6,7 @@ class InterviewreviewsController < ApplicationController
     length: params[:interview][:length],
     difficulty: params[:interview][:difficulty]
     )
-  
-    if r.save!
-      redirect_to interview_index_path
-    end
+
+    r.save!
   end
 end
