@@ -36,6 +36,16 @@
           <p><%= @review["pros"] %>pros</p>
           <p><%= @review["cons"] %>cons</p>
           <% end %>
+
+          <iframe
+            width="600"
+            height="450"
+            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
+            &origin=334+blackwell+st+durham+nc
+            &destination=<%= @name %>
+            &avoid=tolls|highways" allowfullscreen>
+          </iframe>
+
         </div>
       </div>
 
