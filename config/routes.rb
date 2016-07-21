@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :interview
   resources :user_info
   resources :amazoncart
+  resources :interviewreviews
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/aboutus'   => 'aboutus#index'
 end
