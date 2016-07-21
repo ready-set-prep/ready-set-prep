@@ -12,12 +12,7 @@
  *
 
  */
- @import "landing-page";
- @import "sign-in";
- @import "aboutus";
- @import "interview";
- @import "user_info";
- @import "sign-up";
+
 
 
  @font-face{
@@ -59,3 +54,18 @@
  li a:hover {
      background-color: #ddd;
  }
+
+ a{
+   text-decoration: none;
+   text-align: center;
+ }
+ a:hover{
+   text-decoration: none;
+ }
+
+ @import "landing-page";
+ @import "sign-in";
+ @import "aboutus";
+ @import "interview";
+ @import "user_info";
+ @import "sign-up";
