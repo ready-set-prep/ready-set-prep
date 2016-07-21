@@ -8,6 +8,6 @@ class SessionsController < Devise::OmniauthCallbacksController
     u.amazon_key = data.credentials.token
       end
     sign_in @user
-    redirect_to landingpage_index_path
+    redirect_to :root
   end
 end
