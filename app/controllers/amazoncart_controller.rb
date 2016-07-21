@@ -9,8 +9,6 @@ class AmazoncartController < ApplicationController
     request.associate_tag = 'pratt0923-20'
     request.aws_access_key_id = ENV['More_amazon_Access_Key_ID']
     request.aws_secret_access_key = ENV['More_amazon_Secret_Access_Key']
-
-    binding.pry
     response = request.cart_create(
       query: {
         'HMAC' => ENV['More_amazon_Secret_Access_Key'],

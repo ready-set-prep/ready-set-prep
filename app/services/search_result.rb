@@ -13,9 +13,8 @@ class SearchResult
         else
           @image = result["ImageSets"]["ImageSet"].first["LargeImage"]["URL"]
         end
-      else
-        @image = result["LargeImage"]["URL"]
       end
+      @image = result["LargeImage"]["URL"]
     end
     @asin = result["ASIN"]
   end
