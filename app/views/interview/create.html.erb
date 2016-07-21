@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html>
 <body class="backgroundColor">
-
+<h1>interview create</h1>
 
   <section class="wrapper">
     <ul class="tabs">
@@ -36,30 +37,7 @@
           <p>Pros:   <%= @review["pros"] %></p>
           <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
-          <div class="addANewReviewForm">
-            <p> Had an interview with this company? add a review! </p>
-            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-            <p><% f.label :company %>
-            <%= f.hidden_field :company, :value => @name %>
-            </p>
 
-            <p><%= f.label :experience %>
-            <%= f.text_area :experience %>
-            </p>
-
-            <p><%= f.label :length %>
-            <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-            </p>
-            <p>
-            <%= f.label :difficulty %>
-            <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
-            <% end %>
-
-          </div>
           <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
             <% Interviewreview.where(company: @name).each do |i| %>
@@ -70,6 +48,32 @@
             <% end %>
           <% end %>
         </div>
+
+        <div class="addANewReviewForm">
+          <p> Had an interview with this company? add a review! </p>
+          <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+          <p><% f.label :company %>
+          <%= f.hidden_field :company, :value => @name %>
+          </p>
+
+          <p><%= f.label :experience %>
+          <%= f.text_area :experience %>
+          </p>
+
+          <p><%= f.label :length %>
+          <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+          </p>
+          <p>
+          <%= f.label :difficulty %>
+          <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+          </p>
+          <p>
+            <%= f.submit %>
+          </p>
+          <% end %>
+
+        </div>
+
           <iframe
             width="600"
             height="450"

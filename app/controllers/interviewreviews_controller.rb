@@ -7,7 +7,7 @@ class InterviewreviewsController < ApplicationController
     difficulty: params[:interview][:difficulty]
     )
     if r.save!
-      redirect_to landingpage_index_path
+      redirect_to interview_index_path
     end
   end
 end
