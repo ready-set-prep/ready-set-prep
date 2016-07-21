@@ -1,42 +1,22 @@
-require 'amazon/ecs'
-Amazon::Ecs.configure do |options|
-  options[:AWS_access_key_id] = ENV['More_amazon_Access_Key_ID']
-  options[:AWS_secret_key] = ENV['More_amazon_Secret_Access_Key']
-  options[:associate_tag] = 'pratt0923-20'
-end
-
-
 class InterviewController < ApplicationController
   def create
-    # @amazonparams = params[:position].strip.gsub(/\s/,'+') #position #amazon
     @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
-    glassdoor_api_call
-    glassdoor_data
-    # amazon_API_call
-    # @res.items.each do |item|
-    # @URL = item.get('DetailPageURL')
-    # item_attributes = item.get_element('ItemAttributes')
-    # @name = item_attributes.get_unescaped('Title')
-    #   if item_attributes.get_hash('ListPrice')
-    #     @price = item_attributes.get_hash('ListPrice')["FormattedPrice"]
-    #   end
-    #   @image = item.get_hash('LargeImage')["URL"]
-    # end
+    @amazonparams = params[:q][:position].strip.gsub(/\s/,'+') #position #amazon
+    if @params && @amazonparams != ""
+      glassdoor_api_call
+      glassdoor_data
+      @items = Amazonclass.new(@amazonparams).search
+    elsif @amazonparams == ""
+      glassdoor_api_call
+      glassdoor_data
+    elsif @params == ""
+      @items = Amazonclass.new(@amazonparams).search
+    else
+      redirect_to landingpage_index_path
+    end
   end
-
 
   private
-  def amazon_API_call #need to add in the params once we get that down but for now the call is made!!!
-    @res = Amazon::Ecs.item_search('ruby', {:response_group => 'Images, ItemAttributes, Offers', :sort => 'reviewrank', :search_index => 'Apparel', :brand => 'Sony'})
-    @res.is_valid_request?
-    @res.has_error?
-    @res.error
-    @res.total_pages
-    @res.total_results
-    @res.item_page
-  end
-
-
   def glassdoor_api_call
     @data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=#{ENV['PARTNER_ID']}&t.k=#{ENV['GLASSDOOR_KEY']}&action=employers&q=#{@params}
     &userip=192.168.43.42

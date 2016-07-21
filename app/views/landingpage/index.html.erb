@@ -2,6 +2,10 @@
 <html>
 
 
+
+
+<body class="backgroundimg" background= "https://images.unsplash.com/photo-1456515003192-808f8e9ca393?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1e75f07c23b1acd8bd3b6e2a88f2487e">
+
   <div class="overlay">
 
     <ul class="section">
@@ -20,23 +24,26 @@
   </div>
 
 
-
-
     <div class="searchform">
+
     <% if current_user %>
-      <%= form_for :q, url: interview_index_path do |f| %>
-      <%= f.text_field :q, placeholder: "Company" %>
+    <%= form_for :q, url: interview_index_path do |f| %>
+    <%= f.text_field :q, placeholder: "Company" %>
 
       <%= f.text_field :position, placeholder: "Position" %>
       <%= f.submit "submit", :class => "go" %>
       <% end %>
+
     <% else %>
     <form action="/users/sign_in", method="GET">
       <button> LOGIN </button>
     </form>
     <% end %>
-    </div>
+  </div>
 
 
 </body>
+<footer><div class="circle">
+
+</div></footer>
 </html>

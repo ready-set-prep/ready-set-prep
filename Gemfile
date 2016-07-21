@@ -25,7 +25,7 @@ gem 'aws-sdk', '~> 2'
 gem 'aws-sdk-rails'
 gem 'amazon-ecs'
 gem 'geocoder'
-
+gem 'vacuum'
 
 group :development, :test do
   gem 'byebug', platform: :mri

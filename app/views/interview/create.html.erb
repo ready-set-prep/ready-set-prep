@@ -2,41 +2,70 @@
 <html>
 <body class="backgroundColor">
 
-  <p><%= @name %> name</p>
-  <p><%= @industry %>industry</p>
-  <p><%= @sector %>sector</p>
 
-  <div class="glassdoorCard ratings totalRating">
-    <p><%= @total_rating %>total rating</p>
-  </div>
-  <div class="glassdoorCard ratings balanceRating">
-    <% unless @balance_rating == nil %>
-    <p><%= @balance_rating %>balancerating</p>
-    <% end %>
-  </div>
-  <div class="glassdoorCard ratings benefitsRating">
-    <% unless @benefits_rating == nil %>
-    <p><%= @benefits_rating %>benefits rating</p>
-    <% end %>
-  </div>
-  </div>
+  <section class="wrapper">
+    <ul class="tabs">
+      <li class="active">Interview Tips</li>
+      <li>Attire</li>
+    </ul>
 
-  <div class="glassdoorCard reviews">
-    <% unless @review == nil %>
-    <p><%= @review["headline"] %>headline</p>
-    <p><%= @review["pros"] %>pros</p>
-    <p><%= @review["cons"] %>cons</p>
-    <% end %>
-  </div>
+    <ul class="tab__content">
 
-  <div class="amazonCard">
-    <div class="image">
+      <li class="active">
+        <div class="content__wrapper">
+          <p><%= @name %> name</p>
+          <p><%= @industry %>industry</p>
+          <p><%= @sector %>sector</p>
+          <div class="glassdoorCard ratings totalRating">
+            <p><%= @total_rating %>total rating</p>
+          </div>
+          <div class="glassdoorCard ratings balanceRating">
+            <% unless @balance_rating == nil %>
+            <p><%= @balance_rating %>balancerating</p>
+            <% end %>
+          </div>
+          <div class="glassdoorCard ratings benefitsRating">
+            <% unless @benefits_rating == nil %>
+            <p><%= @benefits_rating %>benefits rating</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="glassdoorCard reviews">
+          <% unless @review == nil %>
+          <p><%= @review["headline"] %>headline</p>
+          <p><%= @review["pros"] %>pros</p>
+          <p><%= @review["cons"] %>cons</p>
+          <% end %>
+        </div>
+      </div>
 
-    </div>
-    <div class="amazondetails">
+    </li>
 
-    </div>
-  </div>
+
+    <li>
+      <div class="content__wrapper">
+
+        <% @items.each do |r| %>
+        <div class="cards" >
+          <div class="insideimage">
+            <a href=<%= r.url %>>
+              <img src=<%= r.image %>></img>
+            </a>
+          </div>
+          <div class="insidetext">
+            <%= r.clothing_title %>
+            <%= r.price %>
+          </div>
+          <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
+            <%= f.submit "add to cart" %>
+            <%= f.hidden_field :ASIN, value: r.asin %>
+          <% end %>
+        </div>
+        <% end %>
+
+      </div>
+    </li>
+  </ul>
+</section>
 </body>
-
 </html>

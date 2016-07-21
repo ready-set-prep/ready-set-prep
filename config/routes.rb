@@ -5,6 +5,8 @@ Rails.application.routes.draw do
    root to:  "landingpage#index"
   resources :landingpage
   resources :interview
+  resources :user_info
+  resources :amazoncart
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/aboutus'   => 'aboutus#index'
 end
