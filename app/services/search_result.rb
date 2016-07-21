@@ -6,8 +6,15 @@ class SearchResult
     if result["ItemAttributes"]['ListPrice']
       @price = result["ItemAttributes"]['ListPrice']["FormattedPrice"]
     end
-    binding.pry
-    @image = Array(result["ImageSets"]["ImageSet"]).first["LargeImage"]["URL"] || result["LargeImage"]["URL"] || result["ImageSets"]["ImageSet"].first[1]["URL"]
+    if result["ImageSets"]["ImageSet"]
+      if result["ImageSets"]["ImageSet"].first[1]
+        @image = result["ImageSets"]["ImageSet"].first[1]["URL"]
+      else
+        @image = result["ImageSets"]["ImageSet"].first["LargeImage"]["URL"]
+      end
+    else
+      @image = result["LargeImage"]["URL"]
+    end
     @asin = result["ASIN"]
   end
 end
