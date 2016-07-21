@@ -11,7 +11,7 @@
       <li><a href="/aboutus">About</a></li>
 
       <% if current_user%>
-      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, :class => "buttonTo" %>
       <% else %>
       <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
@@ -19,14 +19,17 @@
 
   </div>
 
-  <div class="searchform">
+
+    <div class="searchform">
+
     <% if current_user %>
     <%= form_for :q, url: interview_index_path do |f| %>
     <%= f.text_field :q, placeholder: "Company" %>
 
-    <%= f.text_field :position, placeholder: "Position" %>
-    <%= f.submit "submit" %>
-    <% end %>
+      <%= f.text_field :position, placeholder: "Position" %>
+      <%= f.submit "submit", :class => "go" %>
+      <% end %>
+
     <% else %>
     <form action="/users/sign_in", method="GET">
       <button> LOGIN </button>
