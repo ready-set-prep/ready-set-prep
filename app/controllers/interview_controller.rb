@@ -1,4 +1,8 @@
 class InterviewController < ApplicationController
+
+  def index
+  end
+
   def create
     @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
     @amazonparams = params[:q][:position].strip.gsub(/\s/,'+') #position #amazon
@@ -9,10 +13,8 @@ class InterviewController < ApplicationController
     elsif @amazonparams == ""
       glassdoor_api_call
       glassdoor_data
-    elsif @params == ""
-      @items = Amazonclass.new(@amazonparams).search
     else
-      redirect_to landingpage_index_path
+      @items = Amazonclass.new(@amazonparams).search
     end
   end
 
