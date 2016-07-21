@@ -37,16 +37,17 @@
           <p>Pros:   <%= @review["pros"] %></p>
           <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
-
+        </div>
           <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
             <% Interviewreview.where(company: @name).each do |i| %>
-            <%= i.company %>
+            <p><%= i.company %>
             <%= i.experience %>
             <%= i.length %>
-            <%= i.difficulty %>
+            <%= i.difficulty %></p>
             <% end %>
           <% end %>
+        </div>
         </div>
 
         <div class="addANewReviewForm">
@@ -73,7 +74,7 @@
           <% end %>
 
         </div>
-
+        <div class="map">
           <iframe
             width="600"
             height="450"
@@ -82,6 +83,8 @@
             &destination=<%= @name %>
             &avoid=tolls|highways" allowfullscreen>
           </iframe>
+        </div>
+
 
         </div>
       </div>
