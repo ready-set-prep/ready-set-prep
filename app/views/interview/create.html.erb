@@ -13,30 +13,63 @@
 
       <li class="active">
         <div class="content__wrapper">
-          <p><%= @name %> name</p>
-          <p><%= @industry %>industry</p>
-          <p><%= @sector %>sector</p>
+          <p>Name:   <%= @name %> </p>
+          <p>Industry:   <%= @industry %></p>
+          <p>Sector:   <%= @sector %></p>
           <div class="glassdoorCard ratings totalRating">
-            <p><%= @total_rating %>total rating</p>
+            <p>Total Rating:   <%= @total_rating %></p>
           </div>
           <div class="glassdoorCard ratings balanceRating">
             <% unless @balance_rating == nil %>
-            <p><%= @balance_rating %>balancerating</p>
+            <p>Work-Life Balance:   <%= @balance_rating %></p>
             <% end %>
           </div>
           <div class="glassdoorCard ratings benefitsRating">
             <% unless @benefits_rating == nil %>
-            <p><%= @benefits_rating %>benefits rating</p>
+            <p>Benefits Rating:   <%= @benefits_rating %> </p>
             <% end %>
           </div>
         </div>
         <div class="glassdoorCard reviews">
           <% unless @review == nil %>
-          <p><%= @review["headline"] %>headline</p>
-          <p><%= @review["pros"] %>pros</p>
-          <p><%= @review["cons"] %>cons</p>
+          <p>Headline:   <%= @review["headline"] %></p>
+          <p>Pros:   <%= @review["pros"] %></p>
+          <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
+          <div class="addANewReviewForm">
+            <p> Had an interview with this company? add a review! </p>
+            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+            <p><% f.label :company %>
+            <%= f.hidden_field :company, :value => @name %>
+            </p>
 
+            <p><%= f.label :experience %>
+            <%= f.text_area :experience %>
+            </p>
+
+            <p><%= f.label :length %>
+            <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+            </p>
+            <p>
+            <%= f.label :difficulty %>
+            <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+            <% end %>
+
+          </div>
+          <div class="existingreviews">
+          <% if Interviewreview.where(company: @name) != [] %>
+            <% Interviewreview.where(company: @name).each do |i| %>
+            <%= i.company %>
+            <%= i.experience %>
+            <%= i.length %>
+            <%= i.difficulty %>
+            <% end %>
+          <% end %>
+        </div>
           <iframe
             width="600"
             height="450"
