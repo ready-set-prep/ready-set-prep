@@ -37,6 +37,36 @@
           <p>Pros:   <%= @review["pros"] %></p>
           <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
+            <% if Review.where(company: @name) != [] %>
+              <% Review.where(company: @name).each do |f| %>
+                <%= f.headline %>
+                <%= f.pros %>
+                <%= f.cons %>
+                <% end %>
+            <% end %>
+        </div>
+
+        <div class="addnewgeneralreviewform">
+          <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+          <p><% f.label :company %>
+          <%= f.hidden_field :company, :value => @name %>
+          </p>
+          <p><%= f.label :headline %>
+          <%= f.text_field :headline %>
+          </p>
+
+          <p><%= f.label :pros %>
+          <%= f.text_area :pros %>
+          </p>
+
+          <p><%= f.label :cons %>
+          <%= f.text_area :cons %>
+          </p>
+          <p>
+            <%= f.submit %>
+          </p>
+          <% end %>
+
         </div>
           <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
