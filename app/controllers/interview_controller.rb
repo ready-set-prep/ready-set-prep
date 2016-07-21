@@ -1,10 +1,7 @@
-
-
 class InterviewController < ApplicationController
   def create
     @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
     @amazonparams = params[:q][:position].strip.gsub(/\s/,'+') #position #amazon
-
     if @params && @amazonparams
       glassdoor_api_call
       glassdoor_data
