@@ -1,4 +1,4 @@
-class InterviewreviewsController < ApplicationController
+class InterviewreviewController < ApplicationController
   def create
     r = Interviewreview.new(
     company: params[:interview][:company],
