@@ -37,6 +37,7 @@ h1{
   height: 2em;
   color: #fff;
   font-weight: lighter;
+  text-align: left;
 }
 i{
   color: #fff;
@@ -45,17 +46,14 @@ i{
 
 
 .bar{
+text-align: center;
+
+
   .field{
     text-align: center;
     padding-top: 1em;
     padding-right: 5em;
   }
-
-    // h2{
-    //   padding-right: 5em;
-    //   font-size: 22px;
-    //   text-align: center;
-    // }
 
     label{
       padding-right: 0.5em;
@@ -87,16 +85,14 @@ i{
       padding-top: 0.5em;
       padding-right: 0em;
       margin-left: 19em;
-    }
 
-    img{
-      // a{
-      //   margin-left: 25em;
-      // }
-      padding-top: 1.5em;
-      padding-right: 0.5em;
+
+    img{/**** amazon button image link ***/
+      // margin: 2em auto;
+      // margin-right: 10%;
       width: 156px;
       height: 32px;
-      margin-left: 10em;
+
       }
+}
 }
