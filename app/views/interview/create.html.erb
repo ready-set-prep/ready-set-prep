@@ -4,15 +4,75 @@
 <body class="backgroundColor">
 <h1>interview create</h1>
 
-  <section class="wrapper">
+  <section class="wrapper"><!-- may need to add a nav-bar div -->
     <ul class="tabs">
       <li class="active">Interview Tips</li>
       <li>Attire</li>
     </ul>
 
+<!-- start of grid system -->
+    <div class="grid grid-pad">
+
+
+      <div class="col-1-2 interviews">
+          <div class="existingreviews">
+          <% if Interviewreview.where(company: @name) != [] %>
+            <% Interviewreview.where(company: @name).each do |i| %>
+            <p><%= i.company %>
+            <%= i.experience %>
+            <%= i.length %>
+            <%= i.difficulty %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+
+        <div class="addANewReviewForm">
+          <p> Had an interview with this company? add a review! </p>
+          <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+          <p><% f.label :company %>
+          <%= f.hidden_field :company, :value => @name %>
+          </p>
+
+          <p><%= f.label :experience %>
+          <%= f.text_area :experience %>
+          </p>
+
+          <p><%= f.label :length %>
+          <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+          </p>
+          <p>
+          <%= f.label :difficulty %>
+          <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+          </p>
+          <p>
+            <%= f.submit %>
+          </p>
+          <% end %>
+        </div>
+      </div>
+
+<!-- end of col 2 -->
+
+<!--  ROW 1 -->
+    <div class="col-1-2 company">
+<!---   THE MAP  ---->
+      <div class="map">
+        <iframe
+          width="340"
+          height="340"
+          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
+          &origin=334+blackwell+st+durham+nc
+          &destination=<%= @name %>
+          &avoid=tolls|highways" allowfullscreen>
+        </iframe>
+      </div>
+<!--  END OF MAP -->
+
+<!-- COMPANY review -->
     <ul class="tab__content">
 
-      <li class="active">
+		  <li class="active">
         <div class="content__wrapper">
           <p>Name:   <%= @name %> </p>
           <p>Industry:   <%= @industry %></p>
@@ -37,62 +97,17 @@
           <p>Pros:   <%= @review["pros"] %></p>
           <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
-        </div>
-          <div class="existingreviews">
-          <% if Interviewreview.where(company: @name) != [] %>
-            <% Interviewreview.where(company: @name).each do |i| %>
-            <p><%= i.company %>
-            <%= i.experience %>
-            <%= i.length %>
-            <%= i.difficulty %></p>
-            <% end %>
-          <% end %>
-        </div>
-        </div>
-
-        <div class="addANewReviewForm">
-          <p> Had an interview with this company? add a review! </p>
-          <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-          <p><% f.label :company %>
-          <%= f.hidden_field :company, :value => @name %>
-          </p>
-
-          <p><%= f.label :experience %>
-          <%= f.text_area :experience %>
-          </p>
-
-          <p><%= f.label :length %>
-          <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-          </p>
-          <p>
-          <%= f.label :difficulty %>
-          <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-          </p>
-          <p>
-            <%= f.submit %>
-          </p>
-          <% end %>
-
-        </div>
-        <div class="map">
-          <iframe
-            width="600"
-            height="450"
-            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
-            &origin=334+blackwell+st+durham+nc
-            &destination=<%= @name %>
-            &avoid=tolls|highways" allowfullscreen>
-          </iframe>
-        </div>
-
-
-        </div>
+          </li>
+        </ul>
       </div>
+    </div><!--  end of col 2 -->
+  </div>
+<!---  end of grid-pad   ------------------------------>
 
-    </li>
 
 
-    <li>
+<!--  attire section -->
+    <!-- <li>
       <div class="content__wrapper">
 
         <% @items.each do |r| %>
@@ -114,8 +129,10 @@
         <% end %>
 
       </div>
-    </li>
-  </ul>
+    </li> -->
+
+
+
 </section>
 </body>
 </html>
