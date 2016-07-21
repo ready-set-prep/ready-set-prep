@@ -1,4 +1,10 @@
+.button_to{
+  text-align: right;
+  padding-right: 2em;
+  padding-top: 0.5em;
 
+  // background-color: black;
+}
 .overlay{
     position:fixed;
     top:0; left:0;
@@ -20,56 +26,90 @@
     bottom:11%;
     background:none;
     border-radius:50%;
-
     box-shadow: 0px 0px 0px 9999px #fff;
     z-index:-2;
+
+}
+
+
+
+.buttonTo {
+  background-color: lightgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
 
 }
 
 .searchform {
   background-color: #fff;
   opacity: 0.65;
-  border:2px solid black;
-  height: 220px;
-  width: 244px;
+  height: 195px;
+  width: 339px;
   padding-right: 1em;
-  padding-top: 2em;
+  padding-top: 1em;
   z-index: 5;
-  top: 248px;
-  left: 386px;
+  top: 162px;
+  left: 450px;
   position: relative;
   border-radius: 6px;
   form{
-    padding-left: 0.5em;
-  }
-  label{
+    padding-left: 7.4em;
     color: black;
     font-weight: bold;
-  }
-  input#position{
-    color: black;
-    background-color: grey;
-    margin-top: 1em;
-    margin-left: 0.5em;
-  }
-  input#q{
-    color: black;
-    background-color: grey;
-    margin-top: 1em;
-    margin-left: 0.5em;
-  }
 
+    input.go{
+      margin-left: 1.3em;
+      margin-top: 1em;
+      background-color: black;
+      border-radius:100%;
+      width: 52px;
+      height: 52px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      outline: none;
+
+    }
+  input#q_position{
+    color: black;
+    background-color: oldlace;
+    margin-top: 1em;
+    margin-left: -2.3em;
+    font-size: 18px;
+    padding-left: 1em;
+    outline: none;
+  }
+  input#q_q{
+    color: black;
+    background-color: oldlace;
+    margin-top: 1em;
+    font-size: 18px;
+    margin-left: -2.3em;
+    padding-left: 1em;
+    outline: none;
+  }
+  .submit{
+    font-size: 11em;
+  }
+  }
 }
 
-
+/***  BUTTON FOR LOGIN PAGE *******/
 button{
-  border-radius: 100%;
-  // font-size: 30px;
+  border-radius:100%;
+  width: 136px;
+  height: 136px;
   background-color: black;
   font-weight: bold;
-  margin-top: 3em;
-  margin-left: 9em;
+  margin-top: 1em;
+  margin-left: -0.5em;
+  padding-right: 0.2em;
   cursor: pointer;
   color: #fff;
+  outline: none;
+  font-size: 22px;
+  font-family: 'Aquatico', Verdana, sans-serif;
 
 }
