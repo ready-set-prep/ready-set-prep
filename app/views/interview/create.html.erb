@@ -2,7 +2,7 @@
 
 <html>
 <body class="backgroundColor">
-<h1>interview create</h1>
+  <h1>interview create</h1>
 
   <section class="wrapper">
     <ul class="tabs">
@@ -37,30 +37,30 @@
           <p>Pros:   <%= @review["pros"] %></p>
           <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
-            <% if Review.where(company: @name) != [] %>
-              <% Review.where(company: @name).each do |f| %>
-                <%= f.headline %>
-                <%= f.pros %>
-                <%= f.cons %>
-                <% end %>
-            <% end %>
+          <% if Review.where(company: @name) != [] %>
+          <% Review.where(company: @name).each do |f| %>
+          <%= f.headline %>
+          <%= f.pros %>
+          <%= f.cons %>
+          <% end %>
+          <% end %>
         </div>
 
         <div class="addnewgeneralreviewform">
           <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
           <p><% f.label :company %>
-          <%= f.hidden_field :company, :value => @name %>
+            <%= f.hidden_field :company, :value => @name %>
           </p>
           <p><%= f.label :headline %>
-          <%= f.text_field :headline %>
+            <%= f.text_field :headline %>
           </p>
 
           <p><%= f.label :pros %>
-          <%= f.text_area :pros %>
+            <%= f.text_area :pros %>
           </p>
 
           <p><%= f.label :cons %>
-          <%= f.text_area :cons %>
+            <%= f.text_area :cons %>
           </p>
           <p>
             <%= f.submit %>
@@ -68,84 +68,111 @@
           <% end %>
 
         </div>
-          <div class="existingreviews">
+        <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
-            <% Interviewreview.where(company: @name).each do |i| %>
-            <p><%= i.company %>
+          <% Interviewreview.where(company: @name).each do |i| %>
+          <p><%= i.company %>
             <%= i.experience %>
             <%= i.length %>
             <%= i.difficulty %></p>
             <% end %>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
         </div>
 
         <div class="addANewReviewForm">
           <p> Had an interview with this company? add a review! </p>
           <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
           <p><% f.label :company %>
-          <%= f.hidden_field :company, :value => @name %>
+            <%= f.hidden_field :company, :value => @name %>
           </p>
 
           <p><%= f.label :experience %>
-          <%= f.text_area :experience %>
+            <%= f.text_area :experience %>
           </p>
 
           <p><%= f.label :length %>
-          <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+            <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
           </p>
           <p>
-          <%= f.label :difficulty %>
-          <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+            <%= f.label :difficulty %>
+            <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
           </p>
           <p>
             <%= f.submit %>
           </p>
           <% end %>
 
+
+          <script>
+          window.onload = function() {
+            var startPos;
+            var geoOptions = {
+              timeout: 10 * 1000
+            }
+            
+            var geoSuccess = function(position) {
+              startPos = position;
+              document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+              document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+            };
+            var geoError = function(error) {
+              console.log('Error occurred. Error code: ' + error.code);
+              // error.code can be:
+              //   0: unknown error
+              //   1: permission denied
+              //   2: position unavailable (error response from location provider)
+              //   3: timed out
+            };
+
+            navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+          };
+          </script>
+
+
         </div>
         <div class="map">
           <iframe
-            width="600"
-            height="450"
-            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
-            &origin=334+blackwell+st+durham+nc
-            &destination=<%= @name %>
-            &avoid=tolls|highways" allowfullscreen>
-          </iframe>
-        </div>
-
-
-        </div>
+          width="600"
+          height="450"
+          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
+          &origin=334+blackwell+st+durham+nc
+          &destination=<%= @name %>
+          &avoid=tolls|highways" allowfullscreen>
+        </iframe>
       </div>
 
-    </li>
+
+    </div>
+  </div>
+
+</li>
 
 
-    <li>
-      <div class="content__wrapper">
+<li>
+  <div class="content__wrapper">
 
-        <% @items.each do |r| %>
-        <div class="cards" >
-          <div class="insideimage">
-            <a href=<%= r.url %>>
-              <img src=<%= r.image %>></img>
-            </a>
-          </div>
-          <div class="insidetext">
-            <%= r.clothing_title %>
-            <%= r.price %>
-          </div>
-          <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
-            <%= f.submit "add to cart" %>
-            <%= f.hidden_field :ASIN, value: r.asin %>
-          <% end %>
-        </div>
-        <% end %>
-
+    <% @items.each do |r| %>
+    <div class="cards" >
+      <div class="insideimage">
+        <a href=<%= r.url %>>
+          <img src=<%= r.image %>></img>
+        </a>
       </div>
-    </li>
-  </ul>
+      <div class="insidetext">
+        <%= r.clothing_title %>
+        <%= r.price %>
+      </div>
+      <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
+      <%= f.submit "add to cart" %>
+      <%= f.hidden_field :ASIN, value: r.asin %>
+      <% end %>
+    </div>
+    <% end %>
+
+  </div>
+</li>
+</ul>
 </section>
 </body>
 </html>
