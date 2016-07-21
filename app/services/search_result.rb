@@ -6,14 +6,16 @@ class SearchResult
     if result["ItemAttributes"]['ListPrice']
       @price = result["ItemAttributes"]['ListPrice']["FormattedPrice"]
     end
-    if result["ImageSets"]["ImageSet"]
-      if result["ImageSets"]["ImageSet"].first[1]
-        @image = result["ImageSets"]["ImageSet"].first[1]["URL"]
+    if result["ImageSets"]
+      if result["ImageSets"]["ImageSet"]
+        if result["ImageSets"]["ImageSet"].first[1]
+          @image = result["ImageSets"]["ImageSet"].first[1]["URL"]
+        else
+          @image = result["ImageSets"]["ImageSet"].first["LargeImage"]["URL"]
+        end
       else
-        @image = result["ImageSets"]["ImageSet"].first["LargeImage"]["URL"]
+        @image = result["LargeImage"]["URL"]
       end
-    else
-      @image = result["LargeImage"]["URL"]
     end
     @asin = result["ASIN"]
   end
