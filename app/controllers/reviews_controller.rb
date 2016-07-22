@@ -7,5 +7,6 @@ class ReviewsController < ApplicationController
       cons: params[:reviews][:cons]
       )
       r.save!
+      binding.pry
   end
 end

@@ -2,7 +2,7 @@
 
 <html>
 <body class="backgroundColor">
-<h1>interview create</h1>
+  <h1>interview create</h1>
 
   <section class="wrapper"><!-- may need to add a nav-bar div -->
     <ul class="tabs">
@@ -10,7 +10,7 @@
       <li>Attire</li>
     </ul>
 
-<!-- start of grid system -->
+    <!-- start of grid system -->
     <div class="grid grid-pad">
 
       <div class="col-1-2 interviews">
@@ -34,107 +34,114 @@
           </div>
         </div>
 
-          <div class="existingreviews">
+        <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
-            <% Interviewreview.where(company: @name).each do |i| %>
-            <p><%= i.company %>
+          <% Interviewreview.where(company: @name).each do |i| %>
+          <p><%= i.company %>
             <%= i.experience %>
             <%= i.length %>
             <%= i.difficulty %></p>
             <% end %>
-          <% end %>
+            <% end %>
+          </div>
+
+
+          <div class="addANewReviewForm">
+            <p> Had an interview with this company? add a review! </p>
+            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+            <p><% f.label :company %>
+              <%= f.hidden_field :company, :value => @name %>
+            </p>
+
+            <p><%= f.label :experience %>
+              <%= f.text_area :experience %>
+            </p>
+
+            <p><%= f.label :length %>
+              <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+            </p>
+            <p>
+              <%= f.label :difficulty %>
+              <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+            <% end %>
+          </div>
         </div>
 
+        <!-- end of col 1-->
 
-        <div class="addANewReviewForm">
-          <p> Had an interview with this company? add a review! </p>
-          <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-          <p><% f.label :company %>
-          <%= f.hidden_field :company, :value => @name %>
-          </p>
+        <!--  ROW 2 -->
+        <div class="col-1-2 company">
+          <!---   THE MAP  ---->
 
-          <p><%= f.label :experience %>
-          <%= f.text_area :experience %>
-          </p>
-
-          <p><%= f.label :length %>
-          <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-          </p>
-          <p>
-          <%= f.label :difficulty %>
-          <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-          </p>
-          <p>
-            <%= f.submit %>
-          </p>
-          <% end %>
+          <%#sometimes it goes somwhere weird cause google maps is dumb and it will need to be fixed in the future.  %>
+          <div class="map">
+            <iframe
+            width="340"
+            height="340"
+            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
+            &origin=334+blackwell+st+durham+nc
+            &destination=<%= @name %>
+            &avoid=tolls|highways" allowfullscreen>
+          </iframe>
         </div>
-      </div>
+        <!--  END OF MAP -->
 
-<!-- end of col 1-->
+        <!-- COMPANY review -->
+        <ul class="tab__content">
 
-<!--  ROW 2 -->
-    <div class="col-1-2 company">
-<!---   THE MAP  ---->
+          <li class="active">
 
-<%#sometimes it goes somwhere weird cause google maps is dumb and it will need to be fixed in the future.  %>
-      <div class="map">
-        <iframe
-          width="340"
-          height="340"
-          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
-          &origin=334+blackwell+st+durham+nc
-          &destination=<%= @name %>
-          &avoid=tolls|highways" allowfullscreen>
-        </iframe>
-      </div>
-<!--  END OF MAP -->
+            <div class="glassdoorCard reviews">
+              <% unless @review == nil %>
+              <p>Headline:   <%= @review["headline"] %></p>
+              <p>Pros:   <%= @review["pros"] %></p>
+              <p>Cons:   <%= @review["cons"] %></p>
+              <% end %>
 
-<!-- COMPANY review -->
-    <ul class="tab__content">
+              <% if Review.where(company: @name) %>
+              <% Review.where(company: @name).each do |f| %>
+              <p><%= f.company %></p>
+              <p><%= f.pros %></p>
+              <p><%= f.cons %></p>
+              <% end %>
+              <% end %>
 
-		  <li class="active">
+              <div class="addnewgeneralreviewform">
+                <p>Add your own review about this company!</p>
+                <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+                <p><% f.label :company %>
+                  <%= f.hidden_field :company, :value => @name %>
+                </p>
+                <p><%= f.label :headline %>
+                  <%= f.text_field :headline %>
+                </p>
 
-        <div class="glassdoorCard reviews">
-          <% unless @review == nil %>
-          <p>Headline:   <%= @review["headline"] %></p>
-          <p>Pros:   <%= @review["pros"] %></p>
-          <p>Cons:   <%= @review["cons"] %></p>
-          <% end %>
-          <div class="addnewgeneralreviewform">
-                    <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
-                    <p><% f.label :company %>
-                      <%= f.hidden_field :company, :value => @name %>
-                    </p>
-                    <p><%= f.label :headline %>
-                      <%= f.text_field :headline %>
-                    </p>
+                <p><%= f.label :pros %>
+                  <%= f.text_area :pros %>
+                </p>
 
-                    <p><%= f.label :pros %>
-                      <%= f.text_area :pros %>
-                    </p>
+                <p><%= f.label :cons %>
+                  <%= f.text_area :cons %>
+                </p>
+                <p>
+                  <%= f.submit %>
+                </p>
+                <% end %>
 
-                    <p><%= f.label :cons %>
-                      <%= f.text_area :cons %>
-                    </p>
-                    <p>
-                      <%= f.submit %>
-                    </p>
-                    <% end %>
-
-                  </div>
-                  </div>
+              </div>
+            </div>
 
           </li>
         </ul>
 
-    </div><!--  end of col 2 -->
-  </div>
-<!---  end of grid-pad   ------------------------------>
+      </div><!--  end of col 2 -->
+    </div>
+    <!---  end of grid-pad   ------------------------------>
 
-
-
-<!--  attire section -->
     <!-- <li>
       <div class="content__wrapper">
 
@@ -150,8 +157,8 @@
             <%= r.price %>
           </div>
           <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
-            <%= f.submit "add to cart" %>
-            <%= f.hidden_field :ASIN, value: r.asin %>
+          <%= f.submit "add to cart" %>
+          <%= f.hidden_field :ASIN, value: r.asin %>
           <% end %>
         </div>
         <% end %>
@@ -161,6 +168,6 @@
 
 
 
-</section>
+  </section>
 </body>
 </html>
