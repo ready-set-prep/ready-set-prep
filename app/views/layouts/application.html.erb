@@ -9,6 +9,21 @@
   </head>
 
   <body>
+
+
+<%#this is the navbar!!!  %>
+    <ul class="section">
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/aboutus">About</a></li>
+
+      <% if current_user%>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, :class => "buttonTo" %>
+      <% else %>
+      <li class="signin"><a href="/users/sign_in">Log In</a></li>
+      <% end %>
+    </ul>
+<%# this is the end of the navbar!!! %>
+
     <%= notice %>
     <%= yield %>
   </body>
