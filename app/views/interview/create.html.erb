@@ -13,6 +13,25 @@
 <!-- start of grid system -->
     <div class="grid grid-pad">
 
+      <div class="content__wrapper">
+        <p>Name:   <%= @name %> </p>
+        <p>Industry:   <%= @industry %></p>
+        <p>Sector:   <%= @sector %></p>
+        <div class="glassdoorCard ratings totalRating">
+          <p>Total Rating:   <%= @total_rating %></p>
+        </div>
+        <div class="glassdoorCard ratings balanceRating">
+          <% unless @balance_rating == nil %>
+          <p>Work-Life Balance:   <%= @balance_rating %></p>
+          <% end %>
+        </div>
+        <div class="glassdoorCard ratings benefitsRating">
+          <% unless @benefits_rating == nil %>
+          <p>Benefits Rating:   <%= @benefits_rating %> </p>
+          <% end %>
+        </div>
+      </div>
+
 
       <div class="col-1-2 interviews">
           <div class="existingreviews">
@@ -52,9 +71,9 @@
         </div>
       </div>
 
-<!-- end of col 2 -->
+<!-- end of col 1-->
 
-<!--  ROW 1 -->
+<!--  ROW 2 -->
     <div class="col-1-2 company">
 <!---   THE MAP  ---->
       <div class="map">
@@ -73,30 +92,37 @@
     <ul class="tab__content">
 
 		  <li class="active">
-        <div class="content__wrapper">
-          <p>Name:   <%= @name %> </p>
-          <p>Industry:   <%= @industry %></p>
-          <p>Sector:   <%= @sector %></p>
-          <div class="glassdoorCard ratings totalRating">
-            <p>Total Rating:   <%= @total_rating %></p>
-          </div>
-          <div class="glassdoorCard ratings balanceRating">
-            <% unless @balance_rating == nil %>
-            <p>Work-Life Balance:   <%= @balance_rating %></p>
-            <% end %>
-          </div>
-          <div class="glassdoorCard ratings benefitsRating">
-            <% unless @benefits_rating == nil %>
-            <p>Benefits Rating:   <%= @benefits_rating %> </p>
-            <% end %>
-          </div>
-        </div>
+
         <div class="glassdoorCard reviews">
           <% unless @review == nil %>
           <p>Headline:   <%= @review["headline"] %></p>
           <p>Pros:   <%= @review["pros"] %></p>
           <p>Cons:   <%= @review["cons"] %></p>
           <% end %>
+          <div class="addnewgeneralreviewform">
+                    <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+                    <p><% f.label :company %>
+                      <%= f.hidden_field :company, :value => @name %>
+                    </p>
+                    <p><%= f.label :headline %>
+                      <%= f.text_field :headline %>
+                    </p>
+
+                    <p><%= f.label :pros %>
+                      <%= f.text_area :pros %>
+                    </p>
+
+                    <p><%= f.label :cons %>
+                      <%= f.text_area :cons %>
+                    </p>
+                    <p>
+                      <%= f.submit %>
+                    </p>
+                    <% end %>
+
+                  </div>
+
+
           </li>
         </ul>
       </div>

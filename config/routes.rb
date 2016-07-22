@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    root to:  "landingpage#index"
   resources :landingpage
   resources :interview
+  resources :reviews
   resources :user_info
   resources :amazoncart
   resources :interviewreviews
