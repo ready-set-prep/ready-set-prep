@@ -2,7 +2,7 @@
 
 <html>
 <body class="backgroundColor">
-<h1>interview create</h1>
+  <h1>interview create</h1>
 
   <section class="wrapper"><!-- may need to add a nav-bar div -->
     <ul class="tabs">
@@ -10,7 +10,7 @@
       <li>Attire</li>
     </ul>
 
-<!-- start of grid system -->
+    <!-- start of grid system -->
     <div class="grid grid-pad">
 
       <div class="col-1-2 interviews">
@@ -34,42 +34,43 @@
           </div>
         </div>
 
-          <div class="existingreviews">
+        <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
-            <% Interviewreview.where(company: @name).each do |i| %>
-            <p><%= i.company %>
+          <% Interviewreview.where(company: @name).each do |i| %>
+          <p><%= i.company %>
             <%= i.experience %>
             <%= i.length %>
             <%= i.difficulty %></p>
             <% end %>
-          <% end %>
+            <% end %>
+          </div>
+
+
+          <div class="addANewReviewForm">
+            <p> Had an interview with this company? add a review! </p>
+            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+            <p><% f.label :company %>
+              <%= f.hidden_field :company, :value => @name %>
+            </p>
+
+            <p><%= f.label :experience %>
+              <%= f.text_area :experience %>
+            </p>
+
+            <p><%= f.label :length %>
+              <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+            </p>
+            <p>
+              <%= f.label :difficulty %>
+              <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+            <% end %>
+          </div>
         </div>
 
-
-        <div class="addANewReviewForm">
-          <p> Had an interview with this company? add a review! </p>
-          <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-          <p><% f.label :company %>
-          <%= f.hidden_field :company, :value => @name %>
-          </p>
-
-          <p><%= f.label :experience %>
-          <%= f.text_area :experience %>
-          </p>
-
-          <p><%= f.label :length %>
-          <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-          </p>
-          <p>
-          <%= f.label :difficulty %>
-          <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-          </p>
-          <p>
-            <%= f.submit %>
-          </p>
-          <% end %>
-        </div>
-      </div>
 
 <!-- end of col 1 ----------------------------->
 
@@ -125,16 +126,13 @@
                   </div>
                   </div>
 
-          </li>
-        </ul><!-- end of Company reviews -->
+        <!-- end of col 1-->
 
-    </div><!--  end of col 2 -->
+        <!--  ROW 2 -->
+        
   </div><!---  End of grid-pad   ------------------------------>
 
 
-
-
-<!--  attire section -->
     <!-- <li>
       <div class="content__wrapper">
 
@@ -150,8 +148,8 @@
             <%= r.price %>
           </div>
           <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
-            <%= f.submit "add to cart" %>
-            <%= f.hidden_field :ASIN, value: r.asin %>
+          <%= f.submit "add to cart" %>
+          <%= f.hidden_field :ASIN, value: r.asin %>
           <% end %>
         </div>
         <% end %>
@@ -161,6 +159,6 @@
 
 
 
-</section>
+  </section>
 </body>
 </html>

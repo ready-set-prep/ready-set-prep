@@ -6,7 +6,6 @@ class InterviewreviewsController < ApplicationController
     length: params[:interview][:length],
     difficulty: params[:interview][:difficulty]
     )
-
     r.save!
   end
 end
