@@ -13,27 +13,27 @@
 <!-- start of grid system -->
     <div class="grid grid-pad">
 
-      <div class="content__wrapper">
-        <p>Name:   <%= @name %> </p>
-        <p>Industry:   <%= @industry %></p>
-        <p>Sector:   <%= @sector %></p>
-        <div class="glassdoorCard ratings totalRating">
-          <p>Total Rating:   <%= @total_rating %></p>
-        </div>
-        <div class="glassdoorCard ratings balanceRating">
-          <% unless @balance_rating == nil %>
-          <p>Work-Life Balance:   <%= @balance_rating %></p>
-          <% end %>
-        </div>
-        <div class="glassdoorCard ratings benefitsRating">
-          <% unless @benefits_rating == nil %>
-          <p>Benefits Rating:   <%= @benefits_rating %> </p>
-          <% end %>
-        </div>
-      </div>
-
-
       <div class="col-1-2 interviews">
+
+        <div class="content__wrapper">
+          <p>Name:   <%= @name %> </p>
+          <p>Industry:   <%= @industry %></p>
+          <p>Sector:   <%= @sector %></p>
+          <div class="glassdoorCard ratings totalRating">
+            <p>Total Rating:   <%= @total_rating %></p>
+          </div>
+          <div class="glassdoorCard ratings balanceRating">
+            <% unless @balance_rating == nil %>
+            <p>Work-Life Balance:   <%= @balance_rating %></p>
+            <% end %>
+          </div>
+          <div class="glassdoorCard ratings benefitsRating">
+            <% unless @benefits_rating == nil %>
+            <p>Benefits Rating:   <%= @benefits_rating %> </p>
+            <% end %>
+          </div>
+        </div>
+
           <div class="existingreviews">
           <% if Interviewreview.where(company: @name) != [] %>
             <% Interviewreview.where(company: @name).each do |i| %>
@@ -121,11 +121,11 @@
                     <% end %>
 
                   </div>
-
+                  </div>
 
           </li>
         </ul>
-      </div>
+
     </div><!--  end of col 2 -->
   </div>
 <!---  end of grid-pad   ------------------------------>
