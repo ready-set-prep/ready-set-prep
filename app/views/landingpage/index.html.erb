@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-<body class="backgroundimg" background= "https://images.unsplash.com/photo-1456515003192-808f8e9ca393?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1e75f07c23b1acd8bd3b6e2a88f2487e">
-  <div class="overlay">
 
-    <ul>
+<body class="backgroundimg" background= "https://images.unsplash.com/photo-1456515003192-808f8e9ca393?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1e75f07c23b1acd8bd3b6e2a88f2487e">
+
+  <!-- <div class="overlay"> -->
+
+    <ul class="section">
       <li><a class="active" href="/">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="/aboutus">About</a></li>
 
       <% if current_user%>
@@ -15,7 +19,7 @@
       <% end %>
     </ul>
 
-  </div>
+  <!-- </div> -->
 
 
     <div class="searchform">
@@ -36,8 +40,9 @@
   </div>
 
 
-</body>
+
 <footer><div class="circle">
 
 </div></footer>
+</body>
 </html>
