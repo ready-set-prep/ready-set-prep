@@ -79,32 +79,36 @@
 <!--  ROW 2 ----------------------------------->
     <div class="col-1-2 company">
 <!---   THE MAP  ---->
+<script>
 
-<%#sometimes it goes somwhere weird cause google maps is dumb and it will need to be fixed in the future.  %>
-      <div class="map", id="map">
+var origin1 = new google.maps.LatLng(55.930385, -3.118425);
+var origin2 = "Greenwich, England";
+var destinationA = "Stockholm, Sweden";
+var destinationB = new google.maps.LatLng(50.087692, 14.421150);
 
-        <script type="text/javascript" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ">
-        window.onload = function() {
-          var startPos;
-          var geoSuccess = function(position) {
-            startPos = position;
-            document.getElementById('map').innerHTML = startPos.coords.latitude;
-            document.getElementById('map').innerHTML = startPos.coords.longitude;
-          };
-          var current = navigator.geolocation.getCurrentPosition(geoSuccess);
-        };
-        </script>
+var service = new google.maps.DistanceMatrixService();
+service.getDistanceMatrix(
+  {
+    origins: [origin1, origin2],
+    destinations: [destinationA, destinationB],
+    travelMode: google.maps.TravelMode.DRIVING,
+    transitOptions: TransitOptions,
+    drivingOptions: DrivingOptions,
+    unitSystem: UnitSystem,
+    avoidHighways: Boolean,
+    avoidTolls: Boolean,
+  }, callback);
+
+function callback(response, status) {
+  // See Parsing the Results for
+  // the basics of a callback function.
+}
+
+</script>
 
 
-        <iframe
-          width="340"
-          height="340"
-          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
-          &origin=current
-          &destination=<%= @name %>
-          &avoid=tolls|highways" allowfullscreen>
-        </iframe>
-      </div>
+
+
 <!--  END OF MAP -->
 
 <!-- COMPANY review -->
