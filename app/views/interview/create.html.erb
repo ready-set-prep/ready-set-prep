@@ -39,9 +39,9 @@
           <% end %>
           <% if Review.where(company: @name) != [] %>
           <% Review.where(company: @name).each do |f| %>
-          <%= f.headline %>
-          <%= f.pros %>
-          <%= f.cons %>
+          <p><%= f.headline %></p>
+          <p><%= f.pros %></p>
+          <p><%= f.cons %></p>
           <% end %>
           <% end %>
         </div>
@@ -110,7 +110,7 @@
             var geoOptions = {
               timeout: 10 * 1000
             }
-            
+
             var geoSuccess = function(position) {
               startPos = position;
               document.getElementById('startLat').innerHTML = startPos.coords.latitude;
