@@ -83,27 +83,17 @@
 <%#sometimes it goes somwhere weird cause google maps is dumb and it will need to be fixed in the future.  %>
       <div class="map", id="map">
 
-        <script type="text/javascript" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ">
-        window.onload = function() {
-          var startPos;
-          var geoSuccess = function(position) {
-            startPos = position;
-            document.getElementById('map').innerHTML = startPos.coords.latitude;
-            document.getElementById('map').innerHTML = startPos.coords.longitude;
-          };
-          var current = navigator.geolocation.getCurrentPosition(geoSuccess);
-        };
-        </script>
 
 
-        <iframe
+
+         <iframe
           width="340"
           height="340"
           src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
-          &origin=current
+          &origin=start
           &destination=<%= @name %>
           &avoid=tolls|highways" allowfullscreen>
-        </iframe>
+        </iframe> -->
       </div>
 <!--  END OF MAP -->
 
@@ -176,5 +166,8 @@
 
 
   </section>
+  <scripts src="text/javascripts/interview.js"></scripts>
+  <scripts src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ"></script>
+
 </body>
 </html>
