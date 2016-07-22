@@ -13,6 +13,8 @@
     <!-- start of grid system -->
     <div class="grid grid-pad">
 
+
+
       <div class="col-1-2 interviews">
 
         <div class="content__wrapper">
@@ -79,12 +81,26 @@
 <!---   THE MAP  ---->
 
 <%#sometimes it goes somwhere weird cause google maps is dumb and it will need to be fixed in the future.  %>
-      <div class="map">
+      <div class="map", id="map">
+
+        <script type="text/javascript" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ">
+        window.onload = function() {
+          var startPos;
+          var geoSuccess = function(position) {
+            startPos = position;
+            document.getElementById('map').innerHTML = startPos.coords.latitude;
+            document.getElementById('map').innerHTML = startPos.coords.longitude;
+          };
+          var current = navigator.geolocation.getCurrentPosition(geoSuccess);
+        };
+        </script>
+
+
         <iframe
           width="340"
           height="340"
           src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ
-          &origin=334+blackwell+st+durham+nc
+          &origin=current
           &destination=<%= @name %>
           &avoid=tolls|highways" allowfullscreen>
         </iframe>
@@ -129,7 +145,7 @@
         <!-- end of col 1-->
 
         <!--  ROW 2 -->
-        
+
   </div><!---  End of grid-pad   ------------------------------>
 
 
