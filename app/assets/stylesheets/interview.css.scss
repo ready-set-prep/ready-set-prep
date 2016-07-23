@@ -79,7 +79,9 @@
   }
 }
 
-
+.backgroundColor {
+  background-color: #f2f0f4;
+}
 
 .cards {
   width: 10em;
@@ -151,40 +153,6 @@ footer{
 	margin: 0 auto;
 }
 
-.interviews {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.eachreview {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.addANewReviewForm {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.reviews {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.addnewgeneralreviewform {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
 
 .tabs{
 	display: table;

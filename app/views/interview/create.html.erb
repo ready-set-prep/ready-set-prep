@@ -34,12 +34,12 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log(pos)
+      console.log(pos.lat)
+      console.log(pos.lng)
+
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
     // Browser doesn't support Geolocation
@@ -93,6 +93,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 <%= i.experience %>
                 <%= i.length %>
                 <%= i.difficulty %></p>
+                <%= link_to "Delete", interviewreview_path(i), method: :delete %>
+                <%= link_to "Edit", edit_interviewreview_path(i) %>
               </a>
               </div>
               <% end %>
@@ -132,7 +134,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 <!-- map is supposed to go here. -->
 
                 <!-- COMPANY review -->
-                <ul class="tab__content">
+                <ul>
                   <!--  ROW 2 ----------------------------------->
                   <li class="active">
                     <div class="flex-boxes">
@@ -144,6 +146,24 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         <% end %>
                         </a>
                       </div>
+
+                      <% if Review.where(company: @name) != [] %>
+                      <%#I dont know how this keeps getting taken out everytime but please if you
+                      do a merge, leave this in. It is important.  %>
+                        <% Review.where(company: @name).each do |f| %>
+                        <div class="flex-boxes">
+                          <a href="javascript:void(0)" class="flex-box">
+                        <p><%= f.headline %></p>
+                        <p><%= f.pros %></p>
+                        <p><%= f.cons %></p>
+                        <%= link_to "Delete", review_path(f), method: :delete %>
+                        <%= link_to "Edit", edit_review_path(f) %>
+                      </a>
+
+                    </div>
+                        <% end %>
+                      <% end %>
+
 
                       <div class="flex-boxes">
                         <a href="javascript:void(0)" class="flex-box">
