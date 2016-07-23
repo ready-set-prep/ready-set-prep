@@ -29,15 +29,21 @@
    background-repeat: no-repeat;
  }
 
+ .backgroundColor {
+   background-color: #f2f0f4;
+ }
+
  ul {
      list-style-type: none;
      margin: 0;
      padding: 0;
      overflow: hidden;
-     border: 1px solid #e7e7e7;
      background-color: #f3f3f3;
-     opacity: 0.65;
      width: 100%;
+ }
+
+ .section {
+   opacity: 1;
  }
 
  li {
