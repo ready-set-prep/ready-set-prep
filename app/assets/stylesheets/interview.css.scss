@@ -68,8 +68,43 @@ footer{
 
 .wrapper{
 	min-width: 600px;
-	max-width: 900px;
+	max-width: 100%;
 	margin: 0 auto;
+}
+
+.interviews {
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+.eachreview {
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+.addANewReviewForm {
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+.reviews {
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding-top: 0em;
+  padding-bottom: 0em;
+}
+
+.addnewgeneralreviewform {
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding-top: 0em;
+  padding-bottom: 0em;
 }
 
 .tabs{
@@ -129,7 +164,7 @@ footer{
 /******   1ST ROW  **************/
 .map{
   margin-left: 4em;
-  // margin-bottom: 
+  // margin-bottom:
 }
 .tab__content{
 	background-color: white;

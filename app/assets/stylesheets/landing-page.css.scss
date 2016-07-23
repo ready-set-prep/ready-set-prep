@@ -72,50 +72,27 @@ button:focus {
  }
 
 .searchform {
+  ///this is the submit button css I am putting this comment here because we will want to style it later and I want to know where it is.
   background-color: lightgrey;
   opacity: 0.8;
   padding-bottom: 3em;
-  // height: 195px;
   width: 37%;
-  // padding-right: 1em;
-  // padding-top: 4em;
-  z-index: 5;
-  top: 4em;
   left:30%;
-
   position: relative;
   border-radius: 6px;
 }
   form{
-    // margin-left: 7em;
     padding-left: 6.4em;
-    // padding-bottom:3em;
 
     color: black;
     font-weight: bold;
 
     .go{
-      margin-left: 2em;
-      margin-top: 2em;
-      border-radius: 100%;
-      // background-color: black;
-      // border-radius:100%;
-      // border: 2px solid black;
-      width: 4em;
-      height: 4em;
-      // font-weight: bold;
-      cursor: pointer;
-      color: black;
-      font-size: 1em;
       background-color: #666;
-      color: white;
-      border: none;
-}
+      }
       .go:hover{
         background-color: #333;
-        // color: #333;
-        // width: 67px;
-        // font-size: 20px;
+
       }
       .go:focus {
         outline: 0;
