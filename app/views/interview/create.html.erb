@@ -78,38 +78,7 @@
 
 <!--  ROW 2 ----------------------------------->
     <div class="col-1-2 company">
-<!---   THE MAP  ---->
-<script>
-
-var origin1 = new google.maps.LatLng(55.930385, -3.118425);
-var origin2 = "Greenwich, England";
-var destinationA = "Stockholm, Sweden";
-var destinationB = new google.maps.LatLng(50.087692, 14.421150);
-
-var service = new google.maps.DistanceMatrixService();
-service.getDistanceMatrix(
-  {
-    origins: [origin1, origin2],
-    destinations: [destinationA, destinationB],
-    travelMode: google.maps.TravelMode.DRIVING,
-    transitOptions: TransitOptions,
-    drivingOptions: DrivingOptions,
-    unitSystem: UnitSystem,
-    avoidHighways: Boolean,
-    avoidTolls: Boolean,
-  }, callback);
-
-function callback(response, status) {
-  // See Parsing the Results for
-  // the basics of a callback function.
-}
-
-</script>
-
-
-
-
-<!--  END OF MAP -->
+      <!-- map is supposed to go here. -->
 
 <!-- COMPANY review -->
     <ul class="tab__content">
@@ -180,5 +149,8 @@ function callback(response, status) {
 
 
   </section>
+  <scripts src="text/javascripts/interview.js"></scripts>
+  <scripts src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEHG0z1gcOISxiaqBGx0fcXm9_Onoe2OQ"></script>
+
 </body>
 </html>
