@@ -71,3 +71,25 @@
 //   };
 //   var current = navigator.geolocation.getCurrentPosition(geoSuccess);
 // };
+
+// if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(function(position) {
+//         var latitude = position.coords.latitude;
+//         var longitude = position.coords.longitude;
+//         var geolocpoint = new google.maps.LatLng(latitude, longitude);
+//
+//         var mapOptions = {
+//             zoom: 8,
+//             center: geolocpoint,
+//             mapTypeId: google.maps.MapTypeId.HYBRID
+//         }
+//         // Place a marker
+//         var geolocation = new google.maps.Marker({
+//             position: geolocpoint,
+//             map: map,
+//             title: 'Your geolocation',
+//             icon: 'http://labs.google.com/ridefinder/images/mm_20_green.png'
+//         });
+//         console.log("yes");
+//     });
+// }

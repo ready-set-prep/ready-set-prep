@@ -5,29 +5,44 @@
   <title>Geolocation</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #map {
-    height: 50%;
-    width: 40%;
-  }
-  </style>
+
 </head>
+<style>
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+     #map {
+       height: 30%;
+     }
+</style>
 <div id="map"></div>
+<div id="destination"></div>
 <script>
 
-function initMap() {
+ window.initMap = function() {
+  // var origin_place_id = null;
+  var destination_place_id = null;
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
     zoom: 15
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
 
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+      directionsDisplay.setMap(map);
+
+  var destination = document.getElementById('destination');
+
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(destination);
+  infoWindow.setDirectionsService(destination);
+  infoWindow.setDirectionsRenderer("destination found");
+
+
   // Try HTML5 geolocation.
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
@@ -37,28 +52,45 @@ function initMap() {
       console.log(pos)
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
+
       map.setCenter(pos);
-    }, function() {
+      console.log("hurray")
+    },
+
+
+     function() {
       handleLocationError(true, infoWindow, map.getCenter());
+
     });
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
 }
+  // var geolocation = new google.maps.Marker({
+  //           position: geolocpoint,
+  //           map: map,
+  //           title: 'Your geolocation',
+  //           icon: 'http://labs.google.com/ridefinder/images/mm_20_green.png'
+  //       });
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-    'Error: The Geolocation service failed.' :
-    'Error: Your browser doesn\'t support geolocation.');
-  }
+// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+//   console.log("hurray")
+//   infoWindow.setPosition(pos);
+//   infoWindow.setContent(browserHasGeolocation ?
+//     'Error: The Geolocation service failed.' :
+//     'Error: Your browser doesn\'t support geolocation.');
+//   }
 
   </script>
 
-  <script>
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&&callback=initMap" async defer></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&libraries=places&callback=initMap&directionsService" >
   </script>
+  <script async defer
+  src=""></script>
+
 
 
   <body class="backgroundColor">
