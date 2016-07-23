@@ -68,162 +68,130 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
       <!-- start of grid system -->
       <div class="grid grid-pad">
-
-
-
         <div class="col-1-2 ">
-
-<div class="flex-boxes">
-          <a href="javascript:void(0)" class="flex-box">
-            <h1 class="flex-title"><%= @name %></h1>
-            <p><%= @industry %></p>
-            <p><%= @sector %></p>
-            <p><%= @total_rating %></p>
-            <% unless @balance_rating == nil %>
-            <p><%= @balance_rating %></p>
-            <% end %>
-            <% unless @benefits_rating == nil %>
-            <p><%= @benefits_rating %></p>
-            <% end %>
-          </a>
-        </div>
-
-
-          <!-- <div class="content__wrapper interviews">
-            <p>Name:   <%= @name %> </p>
-            <p>Industry:   <%= @industry %></p>
-            <p>Sector:   <%= @sector %></p>
-            <div class="glassdoorCard ratings totalRating">
-              <p>Total Rating:   <%= @total_rating %></p>
-            </div>
-            <div class="glassdoorCard ratings balanceRating">
+          <div class="flex-boxes">
+            <a href="javascript:void(0)" class="flex-box">
+              <h1 class="flex-title"><%= @name %></h1>
+              <p><%= @industry %></p>
+              <p><%= @sector %></p>
+              <p><%= @total_rating %></p>
               <% unless @balance_rating == nil %>
-              <p>Work-Life Balance:   <%= @balance_rating %></p>
+              <p><%= @balance_rating %></p>
               <% end %>
-            </div>
-            <div class="glassdoorCard ratings benefitsRating">
               <% unless @benefits_rating == nil %>
-              <p>Benefits Rating:   <%= @benefits_rating %> </p>
+              <p><%= @benefits_rating %></p>
               <% end %>
-            </div>
-          </div> -->
+            </a>
+          </div>
 
-          <div class="existingreviews">
-            <% if Interviewreview.where(company: @name) != [] %>
-            <% Interviewreview.where(company: @name).each do |i| %>
-            <div class="eachreview">
+          <% if Interviewreview.where(company: @name) != [] %>
+          <% Interviewreview.where(company: @name).each do |i| %>
+          <div class="flex-boxes">
+            <a href="javascript:void(0)" class="flex-box">
+
               <p><%= i.company %>
                 <%= i.experience %>
                 <%= i.length %>
                 <%= i.difficulty %></p>
+              </a>
               </div>
               <% end %>
               <% end %>
-            </div>
 
-
-            <div class="addANewReviewForm">
-              <p> Had an interview with this company? add a review! </p>
-              <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-              <p><% f.label :company %>
-                <%= f.hidden_field :company, :value => @name %>
-              </p>
-
-              <p><%= f.label :experience %>
-                <%= f.text_area :experience %>
-              </p>
-
-              <p><%= f.label :length %>
-                <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-              </p>
-              <p>
-                <%= f.label :difficulty %>
-                <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-              </p>
-              <p>
-                <%= f.submit %>
-              </p>
-              <% end %>
-            </div>
-          </div>
-
-
-          <!-- end of col 1 ----------------------------->
-
-<!--  ROW 2 ----------------------------------->
-    <div class="col-1-2 company">
-      <!-- map is supposed to go here. -->
-
-<!-- COMPANY review -->
-    <ul class="tab__content">
-          <!--  ROW 2 ----------------------------------->
-
-
-              <li class="active">
-
-                <div class="glassdoorCard reviews">
-                  <% unless @review == nil %>
-                  <p>Headline:   <%= @review["headline"] %></p>
-                  <p>Pros:   <%= @review["pros"] %></p>
-                  <p>Cons:   <%= @review["cons"] %></p>
-                  <% end %>
-                </div>
-                <div class="addnewgeneralreviewform">
-                  <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+              <div class="flex-boxes">
+                <a href="javascript:void(0)" class="flex-box">
+                  <p> Had an interview with this company? add a review! </p>
+                  <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
                   <p><% f.label :company %>
                     <%= f.hidden_field :company, :value => @name %>
                   </p>
-                  <p><%= f.label :headline %>
-                    <%= f.text_field :headline %>
+
+                  <p><%= f.label :experience %>
+                    <%= f.text_area :experience %>
                   </p>
 
-                  <p><%= f.label :pros %>
-                    <%= f.text_area :pros %>
+                  <p><%= f.label :length %>
+                    <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
                   </p>
-
-                  <p><%= f.label :cons %>
-                    <%= f.text_area :cons %>
+                  <p>
+                    <%= f.label :difficulty %>
+                    <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
                   </p>
                   <p>
                     <%= f.submit %>
                   </p>
                   <% end %>
-
+                  </a>
                 </div>
-
-                <!-- end of col 1-->
-
-                <!--  ROW 2 -->
-
-              </div><!---  End of grid-pad   ------------------------------>
+              </div>
 
 
-              <!-- <li>
-              <div class="content__wrapper">
+              <!-- end of col 1 ----------------------------->
 
-              <% @items.each do |r| %>
-              <div class="cards" >
-              <div class="insideimage">
-              <a href=<%= r.url %>>
-              <img src=<%= r.image %>></img>
-            </a>
+              <div class="col-1-2 company">
+                <!-- map is supposed to go here. -->
+
+                <!-- COMPANY review -->
+                <ul class="tab__content">
+                  <!--  ROW 2 ----------------------------------->
+                  <li class="active">
+                    <div class="flex-boxes">
+                      <a href="javascript:void(0)" class="flex-box">
+                        <% unless @review == nil %>
+                        <p>Headline:   <%= @review["headline"] %></p>
+                        <p>Pros:   <%= @review["pros"] %></p>
+                        <p>Cons:   <%= @review["cons"] %></p>
+                        <% end %>
+                        </a>
+                      </div>
+
+                      <div class="flex-boxes">
+                        <a href="javascript:void(0)" class="flex-box">
+                          <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+                          <p><% f.label :company %>
+                            <%= f.hidden_field :company, :value => @name %>
+                          </p>
+                          <p><%= f.label :headline %>
+                            <%= f.text_field :headline %>
+                          </p>
+
+                          <p><%= f.label :pros %>
+                            <%= f.text_area :pros %>
+                          </p>
+
+                          <p><%= f.label :cons %>
+                            <%= f.text_area :cons %>
+                          </p>
+                          <p>
+                            <%= f.submit %>
+                          </p>
+                          <% end %>
+                          </a>
+                        </div>
+                      </div><!---  End of grid-pad   ------------------------------>
+                    </section>
+                  </body>
+                  </html>
+                  <!-- <li>
+                  <div class="content__wrapper">
+
+                  <% @items.each do |r| %>
+                  <div class="cards" >
+                  <div class="insideimage">
+                  <a href=<%= r.url %>>
+                  <img src=<%= r.image %>></img>
+                </a>
+              </div>
+              <div class="insidetext">
+              <%= r.clothing_title %>
+              <%= r.price %>
+            </div>
+            <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
+            <%= f.submit "add to cart" %>
+            <%= f.hidden_field :ASIN, value: r.asin %>
+            <% end %>
           </div>
-          <div class="insidetext">
-          <%= r.clothing_title %>
-          <%= r.price %>
+          <% end %>
+
         </div>
-        <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
-        <%= f.submit "add to cart" %>
-        <%= f.hidden_field :ASIN, value: r.asin %>
-        <% end %>
-      </div>
-      <% end %>
-
-    </div>
-  </li> -->
-
-
-
-</section>
-</body>
-</html>
+      </li> -->
