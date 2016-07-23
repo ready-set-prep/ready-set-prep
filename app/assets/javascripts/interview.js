@@ -66,9 +66,9 @@ window.onload = function() {
 
               console.log(arguments);
              }
-    // startPos = position;
-    // document.getElementById('map').innerHTML = startPos.coords.latitude;
-    // document.getElementById('map').innerHTML = startPos.coords.longitude;
-//   };
+    startPos = position;
+    document.getElementById('map').innerHTML = startPos.coords.latitude;
+    document.getElementById('map').innerHTML = startPos.coords.longitude;
+  };
   var current = navigator.geolocation.getCurrentPosition(geoSuccess);
 };
