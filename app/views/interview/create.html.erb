@@ -60,7 +60,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 
   <body class="backgroundColor">
-
     <section class="wrapper"><!-- may need to add a nav-bar div -->
       <ul class="tabs">
         <li class="active">Interview Tips</li>
@@ -74,7 +73,23 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
         <div class="col-1-2 ">
 
-          <div class="content__wrapper interviews">
+<div class="flex-boxes">
+          <a href="javascript:void(0)" class="flex-box">
+            <h1 class="flex-title"><%= @name %></h1>
+            <p><%= @industry %></p>
+            <p><%= @sector %></p>
+            <p><%= @total_rating %></p>
+            <% unless @balance_rating == nil %>
+            <p><%= @balance_rating %></p>
+            <% end %>
+            <% unless @benefits_rating == nil %>
+            <p><%= @benefits_rating %></p>
+            <% end %>
+          </a>
+        </div>
+
+
+          <!-- <div class="content__wrapper interviews">
             <p>Name:   <%= @name %> </p>
             <p>Industry:   <%= @industry %></p>
             <p>Sector:   <%= @sector %></p>
@@ -91,7 +106,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
               <p>Benefits Rating:   <%= @benefits_rating %> </p>
               <% end %>
             </div>
-          </div>
+          </div> -->
 
           <div class="existingreviews">
             <% if Interviewreview.where(company: @name) != [] %>
