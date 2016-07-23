@@ -18,6 +18,7 @@
      }
 </style>
 <div id="map"></div>
+
 <div id="destination"></div>
 <script>
 
@@ -37,8 +38,8 @@
   var destination = document.getElementById('destination');
 
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(destination);
-  infoWindow.setDirectionsService(destination);
-  infoWindow.setDirectionsRenderer("destination found");
+  map.setDirectionsService(destination);
+  map.setDirectionsRenderer("destination found");
 
 
   // Try HTML5 geolocation.
@@ -67,7 +68,23 @@
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
-}
+  function route(destination_place_id, directionsService, directionsDisplay) {
+          if (!origin_place_id || !destination_place_id) {
+            return;
+          }
+          directionsService.route({
+            destination: {'placeId': destination_place_id},
+          }, function(response, status) {
+            if (status === google.maps.DirectionsStatus.OK) {
+              directionsDisplay.setDirections(response);
+            } else {
+              window.alert('Directions request failed due to ' + status);
+            }
+          });
+        }
+      }
+
+
   // var geolocation = new google.maps.Marker({
   //           position: geolocpoint,
   //           map: map,
