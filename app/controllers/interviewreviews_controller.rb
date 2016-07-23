@@ -18,12 +18,10 @@ class InterviewreviewsController < ApplicationController
 
 
   def edit
-    binding.pry
     Interviewreview.where(id: params[:id])
   end
 
   def update
-    binding.pry
     if Interviewreview.where(id: params[:id])
       r = Interviewreview.where(id: params[:id])
       r.update(
