@@ -45,20 +45,13 @@
     @for $i from 1 to 7 { // assign colors from $flex-box-top-colors list
       &:nth-child(#{$i}) {
         $color-from-list: nth($flex-box-top-colors, $i);
-        border-top: 6px solid $color-from-list;
+        border-top: 7px solid $color-from-list;
 
         &:focus,
         &:hover {
           background-color: transparentize($color-from-list, 0.9);
         }
       }
-    }
-
-    img {
-      display: block;
-      height: 3em;
-      margin: 0 auto 1em;
-      opacity: 0.4;
     }
 
     .flex-title {
@@ -78,7 +71,6 @@
     flex: 1 1 40em;
   }
 }
-
 
 
 .cards {
@@ -111,7 +103,7 @@
 
 body{
 	font-family: 'Open Sans', sans-serif;
-	color: rgb(80, 85, 90);
+	color: #F6F6F6;
 	// padding: 100px 20px;
   width: 100%;
 }
@@ -151,40 +143,6 @@ footer{
 	margin: 0 auto;
 }
 
-.interviews {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.eachreview {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.addANewReviewForm {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.reviews {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
-
-.addnewgeneralreviewform {
-  background-color: lightgrey;
-  border-radius: 20px;
-  padding-top: 0em;
-  padding-bottom: 0em;
-}
 
 .tabs{
 	display: table;

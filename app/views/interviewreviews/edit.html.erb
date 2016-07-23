@@ -1,0 +1,17 @@
+
+<%= form_for :edit, url: interviewreview_path, method: :patch do |f| %>
+<p><%= f.label :experience %>
+  <%= f.text_area :experience %>
+</p>
+
+<p><%= f.label :length %>
+  <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+</p>
+<p>
+  <%= f.label :difficulty %>
+  <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
