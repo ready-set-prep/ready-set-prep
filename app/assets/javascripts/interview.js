@@ -11,7 +11,6 @@ var map;
 
 
 window.onload = function() {
-
   var startPos;
 
   var geoSuccess = function(position) {
