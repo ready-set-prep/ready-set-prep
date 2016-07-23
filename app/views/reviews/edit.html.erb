@@ -1,0 +1,11 @@
+<%= form_for :edit, url: review_path, method: :patch do |f| %>
+  <%= f.label :headline %>
+  <%= f.text_field :headline %>
+
+  <%= f.label :pros %>
+  <%= f.text_field :pros %>
+
+  <%= f.label :cons %>
+  <%= f.text_field :cons %>
+  <%= f.submit "Update!" %>
+<% end %>
