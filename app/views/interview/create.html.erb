@@ -1,518 +1,172 @@
 <!DOCTYPE html>
 <html>
 
-<%#this one finds the lat and the long. combine them? --------%>
-<head>
-   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-   <meta charset="utf-8">
-   <title>Travel modes in directions</title>
-   <style>
-     html, body {
-       height: 100%;
-       margin: 0;
-       padding: 0;
-     }
-     #map {
-       height: 100%;
-     }
-     #floating-panel {
-       position: absolute;
-       top: 10px;
-       left: 70%;
-       z-index: 5;
-       background-color: #fff;
-       padding: 5px;
-       border: 1px solid #999;
-       text-align: center;
-       font-family: 'Roboto','sans-serif';
-       line-height: 30px;
-       padding-left: 10px;
-     }
-   </style>
- </head>
-<head>
-
-  <title>Geolocation</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
-
-</head>
-<style>
-     html, body {
-       height: 100%;
-       margin: 0;
-       padding: 0;
-     }
-     #map {
-       height: 30%;
-     }
-</style>
 <div id="floating-panel">
-<b>Mode of Travel: </b>
-<select id="mode">
-  <option value="DRIVING">Driving</option>
-  <option value="WALKING">Walking</option>
-  <option value="BICYCLING">Bicycling</option>
-  <option value="TRANSIT">Transit</option>
-</select>
+  <b>Mode of Travel: </b>
+  <select id="mode">
+    <option value="DRIVING">Driving</option>
+    <option value="WALKING">Walking</option>
+    <option value="BICYCLING">Bicycling</option>
+    <option value="TRANSIT">Transit</option>``
+  </select>
 </div>
 <div id="map"></div>
-<div id="destination"></div>
-<script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+</script>
 
-function initMap() {
+<body class="backgroundColor">
+  <ul class="tabs">
+    <li class="active">Interview Tips</li>
+    <li>Attire</li>
+  </ul>
+  <ul class="tab__content">
+    <li class="active">
+      <div class="content__wrapper">
+        <h1>this is the glassdoor info</h1>
+        <div class="grid grid-pad">
+          <div class="col-1-2 ">
+            <div class="flex-boxes">
+              <a href="javascript:void(0)" class="flex-box">
+                <h1 class="flex-title"><%= @name %></h1>
+                <p>Industry:   <%= @industry %></p>
+                <p>Sector:  <%= @sector %></p>
+                <p>Total Rating:   <%= @total_rating %></p>
+                <% unless @balance_rating == nil %>
+                <p>Balance Rating:   <%= @balance_rating %></p>
+                <% end %>
+                <% unless @benefits_rating == nil %>
+                <p>Benefits Rating:   <%= @benefits_rating %></p>
+                <% end %>
+              </a>
+            </div>
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 15
-  });
-  var infoWindow = new google.maps.InfoWindow({map: map});
+            <% if Interviewreview.where(company: @name) != [] %>
+            <% Interviewreview.where(company: @name).each do |i| %>
+            <div class="flex-boxes">
+              <a href="javascript:void(0)" class="flex-box">
 
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay;
-      directionsDisplay.setMap(map);
+                <p><%= i.company %></p>
+                <p>Experience:  <%= i.experience %></p>
+                <p><%= i.length %></p>
+                <p><%= i.difficulty %></p>
 
-  var destination = document.getElementById('destination');
+              </a>
+            </div>
+            <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
+            <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
+            <% end %>
+            <% end %>
 
-  // map.controls[google.maps.ControlPosition.TOP_RIGHT].push(destination);
-  // map.directionsService(destination);
-  // map.directionsRenderer("destination found");
-  // calculateAndDisplayRoute(directionsService, directionsDisplay);
-  // document.getElementById('mode').addEventListener('change', function() {
-  //   calculateAndDisplayRoute(directionsService, directionsDisplay);
-  // });
+            <div class="flex-boxes">
+              <a href="javascript:void(0)" class="flex-box">
+                <p> Had an interview with this company? add a review! </p>
+                <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+                <p><% f.label :company %>
+                  <%= f.hidden_field :company, :value => @name %>
+                </p>
 
+                <p><%= f.label :experience %>
+                  <%= f.text_area :experience %>
+                </p>
 
-  // Try HTML5 geolocation.
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      console.log(pos.lat);
-      console.log(pos.lng);
-
-      infoWindow.setPosition(pos);
-
-      infoWindow.setContent('Location found.');
-
-      map.setCenter(pos);
-      console.log("hurray");
-    },
-
-
-     function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-
-  calculateAndDisplayRoute(directionsService, directionsDisplay);
-  document.getElementById('mode').addEventListener('change', function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-  });
-
-
-    console.log("destination");
-
-    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-      console.log("now");
-      var selectedMode = document.getElementById('mode').value;
-      directionsService.route({
-        origin: {lat: 37.77, lng: -122.447},
-        destination: {lat: 37.768, lng: -122.511},
-        travelMode: google.maps.TravelMode[selectedMode]
-      }, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
-        } else {
-          window.alert('Directions request failed due to ' + status);
-        }
-      });
-    }
-}
-  //   function calcRoute()
-  // {
-// console.log("blah blah");
-//       var selectedMode = document.getElementById("mode").value;
-//       // var origin= document.getCurrentPosition(" ").value;
-//       var end = document.getElementById("destination").value;
-//       google.maps.DirectionsTravelMode.DRIVING;
-//
-//
-//           if(selectedMode=="DRIVING")
-//           {
-//               var request ={
-//               origin: pos,
-//               destination: destination,
-//               travelMode:google.maps.DirectionsTravelMode.DRIVING
-//               };
-//           }
-//           else if(selectedMode=="WALKING")
-//           {
-//               var request = {
-//               origin: pos,
-//               destination: destination,
-//               travelMode:google.maps.DirectionsTravelMode.WALKING
-//               };
-//           }
-//           else if(selectedMode=="BICYCLING")
-//           {
-//               var request = {
-//               origin: pos,
-//               destination: destination,
-//               travelMode:google.maps.DirectionsTravelMode.BICYCLING
-//               };
-//           }
-//           else if(selectedMode=="TRANSIT")
-//           {
-//               var request = {
-//                 origin: pos,
-//                 destination: destination,
-//                 travelMode: google.maps.DirectionsTravelMode.TRANSIT
-//               };
-//           directionsService.route(request, function (response, status) {
-//           if (status == google.maps.DirectionsStatus.OK) {
-//               directionsDisplay.setDirections(response);
-//           }
-//
-//
-//           }
-//
-//
-//           );
-//       }
-//
-//   }
-
-//     function initialize(){
-//       console.log("initialize");
-//     directionsDisplay = new google.maps.DirectionsRenderer();
-//     var latlng = new google.maps.LatLng(-34.397, 150.644);
-//
-//     var myOptions =
-//     {
-//         zoom: 8,
-//         center: latlng,
-//         mapTypeId: google.maps.MapTypeId.ROADMAP
-//     };
-//     var map = new google.maps.Map(document.getElementById("map"), myOptions);
-//     directionsDisplay.setMap(map);
-// }
-
-
-
-//   function calcRoute()
-// {
-//     var selectedMode = document.getElementById("mode").value;
-//     // var origin= document.getCurrentPosition(" ").value;
-//     var end = document.getElementById("destination").value;
-//     google.maps.DirectionsTravelMode.DRIVING;
-//
-//
-//         if(selectedMode=="DRIVING")
-//         {
-//             var request ={
-//             origin: pos,
-//             destination: destination,
-//             travelMode:google.maps.DirectionsTravelMode.DRIVING
-//             };
-//         }
-//         else if(selectedMode=="WALKING")
-//         {
-//             var request = {
-//             origin: pos,
-//             destination: destination,
-//             travelMode:google.maps.DirectionsTravelMode.WALKING
-//             };
-//         }
-//         else if(selectedMode=="BICYCLING")
-//         {
-//             var request = {
-//             origin: pos,
-//             destination: destination,
-//             travelMode:google.maps.DirectionsTravelMode.BICYCLING
-//             };
-//         }
-//         else if(selectedMode=="TRANSIT")
-//         {
-//             var request = {
-//               origin: pos,
-//               destination: destination,
-//               travelMode: google.maps.DirectionsTravelMode.TRANSIT
-//             };
-//         directionsService.route(request, function (response, status) {
-//         if (status == google.maps.DirectionsStatus.OK) {
-//             directionsDisplay.setDirections(response);
-//         }
-//
-//
-//         }
-//
-//
-//         );
-//     }
-//
-// }
-  // function route(destination_place_id, directionsService, directionsDisplay) {
-  //         if (!origin_place_id || !destination_place_id) {
-  //           return;
-  //         }
-  //         directionsService.route({
-  //           destination: {'placeId': destination_place_id},
-  //         }, function(response, status) {
-  //           if (status === google.maps.DirectionsStatus.OK) {
-  //             directionsDisplay.setDirections(response);
-  //           } else {
-  //             window.alert('Directions request failed due to ' + status);
-  //           }
-  //         });
-  //       }
-  //     }
-
-
-  // var geolocation = new google.maps.Marker({
-  //           position: geolocpoint,
-  //           map: map,
-  //           title: 'Your geolocation',
-  //           icon: 'http://labs.google.com/ridefinder/images/mm_20_green.png'
-  //       });
-
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//   console.log("hurray")
-//   infoWindow.setPosition(pos);
-//   infoWindow.setContent(browserHasGeolocation ?
-//     'Error: The Geolocation service failed.' :
-//     'Error: Your browser doesn\'t support geolocation.');
-//   }
-
-
-  </script>
-
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&libraries=places&callback=initMap&directionsService" >
-  </script>
-
-  <%# the one that finds the lat and long is ending.  %>
-
-<%#this is directions to a place by lat and long %>
-    <!-- <body>
-     <div id="floating-panel">
-     <b>Mode of Travel: </b>
-     <select id="mode">
-       <option value="DRIVING">Driving</option>
-       <option value="WALKING">Walking</option>
-       <option value="BICYCLING">Bicycling</option>
-       <option value="TRANSIT">Transit</option>
-     </select>
-     </div>
-     <div id="map"></div>
-     <script>
-       function initMap() {
-         var directionsDisplay = new google.maps.DirectionsRenderer;
-         var directionsService = new google.maps.DirectionsService;
-         var map = new google.maps.Map(document.getElementById('map'), {
-           zoom: 14,
-           center: {lat: 37.77, lng: -122.447}
-         });
-         directionsDisplay.setMap(map);
-
-         calculateAndDisplayRoute(directionsService, directionsDisplay);
-         document.getElementById('mode').addEventListener('change', function() {
-           calculateAndDisplayRoute(directionsService, directionsDisplay);
-         });
-       }
-
-       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-         var selectedMode = document.getElementById('mode').value;
-         directionsService.route({
-           origin: {lat: 37.77, lng: -122.447},
-           destination: {lat: 37.768, lng: -122.511},
-           travelMode: google.maps.TravelMode[selectedMode]
-         }, function(response, status) {
-           if (status == google.maps.DirectionsStatus.OK) {
-             directionsDisplay.setDirections(response);
-           } else {
-             window.alert('Directions request failed due to ' + status);
-           }
-         });
-       }
-     </script>
-     <script async defer
-     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
-     </script>
-   </body> -->
-<%#this is the end of the one that finds the directions. you cannot have both of them on teh page at the same time cause google has problems with that.   %>
-
-
-
-
-
-
-
-
-
-
-
-
-  <body class="backgroundColor">
-    <section class="wrapper"><!-- may need to add a nav-bar div -->
-      <ul class="tabs">
-        <li class="active">Interview Tips</li>
-        <li>Attire</li>
-      </ul>
-
-      <!-- start of grid system -->
-      <div class="grid grid-pad">
-        <div class="col-1-2 ">
-          <div class="flex-boxes">
-            <a href="javascript:void(0)" class="flex-box">
-              <h1 class="flex-title"><%= @name %></h1>
-              <p><%= @industry %></p>
-              <p><%= @sector %></p>
-              <p><%= @total_rating %></p>
-              <% unless @balance_rating == nil %>
-              <p><%= @balance_rating %></p>
-              <% end %>
-              <% unless @benefits_rating == nil %>
-              <p><%= @benefits_rating %></p>
-              <% end %>
-            </a>
+                <p><%= f.label :length %>
+                  <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+                </p>
+                <p>
+                  <%= f.label :difficulty %>
+                  <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+                </p>
+                <p>
+                  <%= f.submit %>
+                </p>
+                <% end %>
+              </a>
+            </div>
           </div>
 
-          <% if Interviewreview.where(company: @name) != [] %>
-          <% Interviewreview.where(company: @name).each do |i| %>
-          <div class="flex-boxes">
-            <a href="javascript:void(0)" class="flex-box">
+          <div class="col-1-2">
+            <ul>
+              <li class>
+                <div class="flex-boxes">
+                  <a href="javascript:void(0)" class="flex-box">
+                    <% unless @review == nil %>
+                    <p>Headline:   <%= @review["headline"] %></p>
+                    <p>Pros:   <%= @review["pros"] %></p>
+                    <p>Cons:   <%= @review["cons"] %></p>
+                    <% end %>
+                  </a>
+                </div>
 
-              <p><%= i.company %>
-                <%= i.experience %>
-                <%= i.length %>
-                <%= i.difficulty %></p>
-                <%= link_to "Delete", interviewreview_path(i), method: :delete %>
-                <%= link_to "Edit", edit_interviewreview_path(i) %>
-              </a>
-              </div>
-              <% end %>
-              <% end %>
+                <% if Review.where(company: @name) != [] %>
+                <%#I dont know how this keeps getting taken out everytime but please if you
+                do a merge, leave this in. It is important.  %>
+                <% Review.where(company: @name).each do |f| %>
+                <div class="flex-boxes">
+                  <a href="javascript:void(0)" class="flex-box">
+                    <p>Headline:   <%= f.headline %></p>
+                    <p>Pros:  <%= f.pros %></p>
+                    <p>Cons:  <%= f.cons %></p>
+                  </a>
 
-              <div class="flex-boxes">
-                <a href="javascript:void(0)" class="flex-box">
-                  <p> Had an interview with this company? add a review! </p>
-                  <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-                  <p><% f.label :company %>
-                    <%= f.hidden_field :company, :value => @name %>
-                  </p>
+                </div>
+                <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
+                <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
+                <% end %>
+                <% end %>
 
-                  <p><%= f.label :experience %>
-                    <%= f.text_area :experience %>
-                  </p>
 
-                  <p><%= f.label :length %>
-                    <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-                  </p>
-                  <p>
-                    <%= f.label :difficulty %>
-                    <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-                  </p>
-                  <p>
-                    <%= f.submit %>
-                  </p>
-                  <% end %>
+                <div class="flex-boxes">
+                  <a href="javascript:void(0)" class="flex-box">
+                    <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+                    <p><% f.label :company %>
+                      <%= f.hidden_field :company, :value => @name %>
+                    </p>
+                    <p><%= f.label :headline %>
+                      <%= f.text_field :headline %>
+                    </p>
+
+                    <p><%= f.label :pros %>
+                      <%= f.text_area :pros %>
+                    </p>
+
+                    <p><%= f.label :cons %>
+                      <%= f.text_area :cons %>
+                    </p>
+                    <p>
+                      <%= f.submit %>
+                    </p>
+                    <% end %>
                   </a>
                 </div>
               </div>
 
-
-              <!-- end of col 1 ----------------------------->
-
-              <div class="col-1-2">
-                <!-- map is supposed to go here. -->
-
-                <!-- COMPANY review -->
-                <ul>
-                  <!--  ROW 2 ----------------------------------->
-                  <li class>
-                    <div class="flex-boxes">
-                      <a href="javascript:void(0)" class="flex-box">
-                        <% unless @review == nil %>
-                        <p>Headline:   <%= @review["headline"] %></p>
-                        <p>Pros:   <%= @review["pros"] %></p>
-                        <p>Cons:   <%= @review["cons"] %></p>
-                        <% end %>
-                        </a>
-                      </div>
-
-                      <% if Review.where(company: @name) != [] %>
-                      <%#I dont know how this keeps getting taken out everytime but please if you
-                      do a merge, leave this in. It is important.  %>
-                        <% Review.where(company: @name).each do |f| %>
-                        <div class="flex-boxes">
-                          <a href="javascript:void(0)" class="flex-box">
-                        <p><%= f.headline %></p>
-                        <p><%= f.pros %></p>
-                        <p><%= f.cons %></p>
-                        <%= link_to "Delete", review_path(f), method: :delete %>
-                        <%= link_to "Edit", edit_review_path(f) %>
-                      </a>
-
-                    </div>
-                        <% end %>
-                      <% end %>
-
-
-                      <div class="flex-boxes">
-                        <a href="javascript:void(0)" class="flex-box">
-                          <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
-                          <p><% f.label :company %>
-                            <%= f.hidden_field :company, :value => @name %>
-                          </p>
-                          <p><%= f.label :headline %>
-                            <%= f.text_field :headline %>
-                          </p>
-
-                          <p><%= f.label :pros %>
-                            <%= f.text_area :pros %>
-                          </p>
-
-                          <p><%= f.label :cons %>
-                            <%= f.text_area :cons %>
-                          </p>
-                          <p>
-                            <%= f.submit %>
-                          </p>
-                          <% end %>
-                          </a>
-                        </div>
-                      </div><!---  End of grid-pad   ------------------------------>
-                    </section>
-                  </body>
-                  </html>
-                  <!-- <li>
-                  <div class="content__wrapper">
-
-                  <% @items.each do |r| %>
-                  <div class="cards" >
-                  <div class="insideimage">
-                  <a href=<%= r.url %>>
-                  <img src=<%= r.image %>></img>
-                </a>
-              </div>
-              <div class="insidetext">
-              <%= r.clothing_title %>
-              <%= r.price %>
             </div>
-            <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
-            <%= f.submit "add to cart" %>
-            <%= f.hidden_field :ASIN, value: r.asin %>
-            <% end %>
-          </div>
-          <% end %>
+          </li>
+          <li>
+            <div class="content__wrapper">
+              <h1>this is the amazon info</h1>
 
-        </div>
-      </li> -->
+              <% @items.each do |r| %>
+              <div class="cards" >
+                <div class="insideimage">
+                  <a href=<%= r.url %>>
+                    <img src=<%= r.image %>></img>
+                  </a>
+                </div>
+                <div class="insidetext">
+                  <%= r.clothing_title %>
+                  <%= r.price %>
+                </div>
+                <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
+                <%= f.submit "add to cart" %>
+                <%= f.hidden_field :ASIN, value: r.asin %>
+                <% end %>
+
+              </div>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      </body>
+      </html>
