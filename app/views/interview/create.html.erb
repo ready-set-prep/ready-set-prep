@@ -11,7 +11,7 @@
 </div>
 <div id="map"></div>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
 </script>
 
 <body class="backgroundColor">
@@ -49,6 +49,7 @@
                 <p><%= i.experience %></p>
                 <p><%= i.length %></p>
                 <p><%= i.difficulty %></p>
+
               </a>
             </div>
             <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
