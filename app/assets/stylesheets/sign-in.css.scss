@@ -64,11 +64,17 @@ text-align: center;
       width: 15em;
       height: 1.5em;
       outline: none;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
     #user_password{
       width: 15em;
       height: 1.5em;
       outline: none;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
     .actions{
       padding-right: 4em;
@@ -86,6 +92,9 @@ text-align: center;
       padding-top: 0.5em;
       padding-right: 0em;
       margin-left: 19em;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
 
 
     img{/**** amazon button image link ***/
