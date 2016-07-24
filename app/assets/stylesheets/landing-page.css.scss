@@ -186,11 +186,13 @@ button{
   }
 
   h2 {
-    border-bottom: 1px solid transparentize($base-font-color, 0.8);
-    display: inline-block;
-    font-size: $icon-bullet-size / 2.5;
-    margin: 0 0 ($icon-bullet-size / 6) 0;
-    padding-top: $icon-bullet-size / 7;
+    // border-bottom: 1px solid transparentize($base-font-color, 0.8);
+    // display: inline-block;
+    // font-size: $icon-bullet-size / 2.5;
+    // margin: 0 0 ($icon-bullet-size / 6) 0;
+    // padding-top: $icon-bullet-size / 7;
+    color: black;
+    background-color: #f2f0f4;
   }
 
   li {
@@ -205,4 +207,8 @@ button{
   img {
     max-width: 100%;
   }
+}
+.bulletcase {
+  margin-top: 70px;
+  margin-right: 45px;
 }
