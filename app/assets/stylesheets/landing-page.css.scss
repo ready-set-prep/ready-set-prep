@@ -122,20 +122,21 @@ button:focus {
 
 
 /***  BUTTON FOR LOGIN PAGE *******/
-button{
+.loginbutton {
   border-radius:100%;
   width: 136px;
   height: 136px;
   background-color: black;
   font-weight: bold;
-  margin-top: 1em;
   margin-left: -0.5em;
-  padding-right: 0.2em;
   cursor: pointer;
   color: #fff;
   outline: none;
   font-size: 22px;
   font-family: 'Aquatico', Verdana, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 
 }
 
