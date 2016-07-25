@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20160721214751) do
     t.string   "headline"
     t.string   "pros"
     t.string   "cons"
+    t.string   "position"
+    t.string   "dress_code"
+    t.string   "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

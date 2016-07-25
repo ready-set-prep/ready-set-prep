@@ -123,32 +123,85 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                 <% end %>
 
 
-                <div class="flex-boxes">
-                  <a href="javascript:void(0)" class="flex-box">
-                    <p> Add a review!</p>
-                    <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
-                    <p><% f.label :company %>
-                      <%= f.hidden_field :company, :value => @name %>
-                    </p>
-                    <p><%= f.label :headline %>
-                      <%= f.text_field :headline %>
-                    </p>
 
-                    <p><%= f.label :pros %>
-                      <%= f.text_area :pros %>
-                    </p>
 
-                    <p><%= f.label :cons %>
-                      <%= f.text_area :cons %>
-                    </p>
-                    <p>
-                      <%= f.submit %>
-                    </p>
-                    <% end %>
-                  </a>
+                      <h1>Add a review!</h1>
+                      <p>
+                        <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
+                        <p><% f.label :company %>
+                          <%= f.hidden_field :company, :value => @name %>
+                        </p>
+                        <p><%= f.label :headline %>
+                          <%= f.text_field :headline %>
+                        </p>
+
+                        <p><%= f.label :pros %>
+                          <%= f.text_area :pros %>
+                        </p>
+
+                        <p><%= f.label :cons %>
+                          <%= f.text_area :cons %>
+                        </p>
+                        <% end %>
+
+
+                        <p>Industry?</p>
+                        <form action="/reviews" method="POST">
+                          <select name="position">
+                            <option value="Architecture / Drafting">Architecture / Drafting</option>
+                            <option value="Art / Design / Entertainment">Art / Design / Entertainment</option>
+                            <option value="Beauty / Wellness">Beauty / Wellness</option>
+                            <option value="Marketing / Advertising / PR">Marketing / Advertising / PR</option>
+                            <option value="Accounting / Finance">Accounting / Finance</option>
+                            <option value="Administrative">Administrative</option>
+                            <option value="Analyst">Analyst</option>
+                            <option value="Banking / Loan / Insurance">Banking / Loan / Insurance</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Legal">Legal</option>
+                            <option value="Medical / Healthcare">Medical / Healthcare</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Business Development / Consulting">Business Development / Consulting</option>
+                            <option value="Education">Education</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Hospitality">Hospitality</option>
+                            <option value="Non-Profit / Volunteering">Non-Profit / Volunteering</option>
+                            <option value="Product / Project Management">Product / Project Management</option>
+                            <option value="Sales / Customer Care">Sales / Customer Care</option>
+                            <option value="Security / Law Enforcement">Security / Law Enforcement</option>
+                            <option value="Software Development / IT">Software Development / IT</option>
+                            <option value="Travel / Transportation">Travel / Transportation</option>
+                            <option value="Writing / Editing / Publishing">Writing / Editing / Publishing</option>
+                            <option value="Facilities / General Labor">Facilities / General Labor</option>
+                            <option value="Manufacturing / Production / Construction">Manufacturing / Production / Construction</option>
+                            <option value="Installation / Maintenance / Repair">Installation / Maintenance / Repair</option>
+                            <option value="Restaurant / Food Services">Restaurant / Food Services</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Skilled Trade">Skilled Trade</option>
+                            <option value="Sports / Fitness">Sports / Fitness</option>
+                            <option value="Other">Other</option>
+                          </select>
+
+                          <p>Dress code? </p>
+                          <select name="dress_code">
+                            <option value="Casual">Casual</option>
+                            <option value="Business Casual">Business Casual</option>
+                            <option value="Fashionable">Fashionable</option>
+                            <option value="Formal">Formal</option>
+                          </select>
+
+                        <p>Size of company?</p>
+                          <select name="size">
+                            <option value="Small">Small</option>
+                            <option value="Med">Med</option>
+                            <option value="Large">Large</option>
+                          </select>
+                          <button type="submit" value="Submit">Submit</button>
+                        </form>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-
             </div>
           </li>
           <li>
