@@ -3,7 +3,7 @@ class InterviewreviewPolicy < ApplicationPolicy
 
   def initialize(user, interviewreview)
     @user = user
-    @interviewreview = interviewreview.first
+    @interviewreview = interviewreview
   end
 
   def create?
