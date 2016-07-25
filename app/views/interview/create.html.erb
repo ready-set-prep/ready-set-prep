@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-
+<!-- <div class="wholemap"> -->
+  <%#I really dont understand why encasing this whole thing in a div does not let it appear why u do dis css  %>
 <div id="floating-panel">
   <b>Mode of Travel: </b>
   <select id="mode">
@@ -13,8 +14,9 @@
 </div>
 <div id="map"></div>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
 </script>
+<!-- </div> -->
 
 <body class="backgroundColor">
   <ul class="tabs">
@@ -32,12 +34,16 @@
                 <h1 class="flex-title"><%= @name %></h1>
                 <p>Industry:   <%= @industry %></p>
                 <p>Sector:  <%= @sector %></p>
-                <p>Total Rating:   <%= @total_rating %></p>
+                <p>Total Rating:</p>
+                <p class="ratings"><%= show_stars @total_rating %></p>
                 <% unless @balance_rating == nil %>
-                <p>Balance Rating:   <%= @balance_rating %></p>
+                <p>Balance Rating:</p>
+                <p class="ratings"><%= show_stars @balance_rating %></p>
                 <% end %>
                 <% unless @benefits_rating == nil %>
-                <p>Benefits Rating: <%= @benefits_rating %></p>
+                <p>Benefits Rating:</p>
+                <p class="ratings"><%= show_stars @total_rating %></p>
+
                 <% end %>
               </a>
             </div>
@@ -119,6 +125,7 @@
 
                 <div class="flex-boxes">
                   <a href="javascript:void(0)" class="flex-box">
+                    <p> Add a review!</p>
                     <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
                     <p><% f.label :company %>
                       <%= f.hidden_field :company, :value => @name %>

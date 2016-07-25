@@ -1,6 +1,5 @@
 class InterviewreviewsController < ApplicationController
   def create
-
     r = Interviewreview.new(
     user_id: current_user.id,
     company: params[:interview][:company],
