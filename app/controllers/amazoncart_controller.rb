@@ -16,6 +16,5 @@ class AmazoncartController < ApplicationController
         'Item.1.Quantity' => 1
       }
     ).to_h
-    binding.pry
   end
 end
