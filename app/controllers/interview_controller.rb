@@ -1,10 +1,6 @@
 class InterviewController < ApplicationController
 
-  def index
-  end
-
   def create
-
     if params[:q][:q] && params[:q][:position] != ""
       @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
       @amazonparams = params[:q][:position].strip.gsub(/\s/,'+') #position #amazon
@@ -30,9 +26,9 @@ class InterviewController < ApplicationController
   def glassdoor_data
     @name = @data["response"]["employers"].first["name"]
     @industry = @data["response"]["employers"].first["industry"]
-    @total_rating = @data["response"]["employers"].first["overallRating"]
-    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
-    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
+    @total_rating = @data["response"]["employers"].first["overallRating"].to_f.round
+    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"].to_f.round
+    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"].to_f.round
     @review = @data["response"]["employers"].first["featuredReview"]
     @sector = @data["response"]["employers"].first["sectorName"]
   end

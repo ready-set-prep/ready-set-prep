@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html>
@@ -43,12 +44,20 @@
           center: {lat: -34.397, lng: 150.644}
         });
         var geocoder = new google.maps.Geocoder();
+=======
+<script>
+geocoder = new google.maps.Geocoder();
 
-        document.getElementById('submit').addEventListener('click', function() {
-          geocodeAddress(geocoder, map);
-        });
-      }
+function codeAddress() {
 
+    //In this case it gets the address from an element on the page, but obviously you  could just pass it to the method instead
+    var address = document.getElementById( 'address' ).value;
+>>>>>>> 31f47c5537ca12e68d2d144758bf806798e4a04e
+
+    geocoder.geocode( { 'address' : address }, function( results, status ) {
+        if( status == google.maps.GeocoderStatus.OK ) {
+
+<<<<<<< HEAD
       function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById('address').value;
         geocoder.geocode({'address': address}, function(results, status) {
@@ -69,3 +78,17 @@
     </script>
   </body>
 </html>
+=======
+            //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
+            map.setCenter( results[0].geometry.location );
+            var marker = new google.maps.Marker( {
+                map     : map,
+                position: results[0].geometry.location
+            } );
+        } else {
+            alert( 'Geocode was not successful for the following reason: ' + status );
+        }
+    } );
+}
+</script>
+>>>>>>> 31f47c5537ca12e68d2d144758bf806798e4a04e
