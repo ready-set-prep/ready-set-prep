@@ -7,6 +7,7 @@ class InterviewController < ApplicationController
       glassdoor_api_call
       glassdoor_data
       @items = Amazonclass.new(@amazonparams).search
+      @pins = Pintrestclass.new.search
     elsif params[:q][:position] == ""
       @amazonparams = params[:q][:position].strip.gsub(/\s/,'+') #position #amazon
       glassdoor_api_call
