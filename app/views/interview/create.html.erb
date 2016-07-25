@@ -173,16 +173,16 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
               </div>
               <% end %> -->
 
-
               <div id="columns">
-  <% @pins.each do |p| %>
-  <figure>
-    <a href=<%= p.url %>>
-      <img src=<%= p.image %>></img>
-    </a>
-    <figcaption><%= p.note %></figcaption>
-  </figure>
-  <% end %>
+                <% @pins.each do |p| %>
+                <figure>
+                  <a href=<%= p.url %>>
+                    <img src=<%= p.image %>></img>
+                  </a>
+                  <figcaption><%= p.note %></figcaption>
+                </figure>
+                <% end %>
+              </div>
             </div>
           </li>
         </ul>
