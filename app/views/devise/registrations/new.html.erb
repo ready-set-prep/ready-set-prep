@@ -1,15 +1,11 @@
 <body class="backgroundimg" background= "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18b277cdf966f5a782a14f6adf300fe8">
 
 
-<div class="page-wrapper">
-<header>
 
-  <h2>Sign-up</h2>
-
-
+<!--    SIGN-UP PAGE -->
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<div class="sign-up-wrapper">
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -32,7 +28,8 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+</div>
 
+<div id="ama-links">
 <%= render "devise/shared/links" %>
-</nav>
-</header.
+</div>

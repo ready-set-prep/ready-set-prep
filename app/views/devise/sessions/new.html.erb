@@ -3,19 +3,8 @@
 
 
 
-<div class="page-wrapper">
-
-<header>
-
-<nav class="bar">
-  <h1>Sign-In</h1>
-
-
-
-
-    <!-- <h2>Log in</h2> -->
-
-
+<!-- SIGN-IN PAGE -->
+<div class="form-wrapper">
 <div id="amazon-root"></div>
 <script type="text/javascript">
 
@@ -52,7 +41,10 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+</div>
 
+
+<div class="amazon-wrapper">
 <a href="#" id="LoginWithAmazon">
   <img border="0" alt="Login with Amazon"
     src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
@@ -79,10 +71,6 @@
     };
     </script>
 <% else %>
-    <!-- <li class="nav-link"><a href="/users/sign_in">Log In</a></li> -->
+
 <% end %>
-
-</nav>
-
-</header>
 </div>

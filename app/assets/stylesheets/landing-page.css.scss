@@ -219,6 +219,7 @@ button:focus {
 .bulletcase {
   margin-top: 70px;
   margin-right: 45px;
+  // opacity: .7;
 }
 
 /// model css
@@ -248,7 +249,7 @@ button:focus {
 
   label img {
     border-radius: $modal-trigger-image-width / 2;
-    display: block;
+    // display: block;
     max-width: $modal-trigger-image-width;
   }
 
@@ -392,3 +393,4 @@ button:focus {
   text-align: center;
   font-family: Tahoma, Geneva, sans-serif;
 }
+//

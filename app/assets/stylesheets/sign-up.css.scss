@@ -1,38 +1,6 @@
-header{
-    position:fixed;
-    top:0; left:0;
-    width:100%;
-    background:none;
-    height:20em;
-    padding-bottom:25%;
-    overflow:hidden;
-    z-index:1;
+.sign-up-wrapper{
+  text-align: center;
 }
-header:after {
-    content:'';
-    position:absolute;
-    left:-600%;
-    // right: -700%;
-    width:1300%;
-    padding-bottom:6300%;
-    top:83%;
-    background:none;
-    border-radius:50%;
-    box-shadow: 0px 0px 0px 9999px #fff;
-    z-index:-2;
-}
-
-h2{
-  font-family: "Aquatico",Verdana, sans-serif;
-    background-color: #47494A;
-    padding-top: 0.5em;
-    // padding-left: 1.5em;
-    height: 2em;
-    color: #fff;
-    font-weight: lighter;
-    opacity: 0.8;
-}
-
 
   #new_user{
     text-align: center;
@@ -41,52 +9,38 @@ h2{
   .field{
     text-align: center;
     padding-top: 0.5em;
-    // height: 4em;
-    // input{
-    //   margin: 0.5em 0;
-    //   width: 30%;
-    //
-    // }
-    input:focus{
-      outline: 0;
-    }
+
   }
   label{
     font-size: 20px;
     font-family: "Aquatico",Verdana, sans-serif;
     color: #47494A;
     opacity: 0.8;
+}
 
 #user_email{
+  margin: 0 auto;
   width: 13em;
-  // height: em;
+  height: 1.5em;
   outline: none;
-  margin-right: 20em;
-
 }
 #user_password{
+  margin: 0 auto;
   width: 13em;
   height: 1.5em;
   outline: none;
 }
 #user_password_confirmation{
+  margin: 0 auto;
   width: 13em;
   height: 1.5em;
   outline: none;
 }
-}
-/****  BUTTON  **/
-.actions >input{
-  font-size: 20px;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  background-color: black;
-  color: #fff;
-  border-radius: 5px;
-  outline: none;
 
-//  a{
-//   padding-top: 0.5em;
-//   margin-left: 38em;
-// }
+.actions{
+  padding-top: 0.5em;
+}
+#ama-links{
+
+  text-align: center;
 }
