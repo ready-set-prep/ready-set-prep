@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <div id="floating-panel">
   <b>Mode of Travel: </b>
   <select id="mode">
@@ -12,7 +13,7 @@
 </div>
 <div id="map"></div>
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
 </script>
 
 <body class="backgroundColor">
@@ -36,7 +37,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                 <p>Balance Rating:   <%= @balance_rating %></p>
                 <% end %>
                 <% unless @benefits_rating == nil %>
-                <p>Benefits Rating:   <%= @benefits_rating %></p>
+                <p>Benefits Rating: <%= @benefits_rating %></p>
                 <% end %>
               </a>
             </div>
@@ -104,7 +105,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                 <% Review.where(company: @name).each do |f| %>
                 <div class="flex-boxes">
                   <a href="javascript:void(0)" class="flex-box">
-                    <p>Headline:   <%= f.headline %></p>
+                    <p><%= f.headline %></p>
                     <p>Pros:  <%= f.pros %></p>
                     <p>Cons:  <%= f.cons %></p>
                   </a>

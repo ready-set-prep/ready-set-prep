@@ -1,10 +1,6 @@
 class InterviewController < ApplicationController
 
-  def index
-  end
-
   def create
-
     if params[:q][:q] && params[:q][:position] != ""
       @params = params[:q][:q].strip.gsub(/\s/,'+') #company #glassdoor
       @amazonparams = params[:q][:position].strip.gsub(/\s/,'+') #position #amazon

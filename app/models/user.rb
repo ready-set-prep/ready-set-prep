@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:amazon]
 
-  has_many :company_saveds       
+  has_many :company_saveds
+  has_many :interviewreviews
+  has_many :reviews
 end
