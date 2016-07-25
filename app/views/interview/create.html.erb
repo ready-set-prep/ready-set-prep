@@ -3,7 +3,7 @@
 
 <!-- <div class="wholemap"> -->
   <%#I really dont understand why encasing this whole thing in a div does not let it appear why u do dis css  %>
-<div id="floating-panel">
+<!-- <div id="floating-panel">
   <b>Mode of Travel: </b>
   <select id="mode">
     <option value="DRIVING">Driving</option>
@@ -11,22 +11,26 @@
     <option value="BICYCLING">Bicycling</option>
     <option value="TRANSIT">Transit</option>``
   </select>
-</div>
-<div id="map"></div>
-<script async defer
+</div> -->
+<!-- <div id="map"></div> -->
+<!-- <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
-</script>
+</script> -->
 <!-- </div> -->
 
 <body class="backgroundColor">
+
   <ul class="tabs">
     <li class="active">Interview Tips</li>
     <li>Attire</li>
   </ul>
+
   <ul class="tab__content">
     <li class="active">
-      <div class="content__wrapper">
+
+      <!-- <div class="content__wrapper"> -->
         <h1>this is the glassdoor info</h1>
+
         <div class="grid grid-pad">
           <div class="col-1-2 ">
             <div class="flex-boxes">
@@ -149,7 +153,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
               </div>
 
             </div>
-          </li>
+          <!-- </div> -->
+        </li>
+      </li>
+    <!-- </ul> -->
+
           <li>
             <div class="content__wrapper">
               <!-- <h1>this is the amazon info</h1>
@@ -186,5 +194,23 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
             </div>
           </li>
         </ul>
+
+<!-- DIRECTIONS PANEL   ---->
+        <div id="floating-panel">
+          <b>Mode of Travel: </b>
+          <select id="mode">
+            <option value="DRIVING">Driving</option>
+            <option value="WALKING">Walking</option>
+            <option value="BICYCLING">Bicycling</option>
+            <option value="TRANSIT">Transit</option>``
+          </select>
+        </div>
+
+<!--  MAP -->
+        <div id="map"></div>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+        </script>
       </body>
       </html>
