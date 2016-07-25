@@ -26,9 +26,9 @@ class InterviewController < ApplicationController
   def glassdoor_data
     @name = @data["response"]["employers"].first["name"]
     @industry = @data["response"]["employers"].first["industry"]
-    @total_rating = @data["response"]["employers"].first["overallRating"]
-    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"]
-    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"]
+    @total_rating = @data["response"]["employers"].first["overallRating"].to_f.round
+    @balance_rating = @data["response"]["employers"].first["workLifeBalanceRating"].to_f.round
+    @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"].to_f.round
     @review = @data["response"]["employers"].first["featuredReview"]
     @sector = @data["response"]["employers"].first["sectorName"]
   end

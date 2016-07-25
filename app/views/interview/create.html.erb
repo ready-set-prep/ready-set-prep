@@ -32,12 +32,16 @@
                 <h1 class="flex-title"><%= @name %></h1>
                 <p>Industry:   <%= @industry %></p>
                 <p>Sector:  <%= @sector %></p>
-                <p>Total Rating:   <%= @total_rating %></p>
+                <p>Total Rating:</p>
+                <p class="ratings"><%= show_stars @total_rating %></p>
                 <% unless @balance_rating == nil %>
-                <p>Balance Rating:   <%= @balance_rating %></p>
+                <p>Balance Rating:</p>
+                <p class="ratings"><%= show_stars @balance_rating %></p>
                 <% end %>
                 <% unless @benefits_rating == nil %>
-                <p>Benefits Rating: <%= @benefits_rating %></p>
+                <p>Benefits Rating:</p>
+                <p class="ratings"><%= show_stars @benefits_rating %></p>
+
                 <% end %>
               </a>
             </div>
