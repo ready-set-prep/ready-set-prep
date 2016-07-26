@@ -43,8 +43,12 @@
 
               </a>
             </div>
-            <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
-            <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
+              <% if policy(i).destroy? %>
+                <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
+              <% end %>
+              <% if policy(i).edit? %>
+                <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
+              <% end %>
             <% end %>
             <% end %>
 
@@ -100,8 +104,12 @@
                   </a>
 
                 </div>
-                <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
-                <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
+                  <% if policy(f).destroy? %>
+                    <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
+                  <% end %>
+                  <% if policy(f).destroy? %>
+                    <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
+                  <% end %>
                 <% end %>
                 <% end %>
 
@@ -117,7 +125,7 @@
                       <h1>Add a review!</h1>
                       <p class="modal-intro">Add a review!</p>
                       <p class="modal-content">
-                        <form action="/reviews" method="POST">
+                      <%= form_tag('/reviews', method: :post) %>
                           <input name="company" type="hidden" value=<%= @name %> />
 
                           Headline<br>
@@ -177,7 +185,6 @@
                             <option value="Large">Large</option>
                           </select>
                           <button type="submit" value="Submit">Submit</button>
-                        </form>
                       </p>
                     </div>
                   </div>
@@ -217,6 +224,7 @@
 
               </div>
               <% end %> -->
+<<<<<<< HEAD
               <div class="pinwrapper">
                 <div class="fashionable">
                   <a data-pin-do="embedBoard" data-pin-board-width="250" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/fashionable-interview-attire/"></a>
@@ -230,6 +238,21 @@
                 <div class="casual">
                   <a data-pin-do="embedBoard" data-pin-board-width="250" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/casual-interview-attire/"></a>
                 </div>
+=======
+
+              <p>Based on your job search we suggest the <%= @category %> category, but other attire is avaliable to you as well</p>
+              <p id="pin-title">Fashionable</p>
+             <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/fashionable-interview-attire/"></a>
+
+             <p id="pin-title">Conservative</p>
+             <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/conservative-interview-attire/"></a>
+
+             <p id="pin-title">Business Casual</p>
+             <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/business-casual-interview-attire/"></a>
+
+             <p id="pin-title">Casual</p>
+             <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/casual-interview-attire/"></a>
+>>>>>>> 330825ac47cc81c0e0119362c4550ca64a67b7d0
 
               </div>
               <div id="columns">

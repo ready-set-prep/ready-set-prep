@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def create
     r = Review.new(
-      user_id: User.first.id,
+      user_id: current_user.id,
       company: params[:company],
       headline: params[:headline],
       pros: params[:pros],

@@ -11,8 +11,7 @@ class InterviewreviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
-    # user == @interviewreview.user
+    user == Array(interviewreview).first.user
   end
 
   def edit?

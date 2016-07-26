@@ -3,8 +3,8 @@
 
     <div class="center">
 <% if current_user %>
-      <form action="/interview" method="post">
-
+<%= notice %>
+    <%= form_tag('/interview', method: :post) %>
       Company<br>
       <input type="text" name="q">
       <select name="positions" class="custom-select positions" placeholder="Positions">
@@ -49,7 +49,6 @@
       </select>
       <button type="submit" value="Submit">Submit</button>
 
-    </form>
     </div>
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
@@ -140,7 +139,7 @@
       </li>
     </ul>
   </div>
-  <!--  -->
+
   <% else %>
   <form action="/users/sign_in", method="GET">
     <button class="loginbutton"> LOGIN </button>
