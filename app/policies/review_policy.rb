@@ -7,7 +7,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    user
+    true
   end
 
   def destroy?
