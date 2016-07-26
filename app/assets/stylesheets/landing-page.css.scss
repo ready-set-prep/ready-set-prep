@@ -85,22 +85,21 @@ button:focus {
   padding:10px;
   color: black;
   font-weight: bold;
-  // .go{
-  //   background-color: #666;
-  //   }
-  //   .go:hover{
-  //     background-color: #333;
-  //
-  //   }
-  //   .go:focus {
-  //     outline: 0;
-  //   }
 }
+// .scroll{
+//
+//   overflow-y: auto;
+//
+// }
+
+// ::-webkit-scrollbar {
+//   display: none;
+// }
 
 
 /***  POSITIONS DIV AND TITLE **/
-#positions {
-  // margin: 0 0 0.3em;
+.positions {
+  text-align: right;
 	// padding: 1em 0 0.5em;
   color: #47a3da;
 	// border-bottom: 1px solid #ddd;
@@ -114,38 +113,34 @@ button:focus {
   // width: 60%;
   // top: 50%; left: 50%;
   // transform: translate(-50%, -50%);
-  // #type{
-  // color: grey;
-  //       text-decoration: none;
-  // }
+
 }
 
 /**  ACCORDION PANEL ***/
 
 
-/***  UL FOR LISTITEMS FOR POSITIONS ACCORDION **/
-#jobcat{/** or dropDownPanel **/
-  display: block;
-// margin-left: 0.5em;
-}
-
-#hidden {
+/***  UL TOGGLE **/
+.jobcat{/** or dropDownPanel **/
+  background-color: lightgrey;
+  width: 100%;
+  height: 120px;
+  whitespace: nowrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  // margin: 0 10px 40px 0px;
   display: none;
-}
 
-// #visible{
-//   display: block;
-// }
+}
 
 /*** LI FOR KINDS OF POSITIONS **/
 .kinds-of{
-  list-style-type: none;
+  // list-style-type: none;
   text-transform: uppercase;
-  font-size: 1.2em;
-  // letter-spacing: 0.4em;
-  // padding: 0.5em 0 0.5em;
+  // font-size: 1.2em;
+
+  padding-top: 15px;
   // margin: 0 0 0.8em;
-  color: #47a3da;
+  color: black;
 }
 
 
