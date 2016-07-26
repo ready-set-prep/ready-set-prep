@@ -121,16 +121,21 @@ button:focus {
 }
 
 /**  ACCORDION PANEL ***/
-  .dropDownPanel {
-    display: none;
 
-    }
 
 /***  UL FOR LISTITEMS FOR POSITIONS ACCORDION **/
 #jobcat{/** or dropDownPanel **/
   display: block;
 // margin-left: 0.5em;
 }
+
+#hidden {
+  display: none;
+}
+
+// #visible{
+//   display: block;
+// }
 
 /*** LI FOR KINDS OF POSITIONS **/
 .kinds-of{

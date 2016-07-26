@@ -1,4 +1,9 @@
+$( document ).ready(function() {
+
 
 $("#positions").click(function(){
-  $(".dropDownPanel").toggle();
+  console.log("test");
+  $("#jobcat").toggle()
   });
+  console.log("test again");
+});
