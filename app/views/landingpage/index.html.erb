@@ -3,6 +3,7 @@
 
     <div class="center">
 <% if current_user %>
+<%= notice %>
     <%= form_tag('/interview', method: :post) %>
       Company<br>
       <input type="text" name="q">
