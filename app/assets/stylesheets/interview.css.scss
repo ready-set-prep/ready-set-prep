@@ -377,34 +377,29 @@ div#columns:hover figure:not(:hover) {
 }
 
 // pintrest board styles
-.pinboards-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.pinwrapper {
+  margin: 15px;
+  height: 360px;
+  width: 100%;
+  display: -webkit-box;
+  padding: 10px;
+
 }
 .fashionable {
-  height:360px;
-  width: 210px;
-  margin: 15px;
-  // position: absolute;
+  position: relative;
+  padding: 2%;
 }
 .conservative {
-  height: 360px;
-  width: 210px;
-  margin: 15px;
-  position: absolute;
-  left: 250px;
-  top: 129px;
+  position: relative;
+  padding: 2%;
+
 }
 
 .bizcas {
-  position: absolute;
-  left: 507px;
-  top: 143px;
+  position: relative;
+  padding: 2%;
 }
 .casual {
-  position: absolute;
-  left: 737px;
-  top: 142px;
-
+  position: relative;
+  padding: 2%;
 }
