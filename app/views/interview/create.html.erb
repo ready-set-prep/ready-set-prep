@@ -43,8 +43,12 @@
 
               </a>
             </div>
-            <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
-            <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
+              <% if policy(i).destroy? %>
+                <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
+              <% end %>
+              <% if policy(i).edit? %>
+                <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
+              <% end %>
             <% end %>
             <% end %>
 
@@ -100,8 +104,12 @@
                   </a>
 
                 </div>
-                <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
-                <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
+                  <% if policy(f).destroy? %>
+                    <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
+                  <% end %>
+                  <% if policy(f).destroy? %>
+                    <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
+                  <% end %>
                 <% end %>
                 <% end %>
 

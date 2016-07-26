@@ -11,8 +11,8 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
-    # user == @review.first.user
+    # true
+    user == Array(review).first.user
   end
 
   def edit?
