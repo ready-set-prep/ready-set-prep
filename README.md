@@ -45,4 +45,4 @@ The next tab is the Attire tab. The Attire tab is all about what you should wear
   * Fashionable
   * Business Casual
   * Casual
-Each of these categories will have their own seperate box of clothes to choose from. If you click on a box of your choice, it will open up into a larger area where you can browse the clothes in more detail. Clothing items come with pictures of the clothes, as well as a short description of the clothes. Clothes and interview outfits are all pulled from pintrest API.  
+Each of these categories will have their own seperate box of clothes to choose from. If you click on a box of your choice, it will open up into a larger area where you can browse the clothes in more detail. Clothing items come with pictures of the clothes, as well as a short description of the clothes. Clothes and interview outfits are all pulled from Pintrest API.  
