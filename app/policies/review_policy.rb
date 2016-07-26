@@ -11,7 +11,6 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    # true
     user == Array(review).first.user
   end
 
