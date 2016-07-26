@@ -97,14 +97,56 @@ button:focus {
   //   }
 }
 
-/***  Postions **/
-.center {
-  position: absolute;
-  display: inline-block;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+
+/***  POSITIONS DIV AND TITLE **/
+#positions {
+  // margin: 0 0 0.3em;
+	// padding: 1em 0 0.5em;
+  color: #47a3da;
+	// border-bottom: 1px solid #ddd;
+	font-size: 30px;
+	// font-weight: 300;
+  // font-style: normal;
+  cursor: pointer;
+  // z-index: 2;
+  // position: relative;
+  // display: none;
+  // width: 60%;
+  // top: 50%; left: 50%;
+  // transform: translate(-50%, -50%);
+  // #type{
+  // color: grey;
+  //       text-decoration: none;
+  // }
 }
 
+/**  ACCORDION PANEL ***/
+  .dropDownPanel {
+    display: none;
+
+    }
+
+/***  UL FOR LISTITEMS FOR POSITIONS ACCORDION **/
+#jobcat{/** or dropDownPanel **/
+  display: block;
+// margin-left: 0.5em;
+}
+
+/*** LI FOR KINDS OF POSITIONS **/
+.kinds-of{
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  // letter-spacing: 0.4em;
+  // padding: 0.5em 0 0.5em;
+  // margin: 0 0 0.8em;
+  color: #47a3da;
+}
+
+
+
+
+/**  INPUT BOX FOR COMPANY NAME **/
   #q_q{
     color: black;
     background-color: lightgrey;
@@ -115,6 +157,7 @@ button:focus {
     border: 2px solid black;
     outline: none;
   }
+
 
 .prep{
   margin-top: 4em;

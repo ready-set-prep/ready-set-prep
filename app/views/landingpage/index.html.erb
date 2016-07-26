@@ -5,18 +5,128 @@
     <%= form_for :q, url: interview_index_path do |f| %>
     <%= f.text_field :q, placeholder: "Company" %>
 
+<!---   POSTIONS DROPDOWN PANEL -->
+    <div id="positions">Positions</div>
 
-    <div class="center">
-      <select name="positions" class="custom-select positions" placeholder="Positions">
+      <div class="dropDownPanel" id="one">
 
         <!-- FASHION -->
-        <option value="1">Architecture / Drafting</option>
-        <option value="1">Art / Design / Entertainment</option>
-        <option value="1">Beauty / Wellness</option>
-        <option value="1">Marketing / Advertising</option>
+        <ul id="jobcat">
+
+          <li class="kinds-of" value="1"><a id="types" href="#" >
+            Architecture / Drafting</a>
+          </li>
+          <li class="kinds-of" value="1"><a id="types" href="#" >
+            Art / Design / Entertainment</a>
+          </li>
+          <li class="kinds-of" value="1"><a id="types" href="#" >
+            Beauty / Wellness</a>
+          </li>
+          <li class="kinds-of" value="1"><a id="types" href="#" >
+            Beauty / Wellness</a>
+          </li>
 
         <!-- CONSERVATIVE -->
-          <option value="2">Accounting / Finance</option>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Accounting / Finance</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Administrative</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Product / Project Management</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Banking / Loan / Insurance</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Human Resources</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Legal</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Medical / Healthcare</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Real Estate</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Science / Research</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Senior Management</a>
+        </li>
+        <li class="kinds-of" value="2"><a id="types" href="#" >
+          Human Resources</a>
+        </li>
+
+        <!-- BUSINESS CASUAL -->
+        <li class="kinds-of" value="3"><a  id="types" href="#">
+          Business Development / Consulting</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Non-Profit / Volunteering</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Product / Project Management</a>
+        </li>
+        <li class="kinds-of"value="3"><a id="types" href="#" >
+          Banking / Loan / Insurance</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Sales / Customer Care</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Security / Law Enforcement</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Software Development / IT</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Writing / Editing / Publishing</a>
+        </li>
+        <li class="kinds-of" value="3"><a id="types" href="#" >
+          Other</a>
+        </li>
+
+
+          <!--  CASUAL -->
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            Facilities / General Labor</a>
+          </li>
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            Manufacturing / Production / Construction</a>
+          </li>
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            Installation / Maintenance / Repair</a>
+          </li>
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            Restaurant / Food Services</a>
+          </li>
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            Retail</a>
+          </li>
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            Skilled Trade</a>
+          </li>
+          <li class="kinds-of" value="4"><a id="types" href="#" >
+            SSports / Fitness</a>
+          </li>
+        </ul><!-- end of jobcat -->
+      </div><!-- end of dropdownPanel -->
+
+
+      <!-- <select name="positions" class="custom-select positions" placeholder="Positions"> -->
+
+        <!-- FASHION -->
+        <!-- <option value="1">Architecture / Drafting</option>
+        <option value="1">Art / Design / Entertainment</option>
+        <option value="1">Beauty / Wellness</option>
+        <option value="1">Beauty / Wellness</option> -->
+
+        <!-- CONSERVATIVE -->
+          <!-- <option value="2">Accounting / Finance</option>
           <option value="2">Administrative</option>
           <option value="2">Analyst</option>
           <option value="2">Banking / Loan / Insurance</option>
@@ -26,30 +136,30 @@
           <option value="2">Real Estate</option>
           <option value="2">Science / Research</option>
           <option value="2">Senior Management</option>
-          <option value="2">Human Resources</option>
+          <option value="2">Human Resources</option> -->
 
         <!-- BUSINESS CASUAL -->
-          <option value="3">Business Development / Consulting</option>
+          <!-- <option value="3">Business Development / Consulting</option>
           <option value="3">Non-Profit / Volunteering</option>
           <option value="3">Product / Project Management</option>
           <option value="3">Sales / Customer Care</option>
           <option value="3">Security / Law Enforcement</option>
           <option value="3">Software Development / IT</option>
-          <option value="3">Travel / Transportation</option>
+
           <option value="3">Writing / Editing / Publishing</option>
-          <option value="3">Other</option>
+          <option value="3">Other</option> -->
 
           <!--  CASUAL -->
-          <option value="4">Facilities / General Labor</option>
+          <!-- <option value="4">Facilities / General Labor</option>
           <option value="4">Manufacturing / Production / Constructionr</option>
           <option value="4">Installation / Maintenance / Repair</option>
           <option value="4">Restaurant / Food Services</option>
           <option value="4">Retail</option>
           <option value="4">Skilled Trade</option>
           <option value="4">Sports / Fitness</option>
-      </select>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      </select> -->
+
+
     <!-- <%= f.text_field :position, placeholder: "Position" %> -->
     <%= f.submit "Prep!", :class => 'prep' %>
     <% end %>
