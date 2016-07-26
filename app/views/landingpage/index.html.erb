@@ -1,14 +1,13 @@
 
   <div class="searchform">
 
-    <% if current_user %>
-    <%= form_for :q, url: interview_index_path do |f| %>
-    <%= f.text_field :q, placeholder: "Company" %>
-
-
     <div class="center">
-      <select name="positions" class="custom-select positions" placeholder="Positions">
+<% if current_user %>
+      <form action="/interview" method="post">
 
+      Company<br>
+      <input type="text" name="q">
+      <select name="positions" class="custom-select positions" placeholder="Positions">
         <!-- FASHION -->
         <option value="1">Architecture / Drafting</option>
         <option value="1">Art / Design / Entertainment</option>
@@ -48,11 +47,13 @@
           <option value="4">Skilled Trade</option>
           <option value="4">Sports / Fitness</option>
       </select>
+      <button type="submit" value="Submit">Submit</button>
+
+    </form>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- <%= f.text_field :position, placeholder: "Position" %> -->
-    <%= f.submit "Prep!", :class => 'prep' %>
-    <% end %>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+
 </div>
 
 
@@ -151,33 +152,3 @@
                             Or need help with finding appropriate interview attire. Then this is the site for you!</p>
 
   <% end %>
-
-
-
-
-
-  <footer><div class="circle">
-
-  </div></footer>
-
-
-
-  <script>
-  $(function() {
-    $("#modal-1").on("change", function() {
-      if ($(this).is(":checked")) {
-        $("body").addClass("modal-open");
-      } else {
-        $("body").removeClass("modal-open");
-      }
-    });
-
-    $(".modal-fade-screen, .modal-close").on("click", function() {
-      $(".modal-state:checked").prop("checked", false).change();
-    });
-
-    $(".modal-inner").on("click", function(e) {
-      e.stopPropagation();
-    });
-  });
-  </script>
