@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include Pundit
     protect_from_forgery
 
-  rescue_from NoMethodError do
-    redirect_to :back
-  end
+  # rescue_from NoMethodError do
+  #   redirect_to :back
+  # end
 end
