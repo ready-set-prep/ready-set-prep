@@ -117,7 +117,7 @@
                       <h1>Add a review!</h1>
                       <p class="modal-intro">Add a review!</p>
                       <p class="modal-content">
-                        <form action="/reviews" method="POST">
+                      <%= form_tag('/reviews', method: :post) %>
                           <input name="company" type="hidden" value=<%= @name %> />
 
                           Headline<br>
@@ -177,7 +177,6 @@
                             <option value="Large">Large</option>
                           </select>
                           <button type="submit" value="Submit">Submit</button>
-                        </form>
                       </p>
                     </div>
                   </div>
