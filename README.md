@@ -31,6 +31,7 @@ The information page is a tab of the interview page. This tab is here so that yo
   * Total Rating, the average of all of the ratings combined for the company that you have searched.
   * Benefits Rating, the average rating for the benefit approval ratings for the company.
   * Balance Rating, the work life balance that the company so that you can gauge how much of yourself you want to invest in the company.
+
 ***
 At the bottom of the left column you can see reviews specifically for people that have interviewed with the company. In addition, if you have interviewed already with the company you can add your own review! Important information that we need is you experience at the interview, the length of the interview, and the difficulty of the interview.
 
