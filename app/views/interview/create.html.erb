@@ -126,30 +126,28 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                 <% end %>
 
 
-
-
+                <div class="modal">
+                  <label for="modal-4">
+                    <div class="modal-trigger">Are you an employee at this company?</div>
+                  </label>
+                  <input class="modal-state" id="modal-4" type="checkbox" />
+                  <div class="modal-fade-screen">
+                    <div class="modal-inner">
+                      <div class="modal-close" for="modal-4"></div>
                       <h1>Add a review!</h1>
-                      <p>
-                        <%= form_for :reviews, url: reviews_path, method: :post do |f| %>
-                        <p><% f.label :company %>
-                          <%= f.hidden_field :company, :value => @name %>
-                        </p>
-                        <p><%= f.label :headline %>
-                          <%= f.text_field :headline %>
-                        </p>
-
-                        <p><%= f.label :pros %>
-                          <%= f.text_area :pros %>
-                        </p>
-
-                        <p><%= f.label :cons %>
-                          <%= f.text_area :cons %>
-                        </p>
-                        <% end %>
-
-
-                        <p>Industry?</p>
+                      <p class="modal-intro">Add a review!</p>
+                      <p class="modal-content">
                         <form action="/reviews" method="POST">
+                          <input name="company" type="hidden" value=<%= @name %> />
+
+                          Headline<br>
+                          <input type="text" name="headline">
+                          Pros:<br>
+                          <input type="text" name="pros">
+                          Cons:<br>
+                          <input type="text" name="cons">
+
+                          Position:<br>
                           <select name="position">
                             <option value="Architecture / Drafting">Architecture / Drafting</option>
                             <option value="Art / Design / Entertainment">Art / Design / Entertainment</option>
@@ -184,7 +182,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                             <option value="Other">Other</option>
                           </select>
 
-                          <p>Dress code? </p>
+                          Dress code?:<br>
                           <select name="dress_code">
                             <option value="Casual">Casual</option>
                             <option value="Business Casual">Business Casual</option>
@@ -192,7 +190,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                             <option value="Formal">Formal</option>
                           </select>
 
-                        <p>Size of company?</p>
+                        Size of company?:<br>
                           <select name="size">
                             <option value="Small">Small</option>
                             <option value="Med">Med</option>
@@ -200,6 +198,12 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwh
                           </select>
                           <button type="submit" value="Submit">Submit</button>
                         </form>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
                       </p>
                     </div>
                   </div>
