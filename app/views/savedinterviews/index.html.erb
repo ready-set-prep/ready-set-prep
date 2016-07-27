@@ -3,8 +3,7 @@ we need to each over or is nil?
 <div id="columns">
   <% @companies.each do |p| %>
   <figure>
-    <%= p.company %>
-    <%= p.position %>
+    <%= button_to 'whatever', {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company} , :method=>:post  %>
   </figure>
   <% end %>
 </div>

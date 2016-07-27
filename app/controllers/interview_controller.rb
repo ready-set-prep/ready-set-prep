@@ -6,7 +6,8 @@ class InterviewController < ApplicationController
       @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       glassdoor_api_call
       glassdoor_data
-      @items = Amazonclass.new(@amazonparams).search
+      binding.pry
+      # @items = Amazonclass.new(@amazonparams).search
       @pins = Pintrestclass.new.search
       @category = PositionCategory.where(position: params[:positions]).first.category
     elsif params[:positions] == ""
@@ -16,7 +17,7 @@ class InterviewController < ApplicationController
       glassdoor_api_call
       glassdoor_data
     else
-      @items = Amazonclass.new(@amazonparams).search
+      # @items = Amazonclass.new(@amazonparams).search
       @pins = Pintrestclass.new.search
       @category = PositionCategory.where(position: params[:positions]).first.category #this will work once the params[:posiitons] is changed to a string and not to a int.
     end

@@ -6,8 +6,8 @@ class SavedinterviewsController < ApplicationController
   def create
     @info = CompanySaved.new(
       user_id: current_user.id,
-      company: params[:company],
-      position: params[:position]
+      company: params[:q],
+      position: params[:positions]
       )
         # authorize r
         @info.save!
