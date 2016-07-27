@@ -1,0 +1,17 @@
+<div class="flex-boxes">
+  <a href="javascript:void(0)" class="flex-box">
+    <h1 class="flex-title"><%= @name %></h1>
+    <p>Industry:   <%= @industry %></p>
+    <p>Sector:  <%= @sector %></p>
+    <p>Total Rating:</p>
+    <p class="ratings"><%= show_stars @total_rating %></p>
+    <% unless @balance_rating == nil %>
+    <p>Balance Rating:</p>
+    <p class="ratings"><%= show_stars @balance_rating %></p>
+    <% end %>
+    <% unless @benefits_rating == nil %>
+    <p>Benefits Rating:</p>
+    <p class="ratings"><%= show_stars @total_rating %></p>
+    <% end %>
+  </a>
+</div>

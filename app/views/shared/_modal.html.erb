@@ -1,0 +1,75 @@
+<div class="modal">
+  <label for="modal-4">
+    <div class="modal-trigger">Are you an employee at this company?</div>
+  </label>
+  <input class="modal-state" id="modal-4" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-4"></div>
+      <h1>Add a review!</h1>
+      <p class="modal-intro">Add a review!</p>
+      <p class="modal-content">
+      <%= form_tag('/reviews', method: :post) %>
+          <input name="company" type="hidden" value=<%= @name %> />
+
+          Headline<br>
+          <input type="text" name="headline">
+          Pros:<br>
+          <input type="text" name="pros">
+          Cons:<br>
+          <input type="text" name="cons">
+
+          Position:<br>
+          <select name="position">
+            <option value="Architecture / Drafting">Architecture / Drafting</option>
+            <option value="Art / Design / Entertainment">Art / Design / Entertainment</option>
+            <option value="Beauty / Wellness">Beauty / Wellness</option>
+            <option value="Marketing / Advertising / PR">Marketing / Advertising / PR</option>
+            <option value="Accounting / Finance">Accounting / Finance</option>
+            <option value="Administrative">Administrative</option>
+            <option value="Analyst">Analyst</option>
+            <option value="Banking / Loan / Insurance">Banking / Loan / Insurance</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Legal">Legal</option>
+            <option value="Medical / Healthcare">Medical / Healthcare</option>
+            <option value="Real Estate">Real Estate</option>
+            <option value="Business Development / Consulting">Business Development / Consulting</option>
+            <option value="Education">Education</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Hospitality">Hospitality</option>
+            <option value="Non-Profit / Volunteering">Non-Profit / Volunteering</option>
+            <option value="Product / Project Management">Product / Project Management</option>
+            <option value="Sales / Customer Care">Sales / Customer Care</option>
+            <option value="Security / Law Enforcement">Security / Law Enforcement</option>
+            <option value="Software Development / IT">Software Development / IT</option>
+            <option value="Travel / Transportation">Travel / Transportation</option>
+            <option value="Writing / Editing / Publishing">Writing / Editing / Publishing</option>
+            <option value="Facilities / General Labor">Facilities / General Labor</option>
+            <option value="Manufacturing / Production / Construction">Manufacturing / Production / Construction</option>
+            <option value="Installation / Maintenance / Repair">Installation / Maintenance / Repair</option>
+            <option value="postion">Restaurant / Food Services</option>
+            <option value="Retail">Retail</option>
+            <option value="Skilled Trade">Skilled Trade</option>
+            <option value="Sports / Fitness">Sports / Fitness</option>
+            <option value="Other">Other</option>
+          </select>
+
+          Dress code?:<br>
+          <select name="dress_code">
+            <option value="Casual">Casual</option>
+            <option value="Business Casual">Business Casual</option>
+            <option value="Fashionable">Fashionable</option>
+            <option value="Formal">Formal</option>
+          </select>
+
+        Size of company?:<br>
+          <select name="size">
+            <option value="Small">Small</option>
+            <option value="Med">Med</option>
+            <option value="Large">Large</option>
+          </select>
+          <button type="submit" value="Submit">Submit</button>
+      </p>
+    </div>
+  </div>
+</div>

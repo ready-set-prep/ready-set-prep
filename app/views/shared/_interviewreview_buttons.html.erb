@@ -1,0 +1,6 @@
+<% if policy(i).destroy? %>
+  <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
+<% end %>
+<% if policy(i).edit? %>
+  <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
+<% end %>

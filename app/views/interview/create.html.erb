@@ -1,276 +1,72 @@
 
 
-  <ul class="tabs">
-    <li class="active">Interview Tips</li>
-    <li>Attire</li>
-  </ul>
+<ul class="tabs">
+  <li class="active">Interview Tips</li>
+  <li>Attire</li>
+</ul>
 
-  <ul class="tab__content">
-    <li class="active">
-
-      <!-- <div class="content__wrapper"> -->
-        <h1>this is the glassdoor info</h1>
-
-        <div class="grid grid-pad">
-          <div class="col-1-2 ">
-            <div class="flex-boxes">
-              <a href="javascript:void(0)" class="flex-box">
-                <h1 class="flex-title"><%= @name %></h1>
-                <p>Industry:   <%= @industry %></p>
-                <p>Sector:  <%= @sector %></p>
-                <p>Total Rating:</p>
-                <p class="ratings"><%= show_stars @total_rating %></p>
-                <% unless @balance_rating == nil %>
-                <p>Balance Rating:</p>
-                <p class="ratings"><%= show_stars @balance_rating %></p>
-                <% end %>
-                <% unless @benefits_rating == nil %>
-                <p>Benefits Rating:</p>
-                <p class="ratings"><%= show_stars @total_rating %></p>
-                <% end %>
-              </a>
-            </div>
-
-            <% if Interviewreview.where(company: @name) != [] %>
-            <% Interviewreview.where(company: @name).each do |i| %>
-            <div class="flex-boxes">
-              <a href="javascript:void(0)" class="flex-box">
-
-                <p><%= i.company %></p>
-                <p>Experience:  <%= i.experience %></p>
-                <p><%= i.length %></p>
-                <p><%= i.difficulty %></p>
-
-              </a>
-            </div>
-              <% if policy(i).destroy? %>
-                <p class="controllerbtn"><%= link_to "Delete", interviewreview_path(i), method: :delete %></p>
-              <% end %>
-              <% if policy(i).edit? %>
-                <p class="controllerbtn"><%= link_to "Edit", edit_interviewreview_path(i) %></p>
-              <% end %>
-            <% end %>
-            <% end %>
-
-            <div class="flex-boxes">
-              <a href="javascript:void(0)" class="flex-box">
-                <p> Had an interview with this company? add a review! </p>
-                <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-                <p><% f.label :company %>
-                  <%= f.hidden_field :company, :value => @name %>
-                </p>
-
-                <p><%= f.label :experience %>
-                  <%= f.text_area :experience %>
-                </p>
-
-                <p><%= f.label :length %>
-                  <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-                </p>
-                <p>
-                  <%= f.label :difficulty %>
-                  <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-                </p>
-                <p>
-                  <%= f.submit %>
-                </p>
-                <% end %>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-1-2">
-            <ul>
-              <li class>
-                <div class="flex-boxes">
-                  <a href="javascript:void(0)" class="flex-box">
-                    <% unless @review == nil %>
-                    <p>Headline:   <%= @review["headline"] %></p>
-                    <p>Pros:   <%= @review["pros"] %></p>
-                    <p>Cons:   <%= @review["cons"] %></p>
-                    <% end %>
-                  </a>
-                </div>
-
-                <% if Review.where(company: @name) != [] %>
-                <%#I dont know how this keeps getting taken out everytime but please if you
-                do a merge, leave this in. It is important.  %>
-                <% Review.where(company: @name).each do |f| %>
-                <div class="flex-boxes">
-                  <a href="javascript:void(0)" class="flex-box">
-                    <p><%= f.headline %></p>
-                    <p>Pros:  <%= f.pros %></p>
-                    <p>Cons:  <%= f.cons %></p>
-                  </a>
-
-                </div>
-                  <% if policy(f).destroy? %>
-                    <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
-                  <% end %>
-                  <% if policy(f).destroy? %>
-                    <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
-                  <% end %>
-                <% end %>
-                <% end %>
-
-<%#im so sorry for the mess you are about to see.  %>
-                <div class="modal">
-                  <label for="modal-4">
-                    <div class="modal-trigger">Are you an employee at this company?</div>
-                  </label>
-                  <input class="modal-state" id="modal-4" type="checkbox" />
-                  <div class="modal-fade-screen">
-                    <div class="modal-inner">
-                      <div class="modal-close" for="modal-4"></div>
-                      <h1>Add a review!</h1>
-                      <p class="modal-intro">Add a review!</p>
-                      <p class="modal-content">
-                      <%= form_tag('/reviews', method: :post) %>
-                          <input name="company" type="hidden" value=<%= @name %> />
-
-                          Headline<br>
-                          <input type="text" name="headline">
-                          Pros:<br>
-                          <input type="text" name="pros">
-                          Cons:<br>
-                          <input type="text" name="cons">
-
-                          Position:<br>
-                          <select name="position">
-                            <option value="Architecture / Drafting">Architecture / Drafting</option>
-                            <option value="Art / Design / Entertainment">Art / Design / Entertainment</option>
-                            <option value="Beauty / Wellness">Beauty / Wellness</option>
-                            <option value="Marketing / Advertising / PR">Marketing / Advertising / PR</option>
-                            <option value="Accounting / Finance">Accounting / Finance</option>
-                            <option value="Administrative">Administrative</option>
-                            <option value="Analyst">Analyst</option>
-                            <option value="Banking / Loan / Insurance">Banking / Loan / Insurance</option>
-                            <option value="Human Resources">Human Resources</option>
-                            <option value="Legal">Legal</option>
-                            <option value="Medical / Healthcare">Medical / Healthcare</option>
-                            <option value="Real Estate">Real Estate</option>
-                            <option value="Business Development / Consulting">Business Development / Consulting</option>
-                            <option value="Education">Education</option>
-                            <option value="Engineering">Engineering</option>
-                            <option value="Hospitality">Hospitality</option>
-                            <option value="Non-Profit / Volunteering">Non-Profit / Volunteering</option>
-                            <option value="Product / Project Management">Product / Project Management</option>
-                            <option value="Sales / Customer Care">Sales / Customer Care</option>
-                            <option value="Security / Law Enforcement">Security / Law Enforcement</option>
-                            <option value="Software Development / IT">Software Development / IT</option>
-                            <option value="Travel / Transportation">Travel / Transportation</option>
-                            <option value="Writing / Editing / Publishing">Writing / Editing / Publishing</option>
-                            <option value="Facilities / General Labor">Facilities / General Labor</option>
-                            <option value="Manufacturing / Production / Construction">Manufacturing / Production / Construction</option>
-                            <option value="Installation / Maintenance / Repair">Installation / Maintenance / Repair</option>
-                            <option value="postion">Restaurant / Food Services</option>
-                            <option value="Retail">Retail</option>
-                            <option value="Skilled Trade">Skilled Trade</option>
-                            <option value="Sports / Fitness">Sports / Fitness</option>
-                            <option value="Other">Other</option>
-                          </select>
-
-                          Dress code?:<br>
-                          <select name="dress_code">
-                            <option value="Casual">Casual</option>
-                            <option value="Business Casual">Business Casual</option>
-                            <option value="Fashionable">Fashionable</option>
-                            <option value="Formal">Formal</option>
-                          </select>
-
-                        Size of company?:<br>
-                          <select name="size">
-                            <option value="Small">Small</option>
-                            <option value="Med">Med</option>
-                            <option value="Large">Large</option>
-                          </select>
-                          <button type="submit" value="Submit">Submit</button>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-<%# the mess is over im sorry i know that was terrible.  %>
-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!-- </div> -->
-        </li>
-      </li>
-    <!-- </ul> -->
-
-          <li>
-            <div class="content__wrapper">
-              <!-- <h1>this is the amazon info</h1>
-
-              <% @items.each do |r| %>
-              <div class="cards" >
-                <div class="insideimage">
-                  <a href=<%= r.url %>>
-                    <img src=<%= r.image %>></img>
-                  </a>
-                </div>
-                <div class="insidetext">
-                  <%= r.clothing_title %>
-                  <%= r.price %>
-                </div>
-                <%= form_for :number, url: amazoncart_index_path(r.asin) do |f| %>
-                <%= f.submit "add to cart" %>
-                <%= f.hidden_field :ASIN, value: r.asin %>
-                <% end %>
-
-              </div> -->
-
-              <p>Based on your job search we suggest the <%= @category %> category, but other attire is avaliable to you as well</p>
-              <div class="pinwrapper">
-                <div class="fashionable">
-                  <a data-pin-do="embedBoard" data-pin-board-width="250" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/fashionable-interview-attire/"></a>
-                </div>
-                <div class="conservative">
-                  <a data-pin-do="embedBoard" data-pin-board-width="250" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/conservative-interview-attire/"></a>
-                </div>
-                <div class="bizcas">
-                  <a data-pin-do="embedBoard" data-pin-board-width="250" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/business-casual-interview-attire/"></a>
-                </div>
-                <div class="casual">
-                  <a data-pin-do="embedBoard" data-pin-board-width="250" data-pin-scale-height="240" data-pin-scale-width="80" href="https://www.pinterest.com/readysetprep/casual-interview-attire/"></a>
-                </div>
-
-              </div>
-              <div id="columns">
-                <% @pins.each do |p| %>
-                <figure>
-                  <a href=<%= p.url %>>
-                    <img src=<%= p.image %>></img>
-                  </a>
-                  <figcaption><%= p.note %></figcaption>
-                </figure>
-                <% end %>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-<!-- DIRECTIONS PANEL   ---->
-        <div id="floating-panel">
-          <b>Mode of Travel: </b>
-          <select id="mode">
-            <option value="DRIVING">Driving</option>
-            <option value="WALKING">Walking</option>
-            <option value="BICYCLING">Bicycling</option>
-            <option value="TRANSIT">Transit</option>``
-          </select>
-        </div>
-
-<!--  MAP -->
-        <div id="map"></div>
-
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
-        </script>
-
-        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+<ul class="tab__content">
+  <li class="active">
+    <h1>this is the glassdoor info</h1>
+    <div class="grid grid-pad">
+      <div class="col-1-2 ">
+        <%= render partial: "/shared/company_info" %>
+        <% if Interviewreview.where(company: @name) != [] %>
+        <% Interviewreview.where(company: @name).each do |i| %>
+        <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
+        <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
         <% end %>
+        <% end %>
+        <div class="flex-boxes">
+          <a href="javascript:void(0)" class="flex-box">
+            <p> Had an interview with this company? add a review! </p>
+            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
+            <p><% f.label :company %>
+              <%= f.hidden_field :company, :value => @name %>
+            </p>
+            <p><%= f.label :experience %>
+              <%= f.text_area :experience %>
+            </p>
+            <p><%= f.label :length %>
+              <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
+            </p>
+            <p>
+              <%= f.label :difficulty %>
+              <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+            <% end %>
+          </a>
+        </div>
+      </div>
+      <div class="col-1-2">
+        <ul>
+          <li class>
+            <%= render partial: "/shared/glassdoor_review" %>
+            <%= render partial: "/shared/user_reviews" %>
+            <%= render partial: "/shared/modal" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+</li>
+<li>
+  <div class="content__wrapper">
+    <%# render partial: "/shared/amazon_info" %>
+    <%= render partial: "/shared/pintrest_widgets" %>
+    <%= render partial: "/shared/pintrest_data" %>
+
+  </div>
+</li>
+</ul>
+<%= render partial: "/shared/directions_panel" %>
+<div id="map"></div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+</script>
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
