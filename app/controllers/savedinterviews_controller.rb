@@ -1,4 +1,6 @@
 class SavedinterviewsController < ApplicationController
+  def index
+  end
   def create
     r = CompanySaved.new(
       user_id: current_user.id,

@@ -18,6 +18,8 @@
 
       <% if current_user%>
       <%= button_to 'Sign out', destroy_user_session_path, method: :delete, :class => "buttonTo" %>
+      <%= link_to 'Saved Interviews', savedinterviews_path, method: :get, :class => "buttonTo" %>
+
       <% else %>
       <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
