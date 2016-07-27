@@ -1,0 +1,3 @@
+class CompanysavedController < ApplicationController
+
+end  
