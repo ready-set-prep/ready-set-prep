@@ -23,6 +23,10 @@
    font-weight: normal;
    src: asset-url('Aquatico-Regular.otf') format("opentype");
  }
+ .buttonsInNavBar {
+   display: inline-block;
+   float: right;
+ }
 
  .backgroundColor {
    background-color: #f2f0f4;
