@@ -1,7 +1,123 @@
 
   <div class="searchform">
 
-    <div class="center">
+    <%# if current_user %>
+    <%# form_for :q, url: interview_index_path do |f| %>
+    <%# f.text_field :q, placeholder: "Company" %>
+
+<!---   POSTIONS DROPDOWN PANEL -->
+<%#
+    <div class="positions">Positions<span class="chosen-catagory"></span></div>
+
+
+
+        <ul class="jobcat scroll">
+            <!-- FASHION -->
+
+          <li class="kinds-of" value="Architecture / Drafting">
+            Architecture / Drafting
+          </li>
+          <li class="kinds-of" value="Art / Design / Entertainment">
+            Art / Design / Entertainment
+          </li>
+          <li class="kinds-of" value="Beauty / Wellness">
+            Beauty / Wellness
+          </li>
+          <li class="kinds-of" value="Marketing / Advertising / PR">
+            Marketing / Advertising / PR
+          </li>
+
+        <!-- CONSERVATIVE -->
+
+        <li class="kinds-of" value="Accounting / Finance">
+          Accounting / Finance
+        </li>
+        <li class="kinds-of" value="Administrative">
+          Administrative
+        </li>
+        <li class="kinds-of" value="Product / Project Management">
+          Product / Project Management
+        </li>
+        <li class="kinds-of" value="Banking / Loan / Insurance">
+          Banking / Loan / Insurance
+        </li>
+        <li class="kinds-of" value="Human Resources">
+          Human Resources
+        </li>
+        <li class="kinds-of" value="Legal">
+          Legal
+        </li>
+        <li class="kinds-of" value="Medical / Healthcare">
+          Medical / Healthcare
+        </li>
+        <li class="kinds-of" value="Real Estate">
+          Real Estate
+        </li>
+        <li class="kinds-of" value="Science / Research">
+          Science / Research
+        </li>
+        <li class="kinds-of" value="Senior Management">
+          Senior Management
+        </li>
+        <li class="kinds-of" value="Human Resources">
+          Human Resources
+        </li>
+
+        <!-- BUSINESS CASUAL -->
+        <li class="kinds-of" value="Business Development / Consulting">
+          Business Development / Consulting
+        </li>
+        <li class="kinds-of" value="Non-Profit / Volunteering">
+          Non-Profit / Volunteering
+        </li>
+        <li class="kinds-of" value="Product / Project Management">
+          Product / Project Management
+        </li>
+        <li class="kinds-of"value="Banking / Loan / Insurance">
+          Banking / Loan / Insurance
+        </li>
+        <li class="kinds-of" value="Sales / Customer Care">
+          Sales / Customer Care
+        </li>
+        <li class="kinds-of" value="Security / Law Enforcement">
+          Security / Law Enforcement
+        </li>
+        <li class="kinds-of" value="Software Development">
+          Software Development / IT
+        </li>
+        <li class="kinds-of" value="Writing / Editing / Publishing">
+          Writing / Editing / Publishing
+        </li>
+        <li class="kinds-of" value="Other">
+          Other
+        </li>
+
+
+          <!--  CASUAL -->
+          <li class="kinds-of" value="Facilities / General Labor">
+            Facilities / General Labor
+          </li>
+          <li class="kinds-of" value="Manufacturing / Production / Construction">
+            Manufacturing / Production / Construction
+          </li>
+          <li class="kinds-of" value="Installation / Maintenance / Repair">
+            Installation / Maintenance / Repair
+          </li>
+          <li class="kinds-of" value="Restaurant / Food Services">
+            Restaurant / Food Services
+          </li>
+          <li class="kinds-of" value="Retail">
+            Retail
+          </li>
+          <li class="kinds-of" value="Skilled Trade">
+            Skilled Trade
+          </li>
+          <li class="kinds-of" value="Sports / Fitness">
+            Sports / Fitness
+          </li>
+        </ul><!-- end of jobcat -->
+%>
+
 <% if current_user %>
 <%= notice %>
     <%= form_tag('/interview', method: :post) %>
@@ -49,11 +165,12 @@
       </select>
       <button type="submit" value="Submit">Submit</button>
 
-    </div>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
-</div>
+    <%# f.text_field :position, placeholder: "Position" %>
+    <%# f.submit "Prep!", :class => 'prep' %>
+    <%# end %>
+</div><!--  end of searchform  -->
 
 
   <!-- bullets -->
