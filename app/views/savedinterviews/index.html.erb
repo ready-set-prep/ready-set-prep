@@ -4,6 +4,8 @@ we need to each over or is nil?
   <% @companies.each do |p| %>
   <figure>
     <%= button_to 'whatever', {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company} , :method=>:post  %>
+    <%= p.position %>
+    <%= p.company %>
   </figure>
   <% end %>
 </div>
