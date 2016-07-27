@@ -146,11 +146,20 @@ button:focus {
 
 
 .prep{
-  margin-top: 4em;
+  // margin-top: 4em;
 }
 /**  END OF SEARCHFORM    ********/
 
 
+/*******  input box for job choice  ***/
+.job-choice{
+  width: 100%;
+
+  #remove{/**** the  x button  *****/
+    font-size: 5px;
+  }
+}
+/****************  end  *********/
 
 
 /***  BUTTON FOR LOGIN PAGE *******/
