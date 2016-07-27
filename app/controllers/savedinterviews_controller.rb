@@ -1,14 +1,16 @@
 class SavedinterviewsController < ApplicationController
   def index
+    @companies = CompanySaved.where(user_id: current_user.id)
+
   end
   def create
-    r = CompanySaved.new(
+    @info = CompanySaved.new(
       user_id: current_user.id,
       company: params[:company],
-      position_categories: params[:position]
+      position: params[:position]
       )
         # authorize r
-        r.save!
+        @info.save!
   end
 
     def destroy
