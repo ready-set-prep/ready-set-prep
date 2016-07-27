@@ -19,5 +19,6 @@ class SavedinterviewsController < ApplicationController
         # authorize r
         r.first.destroy
       end
+      redirect_to :back
     end
 end

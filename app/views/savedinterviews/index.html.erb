@@ -6,6 +6,10 @@ we need to each over or is nil?
     <%= button_to 'whatever', {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company} , :method=>:post  %>
     <%= p.position %>
     <%= p.company %>
+    <%= button_to 'x', {:controller => "savedinterviews", :id => p.id, :action => "destroy" }, {:method => :delete} %>
+
   </figure>
+    <%# button_to 'x', savedinterview_path(p), method: :delete %>
   <% end %>
+
 </div>
