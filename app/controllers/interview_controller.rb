@@ -8,11 +8,11 @@ class InterviewController < ApplicationController
       glassdoor_data
       @items = Amazonclass.new(@amazonparams).search
       @pins = Pintrestclass.new.search
-      @category = PositionCategory.where(position: params[:positions]).first.category
+      @category = PositionCategory.where(position: params[:positions]).category
     elsif params[:positions] == ""
       @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       @pins = Pintrestclass.new.search
-      @category = PositionCategory.where(position: params[:positions]).first.category
+      @category = PositionCategory.where(position: params[:positions]).category
       glassdoor_api_call
       glassdoor_data
     else
