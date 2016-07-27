@@ -8,7 +8,7 @@
 <!---   POSTIONS DROPDOWN PANEL -->
 
     <div class="positions">Positions<span class="chosen-catagory"></span></div>
-      
+
 
 
         <ul class="jobcat scroll">
@@ -211,7 +211,7 @@
       </li>
     </ul>
   </div>
-  <!--  -->
+
   <% else %>
   <form action="/users/sign_in", method="GET">
     <button class="loginbutton"> LOGIN </button>
@@ -223,32 +223,3 @@
                             Or need help with finding appropriate interview attire. Then this is the site for you!</p>
 
   <% end %>
-
-
-
-
-
-  <footer><div class="circle">
-
-  </div></footer>
-
-
-  <script>
-  $(function() {
-    $("#modal-1").on("change", function() {
-      if ($(this).is(":checked")) {
-        $("body").addClass("modal-open");
-      } else {
-        $("body").removeClass("modal-open");
-      }
-    });
-
-    $(".modal-fade-screen, .modal-close").on("click", function() {
-      $(".modal-state:checked").prop("checked", false).change();
-    });
-
-    $(".modal-inner").on("click", function(e) {
-      e.stopPropagation();
-    });
-  });
-  </script>

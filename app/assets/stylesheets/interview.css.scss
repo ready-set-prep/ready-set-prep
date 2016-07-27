@@ -118,7 +118,6 @@ html, body {
 
 body{
 	font-family: 'Open Sans', sans-serif;
-	color: #F6F6F6;
 }
 
 
@@ -374,4 +373,32 @@ div#columns:hover figure:not(:hover) {
 @media screen and (max-width: 750px) {
   #columns { column-gap: 0px; }
   #columns figure { width: 100%; }
+}
+
+// pintrest board styles
+.pinwrapper {
+  margin: 15px;
+  height: 360px;
+  width: 100%;
+  display: -webkit-box;
+  padding: 10px;
+
+}
+.fashionable {
+  position: relative;
+  padding: 2%;
+}
+.conservative {
+  position: relative;
+  padding: 2%;
+
+}
+
+.bizcas {
+  position: relative;
+  padding: 2%;
+}
+.casual {
+  position: relative;
+  padding: 2%;
 }

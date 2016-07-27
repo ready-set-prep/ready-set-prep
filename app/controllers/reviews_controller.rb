@@ -2,11 +2,15 @@ class ReviewsController < ApplicationController
   def create
     r = Review.new(
       user_id: current_user.id,
-      company: params[:reviews][:company],
-      headline: params[:reviews][:headline],
-      pros: params[:reviews][:pros],
-      cons: params[:reviews][:cons]
+      company: params[:company],
+      headline: params[:headline],
+      pros: params[:pros],
+      cons: params[:cons],
+      position: params[:position],
+      dress_code: params[:dress_code],
+      size: params[:size]
       )
+      binding.pry
       authorize r
       r.save!
   end
