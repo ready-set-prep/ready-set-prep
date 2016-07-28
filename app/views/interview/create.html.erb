@@ -1,73 +1,48 @@
 
 <ul class="tabs">
   <li class="active">Interview Tips</li>
-  <li>Attire</li>
+  <li>Outfit Inspiration</li>
 </ul>
 
 <ul class="tab__content">
   <li class="active">
     <!-- <div class="content__wrapper"> -->
-    <h1>this is the glassdoor info</h1>
-      <%= form_tag("/savedinterviews", method: "post") do %>
-        <input type="hidden" name="company" value=<%= @name %>>
-        <input type="hidden" name="position" value="<%= params[:positions] %>">
-        <button type="submit" value="Submit"> Save </button>
+    <%= form_tag("/savedinterviews", method: "post") do %>
+    <input type="hidden" name="company" value=<%= @name %>>
+    <input type="hidden" name="position" value="<%= params[:positions] %>">
+    <button type="submit" value="Submit"> Save </button>
     <% end %>
-
+<!--good above here -->
     <div class="grid grid-pad">
+      <!--good above here -->
       <div class="col-1-2 ">
+          <%= render partial: "/shared/company_info" %>
 
+          <% if Interviewreview.where(company: @name) != [] %>
+          <% Interviewreview.where(company: @name).each do |i| %>
+          <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
+          <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
+          <% end %>
+          <% end %>
 
-        <%= render partial: "/shared/company_info" %>
-
-
-        <% if Interviewreview.where(company: @name) != [] %>
-        <% Interviewreview.where(company: @name).each do |i| %>
-        <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
-        <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
-        <% end %>
-        <% end %>
-
-        <div class="flex-boxes">
-          <a href="javascript:void(0)" class="flex-box">
-            <p> Had an interview with this company? add a review! </p>
-            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-            <p><% f.label :company %>
-              <%= f.hidden_field :company, :value => @name %>
-            </p>
-
-            <p><%= f.label :experience %>
-              <%= f.text_area :experience %>
-            </p>
-
-            <p><%= f.label :length %>
-              <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-            </p>
-            <p>
-              <%= f.label :difficulty %>
-              <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
-
-            <% end %>
-          </a>
-        </div>
-        <div class="flex-boxes">
+              <div class="flex-boxes">
+                <a href="javascript:void(0)" class="flex-box">
+                  <%= render partial: "/shared/intervew_questionair" %>
+                </a>
+              </div>
+          <div class="flex-boxes">
           <a href="javascript:void(0)" class="flex-box">
             <%= render partial: "/shared/directions_panel" %>
 
 
-            <div id="map"></div>
+              <div id="map"></div>
 
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
             </script>
           </a>
         </div>
-
-      </div>
+    </div>
 
 
       <div class="col-1-2">
@@ -77,15 +52,8 @@
             <%= render partial: "/shared/modal" %>
 
             <%= render partial: "/shared/user_reviews" %>
-
-
-
-
-
-
-
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -99,16 +67,16 @@
 
   <div class="content__wrapper">
     <%# render partial: "/shared/amazon_info" %>
-    <a href="/pintrestselections?name=fashionable">Fashionable</a>
-    <a href="/pintrestselections?name=business">Business</a>
-    <a href="/pintrestselections?name=casual">Casual</a>
-    <a href="/pintrestselections?name=conservative">Conservative</a>
-
+<p>
+  The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
+</p>
     <%= render partial: "/shared/pintrest_widgets" %>
     <%= render partial: "/shared/pintrest_data" %>
 
-  </div>
-</li>
+              </div>
+            </li>
+    </div>
+  </li>
 </ul>
 
 <script async defer src="//assets.pinterest.com/js/pinit.js"></script>

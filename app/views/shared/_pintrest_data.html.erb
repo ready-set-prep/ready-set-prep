@@ -1,4 +1,5 @@
 <div id="columns">
+  <% if @pins %>
   <% @pins.each do |p| %>
   <figure>
     <a href=<%= p.url %>>
@@ -6,5 +7,6 @@
     </a>
     <figcaption><%= p.note %></figcaption>
   </figure>
+  <% end %>
   <% end %>
 </div>
