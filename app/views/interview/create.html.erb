@@ -14,40 +14,37 @@
     <input type="hidden" name="position" value="<%= params[:positions] %>">
     <button type="submit" value="Submit"> Save </button>
     <% end %>
-
+<!--good above here -->
     <div class="grid grid-pad">
+      <!--good above here -->
       <div class="col-1-2 ">
+          <%= render partial: "/shared/company_info" %>
 
+          <% if Interviewreview.where(company: @name) != [] %>
+          <% Interviewreview.where(company: @name).each do |i| %>
+          <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
+          <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
+          <% end %>
+          <% end %>
 
-        <%= render partial: "/shared/company_info" %>
-
-
-        <% if Interviewreview.where(company: @name) != [] %>
-        <% Interviewreview.where(company: @name).each do |i| %>
-        <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
-        <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
-        <% end %>
-        <% end %>
-
-        <div class="flex-boxes">
-          <a href="javascript:void(0)" class="flex-box">
-            <%= render partial: "/shared/intervew_questionair" %>
-          </a>
-        </div>
-        <div class="flex-boxes">
+              <div class="flex-boxes">
+                <a href="javascript:void(0)" class="flex-box">
+                  <%= render partial: "/shared/intervew_questionair" %>
+                </a>
+              </div>
+          <div class="flex-boxes">
           <a href="javascript:void(0)" class="flex-box">
             <%= render partial: "/shared/directions_panel" %>
 
 
-            <div id="map"></div>
+              <div id="map"></div>
 
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
             </script>
           </a>
         </div>
-
-      </div>
+    </div>
 
 
       <div class="col-1-2">
@@ -57,32 +54,20 @@
             <%= render partial: "/shared/modal" %>
 
             <%= render partial: "/shared/user_reviews" %>
-
-
-
-
-
-
-
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
+
+
+            <li>
+              <div class="content__wrapper">
+                <%# render partial: "/shared/amazon_info" %>
+                <%= render partial: "/shared/pintrest_widgets" %>
+                <%= render partial: "/shared/pintrest_data" %>
+              </div>
+            </li>
     </div>
-  </div>
-</div>
-<!-- </div> -->
-</li>
-</li>
-<!-- </ul> -->
-
-<li>
-  <div class="content__wrapper">
-    <%# render partial: "/shared/amazon_info" %>
-    <%= render partial: "/shared/pintrest_widgets" %>
-    <%= render partial: "/shared/pintrest_data" %>
-
-  </div>
-</li>
+  </li>
 </ul>
 
 <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
