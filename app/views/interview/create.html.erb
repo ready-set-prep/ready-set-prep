@@ -9,10 +9,10 @@
 
     <!-- <div class="content__wrapper"> -->
     <h1>this is the glassdoor info</h1>
-      <%= form_tag("/savedinterviews", method: "post") do %>
-        <input type="hidden" name="company" value=<%= @name %>>
-        <input type="hidden" name="position" value="<%= params[:positions] %>">
-        <button type="submit" value="Submit"> Save </button>
+    <%= form_tag("/savedinterviews", method: "post") do %>
+    <input type="hidden" name="company" value=<%= @name %>>
+    <input type="hidden" name="position" value="<%= params[:positions] %>">
+    <button type="submit" value="Submit"> Save </button>
     <% end %>
 
     <div class="grid grid-pad">
@@ -31,28 +31,7 @@
 
         <div class="flex-boxes">
           <a href="javascript:void(0)" class="flex-box">
-            <p> Had an interview with this company? add a review! </p>
-            <%= form_for :interview, url: interviewreviews_path, method: :post do |f| %>
-            <p><% f.label :company %>
-              <%= f.hidden_field :company, :value => @name %>
-            </p>
-
-            <p><%= f.label :experience %>
-              <%= f.text_area :experience %>
-            </p>
-
-            <p><%= f.label :length %>
-              <%= f.select(:length, ['Less than 30 min', 'About 30 min', 'Less then an hour', '1-2 hours', '2-4 hours', '5+ hours']) %>
-            </p>
-            <p>
-              <%= f.label :difficulty %>
-              <%= f.select(:difficulty, ['very easy', 'easy', 'medium', 'difficult', 'very difficult']) %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
-
-            <% end %>
+            <%= render partial: "/shared/intervew_questionair" %>
           </a>
         </div>
         <div class="flex-boxes">
