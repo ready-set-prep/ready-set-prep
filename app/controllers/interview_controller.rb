@@ -6,6 +6,7 @@ class InterviewController < ApplicationController
       @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       glassdoor_api_call
       glassdoor_data
+      query_shop
       # @items = Amazonclass.new(@amazonparams).search
       @category = PositionCategory.where(position: params[:positions].strip).first.category
       params_for_pintrest(@category)
@@ -50,5 +51,9 @@ class InterviewController < ApplicationController
       #you did not put in valid things
     end
     return @pins
+  end
+
+  def query_shop
+    @shop = Shopclass.new.search
   end
 end
