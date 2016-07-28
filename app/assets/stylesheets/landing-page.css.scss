@@ -426,3 +426,25 @@ button:focus {
   font-family: Tahoma, Geneva, sans-serif;
 }
 //
+
+/******* Media query for searchform landingpage area  ***/
+@media (min-width: 568px) and (max-width: 749px) {
+  .searchform {
+    width: 250px;
+
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1024px) {
+  .searchform {
+    width: 300px;
+
+  }
+}
+
+@media (min-width: 1025px) {
+  .searchform {
+    width: 350px;
+
+  }
+}
