@@ -2,81 +2,90 @@
 <ul class="tabs">
   <li class="active">Interview Tips</li>
   <li>Outfit Inspiration</li>
+  <li>Shop Clothes</li>
 </ul>
 
-<ul class="tab__content">
-  <li class="active">
-    <!-- <div class="content__wrapper"> -->
-    <%= form_tag("/savedinterviews", method: "post") do %>
-    <input type="hidden" name="company" value=<%= @name %>>
-    <input type="hidden" name="position" value="<%= params[:positions] %>">
-    <button type="submit" value="Submit"> Save </button>
-    <% end %>
-<!--good above here -->
-    <div class="grid grid-pad">
-      <!--good above here -->
-      <div class="col-1-2 ">
-          <%= render partial: "/shared/company_info" %>
+  <ul class="tab__content">
+    <!-- comapny reviews -->
+    <li class="active">
+      <!-- <div class="content__wrapper"> -->
+      <%= form_tag("/savedinterviews", method: "post") do %>
+      <input type="hidden" name="company" value=<%= @name %>>
+      <input type="hidden" name="position" value="<%= params[:positions] %>">
+      <button type="submit" value="Submit"> Save </button>
+      <% end %>
+  <!--good above here -->
+      <div class="grid grid-pad">
+        <!--good above here -->
+        <div class="col-1-2 ">
+            <%= render partial: "/shared/company_info" %>
 
-          <% if Interviewreview.where(company: @name) != [] %>
-          <% Interviewreview.where(company: @name).each do |i| %>
-          <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
-          <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
-          <% end %>
-          <% end %>
+            <% if Interviewreview.where(company: @name) != [] %>
+            <% Interviewreview.where(company: @name).each do |i| %>
+            <%= render partial: "/shared/interviewreview_partial", locals: { i: i } %>
+            <%= render partial: "/shared/interviewreview_buttons", locals: { i: i } %>
+            <% end %>
+            <% end %>
 
-              <div class="flex-boxes">
-                <a href="javascript:void(0)" class="flex-box">
-                  <%= render partial: "/shared/intervew_questionair" %>
-                </a>
-              </div>
-          <div class="flex-boxes">
-          <a href="javascript:void(0)" class="flex-box">
-            <%= render partial: "/shared/directions_panel" %>
+                <div class="flex-boxes">
+                  <a href="javascript:void(0)" class="flex-box">
+                    <%= render partial: "/shared/intervew_questionair" %>
+                  </a>
+                </div>
+            <div class="flex-boxes">
+            <a href="javascript:void(0)" class="flex-box">
+              <%= render partial: "/shared/directions_panel" %>
 
 
-              <div id="map"></div>
+                <div id="map"></div>
 
-            <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
-            </script>
-          </a>
+              <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJh1HtXl2x_IC54PoCH4qKYwhsxKNkAhs&callback=initMap">
+              </script>
+            </a>
+          </div>
+      </div>
+
+
+        <div class="col-1-2">
+          <ul>
+            <li class>
+              <%= render partial: "/shared/glassdoor_review" %>
+              <%= render partial: "/shared/modal" %>
+
+              <%= render partial: "/shared/user_reviews" %>
+            </li>
+          </ul>
         </div>
-    </div>
-
-
-      <div class="col-1-2">
-        <ul>
-          <li class>
-            <%= render partial: "/shared/glassdoor_review" %>
-            <%= render partial: "/shared/modal" %>
-
-            <%= render partial: "/shared/user_reviews" %>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
-</div>
-<!-- </div> -->
-</li>
-</li>
-<!-- </ul> -->
-
-<li>
-
-  <div class="content__wrapper">
-    <%# render partial: "/shared/amazon_info" %>
-<p>
-  The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
-</p>
-    <%= render partial: "/shared/pintrest_widgets" %>
-    <%= render partial: "/shared/pintrest_data" %>
-
-              </div>
-            </li>
-    </div>
+  <!-- </div> -->
   </li>
-</ul>
+  </li>
+  <!-- </ul> -->
+
+  <li>
+<!--pintrest  -->
+    <div class="content__wrapper">
+      <%# render partial: "/shared/amazon_info" %>
+  <p>
+    The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
+  </p>
+      <%= render partial: "/shared/pintrest_widgets" %>
+      <%= render partial: "/shared/pintrest_data" %>
+
+                </div>
+              </li>
+      </div>
+    </li>
+
+<!--shop  -->
+    <li>
+      <div class="shop">
+      </div>
+    </li>
+
+  </ul>
 
 <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
