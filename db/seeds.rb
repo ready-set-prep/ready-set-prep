@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first
 thing = [
   ["fashion", "Architecture / Drafting"],
-  ["fasion", "Art / Design / Entertainment"],
+  ["fashion", "Art / Design / Entertainment"],
   ["fashion", "Beauty / Wellness"],
   ["fashion", "Marketing / Advertising / PR"],
   ["conservative", "Accounting / Finance"],
