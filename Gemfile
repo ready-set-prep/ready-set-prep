@@ -28,7 +28,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
-require 'shopsense'
+gem 'shopsense'
 
 group :development, :test do
   gem 'byebug', platform: :mri
