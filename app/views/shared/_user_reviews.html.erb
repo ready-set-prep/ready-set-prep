@@ -1,0 +1,13 @@
+<% if Review.where(company: @name) != [] %>
+<% Review.where(company: @name).each do |f| %>
+<%= render partial: "/shared/reviews", locals: { f: f } %>
+
+
+  <% if policy(f).destroy? %>
+    <p class="controllerbtn"><%= link_to "Delete", review_path(f), method: :delete %></p>
+  <% end %>
+  <% if policy(f).destroy? %>
+    <p class="controllerbtn"><%= link_to "Edit", edit_review_path(f) %></p>
+  <% end %>
+<% end %>
+<% end %>

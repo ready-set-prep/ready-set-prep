@@ -6,19 +6,19 @@ class InterviewController < ApplicationController
       @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       glassdoor_api_call
       glassdoor_data
-      @items = Amazonclass.new(@amazonparams).search
+      # @items = Amazonclass.new(@amazonparams).search
       @pins = Pintrestclass.new.search
-      @category = PositionCategory.find_by(position: "Architecture / Drafting").category
+      @category = PositionCategory.where(position: params[:positions].strip).first.category
     elsif params[:positions] == ""
       @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       @pins = Pintrestclass.new.search
-      @category = PositionCategory.find_by(position: params[:positions]).category
+      @category = PositionCategory.where(position: params[:positions].strip).first.category
       glassdoor_api_call
       glassdoor_data
     else
-      @items = Amazonclass.new(@amazonparams).search
+      # @items = Amazonclass.new(@amazonparams).search
       @pins = Pintrestclass.new.search
-      @category = PositionCategory.find_by(position: params[:positions]).category #this will work once the params[:posiitons] is changed to a string and not to a int.
+      @category = PositionCategory.where(position: params[:positions].strip).first.category #this will work once the params[:posiitons] is changed to a string and not to a int.
     end
   end
 

@@ -1,0 +1,9 @@
+<div class="flex-boxes">
+  <a href="javascript:void(0)" class="flex-box">
+    <% unless @review == nil %>
+    <p>Headline:   <%= @review["headline"] %></p>
+    <p>Pros:   <%= @review["pros"] %></p>
+    <p>Cons:   <%= @review["cons"] %></p>
+    <% end %>
+  </a>
+</div>

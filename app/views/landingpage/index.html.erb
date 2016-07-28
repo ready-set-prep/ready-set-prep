@@ -9,6 +9,12 @@
 <!---   POSTIONS DROPDOWN PANEL -->
 
     <div class="positions">Positions:</div>
+    <%# if current_user %>
+    <%# form_for :q, url: interview_index_path do |f| %>
+    <%# f.text_field :q, placeholder: "Company" %>
+
+<!---   POSTIONS DROPDOWN PANEL -->
+
 
 
 
@@ -120,11 +126,7 @@
 
     <!-- <div class="job-choice"> -->
 
-        <input autocomplete=""class="chosen-catagory" name="positions" placeholder="Options">
-
-
-
-
+        <input autocomplete="" class="chosen-catagory" name="positions" placeholder="Options">
 
 
     <button type="submit" value="Submit">Submit</button>
@@ -133,97 +135,101 @@
 
 
   <!-- bullets -->
-  <div class="bulletcase">
-    <ul class="bullets">
-      <li class="bullet">
-        <div class="bullet-icon bullet-icon-1">
-        </div>
-        <div class="bullet-content">
-          <h2>Applying for the Job</h2>
-          <p>
-            Read and follow instructions carefully.
-            Always take a few minutes to review the entire application.
-          </p>
-          <div class="modal">
-            <label for="modal-1">
-              <div class="modal-trigger">Read More</div>
-            </label>
-            <input class="modal-state" id="modal-1" type="checkbox" />
-            <div class="modal-fade-screen">
-              <div class="modal-inner">
-                <div class="modal-close" for="modal-1"></div>
-                <h1>Applying for the Job</h1>
-                <p class="modal-intro">Tips on applying for the job you want!</p>
-                <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
-              </div>
-            </div>
-          </div>
 
-        </div>
-      </li>
-      <li class="bullet">
-        <div class="bullet-icon bullet-icon-2">
-        </div>
-        <div class="bullet-content">
-          <h2>Prepare for Interview</h2>
-          <p>
-            Arrive prepared with the information you need.
-            Be sure to bring your resume, social security card, driver’s license, etc.
-            It’s always better if have too much information than not enough.
-          </p>
-          <div class="modal">
-            <label for="modal-2">
-              <div class="modal-trigger">Read More</div>
-            </label>
-            <input class="modal-state" id="modal-2" type="checkbox" />
-            <div class="modal-fade-screen">
-              <div class="modal-inner">
-                <div class="modal-close" for="modal-2"></div>
-                <h1>Prepare for Interview</h1>
-                <p class="modal-intro">How to prepare for that interview!</p>
-                <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </li>
-      <li class="bullet">
-        <div class="bullet-icon bullet-icon-3">
-        </div>
-        <div class="bullet-content">
-          <h2>Get the Job</h2>
-          <p>Be confident!</p>
-
-          <div class="modal">
-            <label for="modal-3">
-              <div class="modal-trigger">Read More</div>
-            </label>
-            <input class="modal-state" id="modal-3" type="checkbox" />
-            <div class="modal-fade-screen">
-              <div class="modal-inner">
-                <div class="modal-close" for="modal-3"></div>
-                <h1>Get the Job</h1>
-                <p class="modal-intro">How to get the job you want!</p>
-                <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </li>
-    </ul>
-  </div>
 
   <% else %>
   <form action="/users/sign_in", method="GET">
     <button class="loginbutton"> LOGIN </button>
   </form>
 
+
+
     <p class="blurbtitle"> Welcome to Ready Set PreP</p>
     <p class="blurbcontent"> We are here to help you get ready for your next interview!
                             Have you ever need some guidance about prospective companies you are applying to?
                             Or need help with finding appropriate interview attire. Then this is the site for you!</p>
+
+                            <div class="bulletcase">
+                              <ul class="bullets">
+                                <li class="bullet">
+                                  <div class="bullet-icon bullet-icon-1">
+                                  </div>
+                                  <div class="bullet-content">
+                                    <h2>Applying for the Job</h2>
+                                    <p>
+                                      Read and follow instructions carefully.
+                                      Always take a few minutes to review the entire application.
+                                    </p>
+                                    <div class="modal">
+                                      <label for="modal-1">
+                                        <div class="modal-trigger">Read More</div>
+                                      </label>
+                                      <input class="modal-state" id="modal-1" type="checkbox" />
+                                      <div class="modal-fade-screen">
+                                        <div class="modal-inner">
+                                          <div class="modal-close" for="modal-1"></div>
+                                          <h1>Applying for the Job</h1>
+                                          <p class="modal-intro">Tips on applying for the job you want!</p>
+                                          <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li class="bullet">
+                                  <div class="bullet-icon bullet-icon-2">
+                                  </div>
+                                  <div class="bullet-content">
+                                    <h2>Prepare for Interview</h2>
+                                    <p>
+                                      Arrive prepared with the information you need.
+                                      Be sure to bring your resume, social security card, driver’s license, etc.
+                                      It’s always better if have too much information than not enough.
+                                    </p>
+                                    <div class="modal">
+                                      <label for="modal-2">
+                                        <div class="modal-trigger">Read More</div>
+                                      </label>
+                                      <input class="modal-state" id="modal-2" type="checkbox" />
+                                      <div class="modal-fade-screen">
+                                        <div class="modal-inner">
+                                          <div class="modal-close" for="modal-2"></div>
+                                          <h1>Prepare for Interview</h1>
+                                          <p class="modal-intro">How to prepare for that interview!</p>
+                                          <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li class="bullet">
+                                  <div class="bullet-icon bullet-icon-3">
+                                  </div>
+                                  <div class="bullet-content">
+                                    <h2>Get the Job</h2>
+                                    <p>Be confident!</p>
+
+                                    <div class="modal">
+                                      <label for="modal-3">
+                                        <div class="modal-trigger">Read More</div>
+                                      </label>
+                                      <input class="modal-state" id="modal-3" type="checkbox" />
+                                      <div class="modal-fade-screen">
+                                        <div class="modal-inner">
+                                          <div class="modal-close" for="modal-3"></div>
+                                          <h1>Get the Job</h1>
+                                          <p class="modal-intro">How to get the job you want!</p>
+                                          <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
 
   <% end %>

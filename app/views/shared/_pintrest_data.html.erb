@@ -1,0 +1,10 @@
+<div id="columns">
+  <% @pins.each do |p| %>
+  <figure>
+    <a href=<%= p.url %>>
+      <img src=<%= p.image %>></img>
+    </a>
+    <figcaption><%= p.note %></figcaption>
+  </figure>
+  <% end %>
+</div>

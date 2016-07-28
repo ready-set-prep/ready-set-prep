@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
       dress_code: params[:dress_code],
       size: params[:size]
       )
-      binding.pry
       authorize r
       r.save!
   end
