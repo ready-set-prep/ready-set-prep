@@ -6,7 +6,6 @@
 
 <ul class="tab__content">
   <li class="active">
-
     <!-- <div class="content__wrapper"> -->
     <h1>this is the glassdoor info</h1>
       <%= form_tag("/savedinterviews", method: "post") do %>
@@ -97,8 +96,14 @@
 <!-- </ul> -->
 
 <li>
+
   <div class="content__wrapper">
     <%# render partial: "/shared/amazon_info" %>
+    <a href="/pintrestselections?name=fashionable">Fashionable</a>
+    <a href="/pintrestselections?name=business">Business</a>
+    <a href="/pintrestselections?name=casual">Casual</a>
+    <a href="/pintrestselections?name=conservative">Conservative</a>
+
     <%= render partial: "/shared/pintrest_widgets" %>
     <%= render partial: "/shared/pintrest_data" %>
 
