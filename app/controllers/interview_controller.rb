@@ -7,17 +7,15 @@ class InterviewController < ApplicationController
       glassdoor_api_call
       glassdoor_data
       # @items = Amazonclass.new(@amazonparams).search
-      @pins = Pintrestclass.new.search
       @category = PositionCategory.where(position: params[:positions].strip).first.category
+      params_for_pintrest(@category)
     elsif params[:positions] == ""
       @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
-      @pins = Pintrestclass.new.search
       @category = PositionCategory.where(position: params[:positions].strip).first.category
       glassdoor_api_call
       glassdoor_data
     else
       # @items = Amazonclass.new(@amazonparams).search
-      @pins = Pintrestclass.new.search
       @category = PositionCategory.where(position: params[:positions].strip).first.category #this will work once the params[:posiitons] is changed to a string and not to a int.
     end
   end
@@ -37,5 +35,20 @@ class InterviewController < ApplicationController
     @benefits_rating = @data["response"]["employers"].first["compensationAndBenefitsRating"].to_f.round
     @review = @data["response"]["employers"].first["featuredReview"]
     @sector = @data["response"]["employers"].first["sectorName"]
+  end
+
+  def params_for_pintrest(params)
+    if params == "fashion"
+      @pins = Pintrestclass.new.search("fashionable-interview-attire")
+    elsif params == "casual"
+      @pins = Pintrestclass.new.search("casual-interview-attire")
+    elsif params == "business_casual"
+      @pins = Pintrestclass.new.search("business-casual-interview-attire")
+    elsif params == "conservative"
+      @pins = Pintrestclass.new.search("conservative-interview-attire")
+    else
+      #you did not put in valid things
+    end
+    return @pins
   end
 end

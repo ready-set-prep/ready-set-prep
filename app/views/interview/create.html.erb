@@ -1,14 +1,12 @@
 
 <ul class="tabs">
   <li class="active">Interview Tips</li>
-  <li>Attire</li>
+  <li>Outfit Inspiration</li>
 </ul>
 
 <ul class="tab__content">
   <li class="active">
-
     <!-- <div class="content__wrapper"> -->
-    <h1>this is the glassdoor info</h1>
     <%= form_tag("/savedinterviews", method: "post") do %>
     <input type="hidden" name="company" value=<%= @name %>>
     <input type="hidden" name="position" value="<%= params[:positions] %>">
@@ -57,12 +55,24 @@
           </li>
         </ul>
       </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+</li>
+</li>
+<!-- </ul> -->
 
-            <li>
-              <div class="content__wrapper">
-                <%# render partial: "/shared/amazon_info" %>
-                <%= render partial: "/shared/pintrest_widgets" %>
-                <%= render partial: "/shared/pintrest_data" %>
+<li>
+
+  <div class="content__wrapper">
+    <%# render partial: "/shared/amazon_info" %>
+<p>
+  The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
+</p>
+    <%= render partial: "/shared/pintrest_widgets" %>
+    <%= render partial: "/shared/pintrest_data" %>
+
               </div>
             </li>
     </div>
