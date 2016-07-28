@@ -2,8 +2,9 @@
   <div class="searchform">
 
     <% if current_user %>
-    <%= form_for :q, url: interview_index_path do |f| %>
-    <%= f.text_field :q, placeholder: "Company" %>
+    <%= form_tag('/interview', method: :post) %>
+       Company<br>
+       <input type="text" name="q">
 
 <!---   POSTIONS DROPDOWN PANEL -->
 
@@ -119,17 +120,15 @@
 
     <!-- <div class="job-choice"> -->
 
-        <input class="chosen-catagory" placeholder="Options">
-
-    <!-- </div> -->
+        <input autocomplete=""class="chosen-catagory" name="positions" placeholder="Options">
 
 
 
 
 
-    <!-- <%= f.text_field :position, placeholder: "Position" %> -->
-    <%= f.submit "Prep!", :class => 'prep' %>
-    <% end %>
+
+    <button type="submit" value="Submit">Submit</button>
+
 </div><!--  end of searchform  -->
 
 
