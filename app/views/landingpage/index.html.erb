@@ -1,13 +1,20 @@
 
   <div class="searchform">
 
+    <% if current_user %>
+    <%= form_tag('/interview', method: :post) %>
+       Company<br>
+       <input type="text" name="q">
+
+<!---   POSTIONS DROPDOWN PANEL -->
+
+    <div class="positions">Positions:</div>
     <%# if current_user %>
     <%# form_for :q, url: interview_index_path do |f| %>
     <%# f.text_field :q, placeholder: "Company" %>
 
 <!---   POSTIONS DROPDOWN PANEL -->
-<%#
-    <div class="positions">Positions<span class="chosen-catagory"></span></div>
+
 
 
 
@@ -116,60 +123,14 @@
             Sports / Fitness
           </li>
         </ul><!-- end of jobcat -->
-%>
 
-<% if current_user %>
-<%= notice %>
-    <%= form_tag('/interview', method: :post) %>
-      Company<br>
-      <input type="text" name="q">
-      <select name="positions" class="custom-select positions" placeholder="Positions">
-        <!-- FASHION -->
-        <option value="Architecture / Drafting">Architecture / Drafting</option>
-        <option value="Art / Design / Entertainment">Art / Design / Entertainment</option>
-        <option value="Beauty / Wellness">Beauty / Wellness</option>
-        <option value="Marketing / Advertising">Marketing / Advertising</option>
+    <!-- <div class="job-choice"> -->
 
-        <!-- CONSERVATIVE -->
-          <option value="Accounting / Finance">Accounting / Finance</option>
-          <option value="Administrative<">Administrative</option>
-          <option value="Analyst">Analyst</option>
-          <option value="Banking / Loan / Insurance">Banking / Loan / Insurance</option>
-          <option value="Human Resources">Human Resources</option>
-          <option value="Legal">Legal</option>
-          <option value="Medical / Healthcare">Medical / Healthcare</option>
-          <option value="Real Estate">Real Estate</option>
-          <option value="Science / Research">Science / Research</option>
-          <option value="Senior Management">Senior Management</option>
-          <option value="Human Resources">Human Resources</option>
-
-        <!-- BUSINESS CASUAL -->
-          <option value="Business Development / Consulting">Business Development / Consulting</option>
-          <option value="Non-Profit / Volunteering">Non-Profit / Volunteering</option>
-          <option value="Product / Project Management">Product / Project Management</option>
-          <option value="Sales / Customer Care">Sales / Customer Care</option>
-          <option value="Security / Law Enforcement">Security / Law Enforcement</option>
-          <option value="Software Development / IT">Software Development / IT</option>
-          <option value="Travel / Transportation">Travel / Transportation</option>
-          <option value="Writing / Editing / Publishing">Writing / Editing / Publishing</option>
-          <option value="Other">Other</option>
-
-          <!--  CASUAL -->
-          <option value="Facilities / General Labor">Facilities / General Labor</option>
-          <option value="Manufacturing / Production / Construction">Manufacturing / Production / Construction</option>
-          <option value="Installation / Maintenance / Repair">Installation / Maintenance / Repair</option>
-          <option value="Restaurant / Food Services">Restaurant / Food Services</option>
-          <option value="Retail">Retail</option>
-          <option value="Skilled Trade">Skilled Trade</option>
-          <option value="Sports / Fitness">Sports / Fitness</option>
-      </select>
-      <button type="submit" value="Submit">Submit</button>
+        <input autocomplete="" class="chosen-catagory" name="positions" placeholder="Options">
 
 
+    <button type="submit" value="Submit">Submit</button>
 
-    <%# f.text_field :position, placeholder: "Position" %>
-    <%# f.submit "Prep!", :class => 'prep' %>
-    <%# end %>
 </div><!--  end of searchform  -->
 
 

@@ -6,10 +6,26 @@ $(".positions").click(function(){
   console.log("test");
   $(".jobcat").toggle();
   });
-// $(".jobcat").animate({ scrollTop: $(".jobcat")[0].scrollHeight}, 1000);
+
 $(".jobcat").on("click", ".kinds-of", function(){
-  console.log(this);
-  $(".chosen-catagory").text(this.val());//  getting close; still need to tweek //
-});
-  console.log("test again");
-});
+    console.log($(this).text());
+    var clone = ($(this).text());
+
+
+
+    $(".chosen-catagory").val(function(index,val){
+      event.stopPropagation();
+      return clone;
+
+      $("#remove").on("click", function(event){
+        $(".chosen-catagory").val("");
+    });
+
+    });
+    console.log("yes");
+
+
+  });// end of click function  //
+
+
+});// end of ready function  //
