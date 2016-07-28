@@ -99,7 +99,8 @@ button:focus {
 /** DROP-DOWN MENU **/
 
 /***  positions title **/
-.positions {
+.positions{
+
   text-align: left;
 	color: grey;
 	font-size: 20px;
@@ -122,7 +123,8 @@ button:focus {
 
 /*** list-items   **/
 .kinds-of{
-
+  font-family: "Lato", Verdana, sans-serif;
+  cursor: pointer;
   padding-left: 5px;
   text-transform: uppercase;
   padding-top: 15px;
@@ -426,3 +428,25 @@ button:focus {
   font-family: Tahoma, Geneva, sans-serif;
 }
 //
+
+/*******  Media query for searchform landingpage area  ***/
+@media (min-width: 568px) and (max-width: 749px) {
+  .searchform {
+    width: 250px;
+
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1024px) {
+  .searchform {
+    width: 300px;
+
+  }
+}
+
+@media (min-width: 1025px) {
+  .searchform {
+    width: 350px;
+
+  }
+}

@@ -12,12 +12,12 @@ $(".jobcat").on("click", ".kinds-of", function(){
     var clone = ($(this).text());
 
 
-
-    $(".chosen-catagory").val(function(index,val){
+  $(".chosen-catagory").val(function(index,val){
       event.stopPropagation();
       return clone;
 
-      $("#remove").on("click", function(event){
+      $(".chosen-catagory").on("click", function(event){
+          // event.stopPropagation();
         $(".chosen-catagory").val("");
     });
 
