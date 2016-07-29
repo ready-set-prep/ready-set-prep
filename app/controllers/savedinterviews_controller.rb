@@ -9,16 +9,19 @@ class SavedinterviewsController < ApplicationController
       company: params[:company],
       position: params[:position]
       )
-        # authorize r
-        @info.save!
+    flash[:success] = "Saved!"
+    redirect_to landingpage_index_path
+    # authorize r
+    @info.save!
   end
 
-    def destroy
-      if CompanySaved.where(id: params[:id])
-        r = CompanySaved.where(id: params[:id])
-        # authorize r
-        r.first.destroy
-      end
-      redirect_to :back
+  def destroy
+    if CompanySaved.where(id: params[:id])
+      r = CompanySaved.where(id: params[:id])
+      # authorize r
+      r.first.destroy
     end
+    flash[:success] = "Deleted!"
+    redirect_to landingpage_index_path
+  end
 end

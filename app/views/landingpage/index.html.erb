@@ -9,10 +9,8 @@
 
 <!---   POSTIONS DROPDOWN PANEL -->
 
-    <div class="positions">Click to select Positions:<i class="fa fa-down-arrow" aria-hidden="true"></i></div>
-    <%# if current_user %>
-    <%# form_for :q, url: interview_index_path do |f| %>
-    <%# f.text_field :q, placeholder: "Company" %>
+
+    <div class="positions">Click to select Positions:</div>
 
 <!---   POSTIONS DROPDOWN PANEL -->
 
@@ -132,8 +130,16 @@
 
     <button type="submit" value="Submit">Submit</button>
 
-</div><!--  end of searchform  -->
 
+</div><!--  end of searchform  -->
+<% if current_user %>
+  <% @reviews.each do |f| %>
+  <%= button_to 'Go!', {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post  %>
+  <%= f.position %>
+  <%= f.company %>
+  <%= button_to 'x', {:controller => "savedinterviews", :id => f.id, :action => "destroy" }, {:method => :delete} %>
+  <% end %>
+<% end %>
 
   <!-- bullets -->
 
@@ -146,11 +152,11 @@
 
 
     <p class="blurbtitle"> Welcome to Ready Set PreP</p>
-    <p class="blurbcontent"> We are here to help you get ready for your next interview!
+    <!-- <p class="blurbcontent"> We are here to help you get ready for your next interview!
                             Have you ever need some guidance about prospective companies you are applying to?
-                            Or need help with finding appropriate interview attire. Then this is the site for you!</p>
+                            Or need help with finding appropriate interview attire. Then this is the site for you!</p> -->
 
-                            <div class="bulletcase">
+                            <!-- <div class="bulletcase">
                               <ul class="bullets">
                                 <li class="bullet">
                                   <div class="bullet-icon bullet-icon-1">
@@ -231,6 +237,7 @@
                                   </div>
                                 </li>
                               </ul>
-                            </div>
+                            </div> -->
+
 
   <% end %>

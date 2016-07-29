@@ -1,0 +1,12 @@
+<div id="columns">
+  <% if @shop %>
+  <% @shop.each do |p| %>
+  <figure>
+    <a href=<%= p.site %>>
+      <img src=<%= p.picture %>></img>
+    </a>
+    <figcaption><%= p.description %></figcaption>
+  </figure>
+  <% end %>
+  <% end %>
+</div>

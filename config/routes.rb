@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :amazoncart
   resources :interviewreviews
   resources :savedinterviews
+  resources :pintrestselections
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/aboutus'   => 'aboutus#index'
 end
