@@ -7,7 +7,7 @@
 
   <ul class="tab__content">
     <!-- comapny reviews -->
-    <li class="active">
+    <li>
       <!-- <div class="content__wrapper"> -->
       <%= form_tag("/savedinterviews", method: "post") do %>
       <input type="hidden" name="company" value=<%= @name %>>
@@ -48,7 +48,7 @@
 
         <div class="col-1-2">
           <ul>
-            <li class>
+            <li class="active">
               <%= render partial: "/shared/glassdoor_review" %>
               <%= render partial: "/shared/modal" %>
 

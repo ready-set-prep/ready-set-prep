@@ -1,9 +1,7 @@
 <div id="columns">
   <% @companies.each do |p| %>
   <figure>
-    <%= button_to 'Go!', {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company} , :method=>:post  %>
-    <%= p.position %>
-    <%= p.company %>
+    <%= button_to "#{p.position}, #{p.company}", {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company} , :method=>:post  %>
     <%= button_to 'x', {:controller => "savedinterviews", :id => p.id, :action => "destroy" }, {:method => :delete} %>
 
   </figure>
