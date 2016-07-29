@@ -8,6 +8,14 @@
   <ul class="tab__content">
     <!-- comapny reviews -->
     <li class="active">
+<!--
+      <div class="excontainer">
+          <button id="loadbasic">basic load</button>
+          <div id="result"></div>
+
+      </div> -->
+
+
       <!-- <div class="content__wrapper"> -->
       <%= form_tag("/savedinterviews", method: "post") do %>
       <input type="hidden" name="company" value=<%= @name %>>

@@ -1,249 +1,224 @@
+// learn jquery ajax
+// http://net.tutsplus.com/tutorials/javascript-ajax/5-ways-to-make-ajax-calls-with-jquery/
 
-// if (navigator.geolocation) {
-//        navigator.geolocation.getCurrentPosition(success, error);
-//      } else {
-//        error('not supported');
-//      }
+// no need to specify document ready
 
-// var directionDisplay;
-// var directionsService = new google.maps.DirectionsService();
-// var map;
-//
-//
-// window.onload = function() {
-//   var startPos;
-//
-//   var geoSuccess = function(position) {
-//     directionsDisplay = new google.maps.DirectionsRenderer();
-//         var latlng = new google.maps.LatLng(" ");
-//         var mapOptions = {
-//           zoom:15,
-//           mapTypeId: google.maps.MapTypeId.ROADMAP,
-//           center: latlng
-//         }
-//         map = new;
-//         google.maps.Map(document.getElementById('map'), mapOptions);
-//         directionsDisplay.setMap(map);
-//
-//
-//
-//         var start = current;
-//         var end =  position.coords.latitude + ',' + position.coords.longitude;
-//         var mode;
-//
-//         switch ( 'driving' )
-//         {
-//           case 'bicycling' :
-//             mode = google.maps.DirectionsTravelMode.BICYCLING;
-//             break;
-//           case 'driving':
-//             mode = google.maps.DirectionsTravelMode.DRIVING;
-//             break;
-//           case 'walking':
-//             mode = google.maps.DirectionsTravelMode.WALKING;
-//             break;
-//         }
-//
-//         var request = {
-//             origin:from,
-//             destination:to,
-//             travelMode: mode
-//         };
-//
-//         directionsService.route(request, function(response, status) {
-//           if (status == google.maps.DirectionsStatus.OK) {
-//             directionsDisplay.setDirections(response);
-//           }
-//         });
-//
-//       }
-//
-//       function error(msg) {
-//               var s = document.querySelector('#status');
-//               s.innerHTML = typeof msg == 'string' ? msg : "failed";
-//               s.className = 'fail';
-//
-//               console.log(arguments);
-//              }
-//     startPos = position;
-//     document.getElementById('map').innerHTML = startPos.coords.latitude;
-//     document.getElementById('map').innerHTML = startPos.coords.longitude;
-//   };
-//   var current = navigator.geolocation.getCurrentPosition(geoSuccess);
-// };
+$(function(){
+  "use strict";
 
-// if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(function(position) {
-//         var latitude = position.coords.latitude;
-//         var longitude = position.coords.longitude;
-//         var geolocpoint = new google.maps.LatLng(latitude, longitude);
-//
-//         var mapOptions = {
-//             zoom: 8,
-//             center: geolocpoint,
-//             mapTypeId: google.maps.MapTypeId.HYBRID
-//         }
-//         // Place a marker
-//         var geolocation = new google.maps.Marker({
-//             position: geolocpoint,
-//             map: map,
-//             title: 'Your geolocation',
-//             icon: 'http://labs.google.com/ridefinder/images/mm_20_green.png'
-//         });
-//         console.log("yes");
-//     });
-// }
 
-//  finding current location   //
-// window.initMap.function() {
-//
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     center: {lat: -34.397, lng: 150.644},
-//     zoom: 15
-//   });
-//   var infoWindow = new google.maps.InfoWindow({map: map});
-//
-//   var directionsService = new google.maps.DirectionsService;
-//   var directionsDisplay = new google.maps.DirectionsRenderer;
-//       directionsDisplay.setMap(map);
-//
-//   var destination = document.getElementById('destination');
-//
-//   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(destination);
-//   map.setDirectionsService(destination);
-//   map.setDirectionsRenderer("destination found");
-//
-//
-//   // Try HTML5 geolocation.
-//
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(function(position) {
-//       var pos = {
-//         lat: position.coords.latitude,
-//         lng: position.coords.longitude
-//       };
-//       console.log(pos.lat)
-//       console.log(pos.lng)
-//
-//       infoWindow.setPosition(pos);
-//
-//       infoWindow.setContent('Location found.');
-//
-//       map.setCenter(pos);
-//       console.log("hurray")
-//     },
-//
-//
-//      function() {
-//       handleLocationError(true, infoWindow, map.getCenter());
-//
-//     });
-//   } else {
-//     // Browser doesn't support Geolocation
-//     handleLocationError(false, infoWindow, map.getCenter());
-//   }
+  function getResults(searchStr, offset, limit) {
 
-  // function route(destination_place_id, directionsService, directionsDisplay) {
-  //         if (!origin_place_id || !destination_place_id) {
-  //           return;
-  //         }
-  //         directionsService.route({
-  //           destination: {'placeId': destination_place_id},
-  //         }, function(response, status) {
-  //           if (status === google.maps.DirectionsStatus.OK) {
-  //             directionsDisplay.setDirections(response);
-  //           } else {
-  //             window.alert('Directions request failed due to ' + status);
-  //           }
-  //         });
-  //       }
-  //     }
-//  end finding current locations  //
+    console.log("search box input => " + searchStr);
+    // var baseURL = "https://api.spoonflower.com/design/search?q=cars&q=dino";
+    // var baseURL ="whatever the url is"
+    var baseURL = "https://api.spoonflower.com/design/search?";
 
-// this is directions to a place by lat and long //
+    var terms = [];
+    var query = "";
+    var jsonURL = "";
 
-      //  function initMap() {
-      //    var directionsDisplay = new google.maps.DirectionsRenderer;
-      //    var directionsService = new google.maps.DirectionsService;
-      //    var map = new google.maps.Map(document.getElementById('map'), {
-      //      zoom: 14,
-      //      center: {lat: 37.77, lng: -122.447}
-      //    });
-      //    directionsDisplay.setMap(map);
-       //
-      //    calculateAndDisplayRoute(directionsService, directionsDisplay);
-      //    document.getElementById('mode').addEventListener('change', function() {
-      //      calculateAndDisplayRoute(directionsService, directionsDisplay);
-      //    });
-      //  }
-       //
-      //  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-      //    var selectedMode = document.getElementById('mode').value;
-      //    directionsService.route({
-      //      origin: {lat: 37.77, lng: -122.447},
-      //      destination: {lat: 37.768, lng: -122.511},
-      //      travelMode: google.maps.TravelMode[selectedMode]
-      //    }, function(response, status) {
-      //      if (status == google.maps.DirectionsStatus.OK) {
-      //        directionsDisplay.setDirections(response);
-      //      } else {
-      //        window.alert('Directions request failed due to ' + status);
-      //      }
-      //    });
-      //  }
-//         end of directions code    //
-/////////////////////////////////////////////////////////////////////////////
-// var map;
-// var geocoder;
-// var myLocation;
-// var directionsDisplay = new google.maps.DirectionsRenderer();
-// var directionsService = new google.maps.DirectionsService();
-//
-// var userDirection;
-// var userPosition;
-//
-// var locations = [
-//     ['A/P LA PAMPA', -0.0425, -78.4558333333, 1],
-//     ['A/P PUSUQUI', -0.0647222222, -78.4655555556, 2]
-// ];
-//
-// ///////////////////////////////////////////////////////////////////////////////
-// function initialize() {
-//     var infoWindow = null;
-//     var opts = {
-//         center: new google.maps.LatLng(-1.2, -78.58),
-//         zoom: 6
-//     };
-//     map = new google.maps.Map(document.getElementById('map'), opts);
-//     directionsDisplay = new google.maps.DirectionsRenderer({map:map});
-//     geocoder = new google.maps.Geocoder();
-//     // var image = './images/theme-images/mascot_finder.png';
-//     infowindow = new google.maps.InfoWindow({
-//         content: "holding..."
-//     });
-//
-//     for (i = 0; i < locations.length; i++) {
-//         var currentLatLong = new google.maps.LatLng(locations[i][1], locations[i][2]);
-//         marker = new google.maps.Marker({
-//             position: currentLatLong,
-//             map: map /*,
-//             icon: image */
-//         });
-//
-//         google.maps.event.addListener(marker, 'click', (function (marker, i) {
-//             return function () {
-//                 var userDirection = marker.getPosition();
-//                 var userPosition = myLocation.getPosition();
-//                 infowindow.setContent(locations[i][0]);
-//                 infowindow.open(map, marker);
-//                 calcRoute(userDirection, userPosition);
-//
-//
-//             };
-//         })(marker, i));
-//     }
-//
-//
-//     getMyLocation();
-//
-// }
+    // seperate search terms
+    if (searchStr) {
+      if (searchStr.indexOf(' ')) {
+        terms = searchStr.split(" ");
+      } else {
+        terms.push(searchStr);
+      }
+    }
+
+    // build query string
+    $.each(terms, function(i) {
+      query += "q=" + this;
+      if (terms.length > 0 && i < terms.length - 1) {
+        query += "&";
+      }
+    });
+
+    jsonURL = baseURL + query + "&offset=" + offset + "&limit=" + limit;
+      console.log("AJAX URL => " + jsonURL);
+
+      // AJAX call using jQuery
+      $.getJSON(jsonURL)
+        .done( function(data) {
+          console.log('JSON:GET => Success!', data);
+
+          var htmlStr = "";
+
+          // wrap HTML around each result
+          $.each(data.results[0].results, function(i){
+
+            htmlStr +=
+       "<div class='design-card'>\n" +
+
+"<div class='design-card-image-wrapper'>" +
+
+       "  <img class='design-thumbnail' src='" + this.thumbnail_url + "'>\n" +
+
+"<div class='design-card-image-overlay'>"+
+"<div class='design-card-image-overlay-content'>"+
+
+       "  <div class='design-name'><strong> Name:  </strong> <br> " + truncate(this.name, 20) + "</div>\n" +
+       +
+       "  <div class='design-id'><strong>Product ID:  </strong> <br> " + this.id + "</div>\n" +
+       "\n";
+
+     htmlStr += "<div class='design-form-wrapper'>\n  " +
+                $(".design-form-wrapper:last").html() +
+                "\n</div>\n";
+
+     htmlStr += "<form class='design-form' action='/designs' accept-charset='UTF-8' data-remote='true' method='post'>\n";
+
+     htmlStr += "<div class='design-board-dropdown-wrapper'>\n  " +
+                $(".design-board-dropdown-label-wrapper:last").html() +
+                "\n</div>\n";
+
+     htmlStr += "<div class='design-board-dropdown-wrapper'>\n  " +
+                $(".design-board-dropdown-wrapper:last").html() +
+                "\n</div>\n &nbsp; \n";
+
+     htmlStr += "<div class='design-board-btn-wrapper'>\n  " +
+                $(".design-board-btn-wrapper:last").html() +
+                "\n</div>\n";
+
+     htmlStr += "<div class='design-card-add-board-msg'>Added</div>";
+
+     htmlStr += "  <div class='design-borad-hidden-spoonflower-id-wrapper'>\n" +
+                "    <input type='hidden' name='design[spoonflower_id]' id='design_spoonflower_id' value='" + this.id + "'>\n" +
+                "  </div>\n";
+
+     htmlStr += "</form>\n";
+
+htmlStr += "</div></div></div>\n";
+
+     htmlStr += "</div>\n";
+
+     $(".search-results-container").append(htmlStr);
+            htmlStr = "";
+   });
+
+    console.log(htmlStr);
+    updateScrollTrigger($(".design-card:last").prev().prev().prev().prev().prev());
+    currentOffset += 50;
+    console.log(" scroll offset => " + currentOffset);
+    pageNum ++;
+    console.log(" scroll page => " + pageNum);
+    // re-start scroll event triggering API call
+    $(document).on('scroll', loadScrollData);
+
+    // clear DOM for new results
+    // $(".resutls-container").empty();
+    // add search results to DOM
+    // $(".resutls-container").append("<div class='results-total'>\n  Results: " +
+    //                                 data.results[0].results.length + ", Total hits: " +
+    //                                 data.results[0].total_hits + "\n</div>\n");
+    // $(".search-results-container").append(htmlStr);
+})
+.fail( function() {
+  console.log('JSON:GET => Error!', data);
+});
+}
+
+
+/*
+* hide DOM elements
+*/
+function hideElement(element) {
+console.log("** function call : hideElement() => ", element);
+$(element).hide();
+}
+
+/*
+* hide DOM elements
+*/
+function showElement(element) {
+console.log("** function call : showElement() => ", element);
+$(element).show();
+}
+
+/*
+* add class name into DOM for checking scroll postion
+*/
+function addScrollTrigger(element) {
+console.log("** function call : addScrollTrigger() ** ");
+element.addClass("SCROLL_TRIGGER");
+// $('<input type="hidden" name="scroll_trigger" value="true" id="scrollTrigger">').appendTo($(".design-card"));
+}
+
+/*
+* remove trigger class name from DOM for checking scroll postion
+*/
+function removeScrollTrigger() {
+console.log("** function call : removeScrollTrigger() ** ");
+$(".SCROLL_TRIGGER").removeClass("SCROLL_TRIGGER");
+}
+
+/*
+* remove, then add trigger class to different element in DOM for checking scroll
+*   postion
+*/
+function updateScrollTrigger(element) {
+console.log("** function call : updateScrollTrigger() ** ");
+removeScrollTrigger();
+addScrollTrigger(element);
+}
+
+/*
+* check DOM for position of trigger element for endless scroll
+*
+*   return: true - if trigger element is in the document view
+*           false - if trigger element is not in the document view
+*/
+function trigger(element) {
+if (element != undefined && element.offset() != undefined && pageNum < maxScrollLoads) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+
+  var elemTop = $(element).offset().top;
+  var elemBottom = elemTop + $(element).height();
+
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+return false;
+}
+
+/*
+*  format long strings to be approx. 21 characters worth of pixels
+*/
+function truncate(str, num) {
+var arrStr;
+if (str != undefined && str.length > 0 && num != NaN && num > 0) {
+  if (str.indexOf(" // ")) {
+    str = str.split(" // ")[0];
+  }
+  if (str.length > num) {
+    arrStr = str.split("");
+    return arrStr.slice(0, num).join("") + "...";
+  }
+}
+return str;
+}
+
+/*
+*  send notification messages to #notice element in page header
+*/
+function notify(str) {
+if (str != undefined && str.length > 0) {
+  $("#notice").empty();
+  $("#notice").prepend(str).fadeIn(600, "swing").delay(2000).fadeOut(600, "swing");
+}
+}
+
+/*
+*  hide designs after removing them in board show
+*/
+
+function deleteDesign() {
+var card = $(event.target).closest(".board-card");
+card.css("display", "none");
+}
+
+function bindDeleteDesign() {
+$(".remove").on("click", deleteDesign);
+}
+}

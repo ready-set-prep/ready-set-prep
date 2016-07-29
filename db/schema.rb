@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160728143841) do
   end
 
   create_table "interviewreviews", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "company"
     t.string   "experience"
     t.string   "length"
@@ -47,10 +48,14 @@ ActiveRecord::Schema.define(version: 20160728143841) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "company"
     t.string   "headline"
     t.string   "pros"
     t.string   "cons"
+    t.string   "position"
+    t.string   "dress_code"
+    t.string   "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -80,6 +85,8 @@ ActiveRecord::Schema.define(version: 20160728143841) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.boolean  "admin"
+    t.string   "amazon_key"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
