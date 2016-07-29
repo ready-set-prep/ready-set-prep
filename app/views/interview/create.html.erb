@@ -11,7 +11,7 @@
       <!-- <div class="content__wrapper"> -->
       <%= form_tag("/savedinterviews", method: "post") do %>
       <input type="hidden" name="company" value=<%= @name %>>
-      <input type="hidden" name="position" value="<%= params[:positions] %>">
+      <input type="hidden" name="position" value="f<%= params[:positions] %>">
       <button type="submit" value="Submit"> Save </button>
       <% end %>
 
@@ -90,4 +90,3 @@
 </ul>
 
 <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-<!-- <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script> -->
