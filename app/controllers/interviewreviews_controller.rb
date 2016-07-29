@@ -9,6 +9,8 @@ class InterviewreviewsController < ApplicationController
     )
     authorize r
     r.save!
+    flash[:success] = "Added!"
+    redirect_to landingpage_index_path
   end
 
   def destroy
@@ -16,6 +18,8 @@ class InterviewreviewsController < ApplicationController
       r = Interviewreview.where(id: params[:id])
       authorize r
       r.first.destroy
+      flash[:success] = "Deleted!"
+      redirect_to landingpage_index_path
     end
   end
 
@@ -34,7 +38,8 @@ class InterviewreviewsController < ApplicationController
         length: params[:edit][:length],
         difficulty: params[:edit][:difficulty]
       )
-      #this will need to redirect back to the interview page. Right now it goes no where. Refresh.
+      flash[:success] = "Edited!"
+      redirect_to landingpage_index_path
     end
   end
 end
