@@ -8,6 +8,10 @@
   <ul class="tab__content">
     <!-- comapny reviews -->
     <li class="active">
+
+
+
+
       <!-- <div class="content__wrapper"> -->
       <%= form_tag("/savedinterviews", method: "post") do %>
         <input type="hidden" name="company" value=<%= @name %>>
@@ -65,8 +69,8 @@
 
 
   <li>
-<!--pintrest  -->
-    <div class="content__wrapper">
+
+
       <%# render partial: "/shared/amazon_info" %>
   <p>
     The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
