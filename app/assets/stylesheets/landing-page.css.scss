@@ -298,7 +298,11 @@ button:focus {
   }
 
   .modal-trigger {
+    margin: 10px;
     padding: 0.8em 1em;
+    color: white;
+    background-color: $blue;
+    border-radius: 5px;
   }
 
   .modal-fade-screen { // overlay
