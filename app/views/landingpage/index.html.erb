@@ -125,7 +125,7 @@
 
     <!-- <div class="job-choice"> -->
 
-    <input class="chosen-catagory" name="positions" placeholder="Options">
+        <input class="chosen-catagory" name="positions" placeholder="Options">
 
 
     <button type="submit" value="Submit">Submit</button>
@@ -134,7 +134,9 @@
 </div><!--  end of searchform  -->
 <% if current_user %>
   <% @reviews.each do |f| %>
-  <%= button_to "#{f.position}, #{f.company}", {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post  %>
+  <%= button_to 'Go!', {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post  %>
+  <%= f.position %>
+  <%= f.company %>
   <%= button_to 'x', {:controller => "savedinterviews", :id => f.id, :action => "destroy" }, {:method => :delete} %>
   <% end %>
 <% end %>
