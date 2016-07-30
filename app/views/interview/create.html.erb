@@ -1,4 +1,4 @@
-
+<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <ul class="tabs">
   <li class="active">Company Info</li>
   <li>Outfit Inspiration</li>
@@ -10,9 +10,9 @@
     <li class="active">
       <!-- <div class="content__wrapper"> -->
       <%= form_tag("/savedinterviews", method: "post") do %>
-      <input type="hidden" name="company" value=<%= @name %>>
-      <input type="hidden" name="position" value="<%= params[:positions] %>">
-      <button type="submit" value="Submit"> Save </button>
+        <input type="hidden" name="company" value=<%= @name %>>
+        <input type="hidden" name="position" value="<%= params[:positions] %>">
+        <button type="submit" value="Submit"> Save </button>
       <% end %>
 
       <div class="grid grid-pad">
@@ -88,5 +88,3 @@
     </li>
 
 </ul>
-
-<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
