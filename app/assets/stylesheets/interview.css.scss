@@ -162,7 +162,7 @@ footer{
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
-		color: white;
+		color: black;
 
 		&:before{
 			z-index: -1;
@@ -172,7 +172,7 @@ footer{
 			height: 120%;
 			top: 0;
 			left: 0;
-			background-color: rgba(255, 255, 255, .3);
+			background-color: white;
 			-webkit-transform: translateY(100%);
 			transform: translateY(100%);
 			transition-duration: .25s;
@@ -188,11 +188,11 @@ footer{
 		}
 
 		&.active{
-			color: rgb(80, 85, 90);
+			color: #800000;
 
 			&:before{
 				transition-duration: .5s;
-				background-color: white;
+				background-color: #f6f9ff;
 				-webkit-transform: translateY(0);
 				transform: translateY(0);
 			}
