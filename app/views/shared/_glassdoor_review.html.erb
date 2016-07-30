@@ -1,9 +1,15 @@
 <div class="flex-boxes">
   <a href="javascript:void(0)" class="flex-box">
     <% unless @review == nil %>
+  <div class="glassdoorContent">
     <p>Headline:   <%= @review["headline"] %></p>
+  </div>
+  <div class="glassdoorContent">
     <p>Pros:   <%= @review["pros"] %></p>
+  </div>
+  <div class="glassdoorContent">
     <p>Cons:   <%= @review["cons"] %></p>
+  </div>
     <% end %>
   </a>
 </div>

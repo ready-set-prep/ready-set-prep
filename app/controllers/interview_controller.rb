@@ -23,7 +23,7 @@ class InterviewController < ApplicationController
 
   private
   def glassdoor_api_call
-    @data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=#{ENV['PARTNER_ID']}&t.k=#{ENV['GLASSDOOR_KEY']}&action=employers&q=#{@params}
+    @data = HTTParty.get "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=79146&t.k=gT8SLkXZtoi&action=employers&q=#{@params}
     &userip=192.168.43.42
     &useragent=Chrome/%2F4.0"
   end

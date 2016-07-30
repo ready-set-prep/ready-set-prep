@@ -248,6 +248,7 @@ button:focus {
   p {
     color: $base-font-color;
     line-height: $base-line-height;
+    font-family: "Lato", Verdana, sans-serif;
   }
 
   img {
@@ -283,6 +284,7 @@ button:focus {
   label {
     cursor: pointer;
     margin-bottom: 0;
+    font-family: "Lato", Verdana, sans-serif;
   }
 
   label img {
@@ -296,7 +298,11 @@ button:focus {
   }
 
   .modal-trigger {
+    margin: 10px;
     padding: 0.8em 1em;
+    color: white;
+    background-color: $blue;
+    border-radius: 5px;
   }
 
   .modal-fade-screen { // overlay

@@ -1,6 +1,7 @@
 <div class="flex-boxes">
   <a href="javascript:void(0)" class="flex-box">
     <h1 class="flex-title"><%= @name %></h1>
+    <div class="glassdoorContent">
     <p>Industry:   <%= @industry %></p>
     <p>Sector:  <%= @sector %></p>
     <p>Total Rating:</p>
@@ -13,5 +14,6 @@
     <p>Benefits Rating:</p>
     <p class="ratings"><%= show_stars @total_rating %></p>
     <% end %>
+  </div>
   </a>
 </div>
