@@ -389,17 +389,24 @@ div#columns:hover figure:not(:hover) {
 }
 .something{/**  board-function-bar **/
   font-family: "Lato", Verdana, sans-serif;
-  background-color: grey;
-  
+  background-color: lightblue;
+
 }
 
 .board-function-bar {
   background: #fff;
-  color: $grey;
+  color: grey;
   .board-function-bar-item {
     display: inline-block;
     margin: 5px;
   }
+  // display: none;
+}
+
+.category-function-bar-items{
+  display: block;
+}
+.category-function-bar-items{
   display: none;
 }
 #fashionable {
