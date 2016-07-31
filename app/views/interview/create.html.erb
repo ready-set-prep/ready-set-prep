@@ -21,6 +21,7 @@
 
       <div class="grid grid-pad">
         <div class="col-1-2 ">
+
             <%= render partial: "/shared/company_info" %>
 
             <% if Interviewreview.where(company: @name) != [] %>
@@ -75,10 +76,16 @@
   <p>
     The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
   </p>
+
+
       <%= render partial: "/shared/pintrest_widgets" %>
       <%= render partial: "/shared/pintrest_data" %>
 
+<<<<<<< HEAD
                 <!-- </div> -->
+=======
+
+>>>>>>> 88a8b25882f742d466589a660f72de5457407d60
               </li>
       <!-- </div> -->
     <!-- </li> -->
@@ -92,8 +99,3 @@
     </li>
 
 </ul>
-<footer>
-  <p>
-    Ready-Set-Prep! is the work of Alyssa Pratt, Mary Howell, and Rhonda Goolsby
-  </p>
-</footer>
