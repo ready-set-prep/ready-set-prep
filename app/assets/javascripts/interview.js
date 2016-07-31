@@ -1,4 +1,3 @@
-console.log("something");
 
    $.ajax({
       dataType: "json",
