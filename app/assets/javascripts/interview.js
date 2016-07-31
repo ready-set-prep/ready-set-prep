@@ -1,6 +1,7 @@
-console.log("something");
-
-
+function myFunction() {
+  console.log("refresh")
+    location.reload();
+}
 
 
 
