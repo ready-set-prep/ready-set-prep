@@ -3,8 +3,10 @@ $(document).ready(function(){
 
 $(".show").on("click",function(){
   console.log("test");
+
   // $('.category-function-bar-items').addClass('animated slideInDown');
-  $(".category-function-bar-items").css("display", "block");
+  $(".category-function-bar-items").slideDown(300);
+
   $(".show").css("display", "none");
   $(".hide").css("display", "block");
   });
@@ -12,18 +14,23 @@ $(".show").on("click",function(){
   $(".hide").on("click",function(){
     console.log("again");
     // $('.category-function-bar-items').addClass('animated slideOutUp');
-    $(".category-function-bar-items").css("display", "none");
+    $(".category-function-bar-items").slideUp(300);
     $(".hide").css("display", "none");
     $(".show").css("display", "block");
   });
 
 });
 
+function refresh() {
+    location.reload();
+}
 
 
 //fashion
-$(document).ready(function(){
+$(document).ready(function(e){
+
 $( ".fashionable").on("click", function() {
+
   console.log("button 1")
   $.ajax({
      dataType: "json",
@@ -35,11 +42,13 @@ $( ".fashionable").on("click", function() {
 
    $.each(json.data, function(index,item) {
        $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
-  });
+     });
+
   });
 });
 
 $(".conservative").on("click", function() {
+
 //conservative
 
   console.log("button 2")
@@ -60,6 +69,7 @@ $(".conservative").on("click", function() {
 
 
 $(".bizcas").on("click", function() {
+
 //business casual
   console.log("button 3")
    $.ajax({
@@ -72,12 +82,13 @@ $(".bizcas").on("click", function() {
          $.each(json.data, function(index,item) {
            $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
          });
-});
+    });
 });
 
 
 
 $(".casual").on("click", function() {
+
 //casual
   console.log("button 4")
  $.ajax({
@@ -92,6 +103,7 @@ $(".casual").on("click", function() {
         });
 
       });
-    });
+
+  });
 
 });// end of ajax document.ready //
