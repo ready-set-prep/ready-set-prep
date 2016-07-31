@@ -3,6 +3,14 @@
   <div class="searchform">
 
     <% if current_user %>
+<!-- <form>
+    <button class="fashionable" type="submit">Fashionable</button>
+    <button class="conservative" type="submit">Conservative</button>
+    <button class="bizcas" type="submit">Bizcas</button>
+    <button class="casual" type="submit">Casual</button>
+</form> -->
+
+
     <%= form_tag('/interview', method: :post) %>
        Company<br>
        <input type="text" name="q">
