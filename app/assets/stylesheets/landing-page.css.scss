@@ -23,7 +23,7 @@ button:focus {
   background: #333;
   color: #fff;
   font-weight: bold;
-  border-radius: 5px;
+  // border-radius: 5px;
   cursor: pointer;
   outline: none;
 
@@ -36,7 +36,7 @@ button:focus {
 
 .section{
   width: 100%;
-  background-color:lightgrey;
+  background-color:#F5F4FA;
 
 }
 
@@ -292,7 +292,7 @@ button:focus {
     padding: 0.8em 1em;
     color: white;
     background-color: $blue;
-    border-radius: 5px;
+    // border-radius: 5px;
     text-align: center;
   }
 

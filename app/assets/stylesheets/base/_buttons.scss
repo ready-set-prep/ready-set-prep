@@ -1,12 +1,12 @@
 #{$all-buttons} {
   appearance: none;
-  background-color: $action-color;
+  // background-color: $action-color;
   border: 0;
-  border-radius: $base-border-radius;
+  // border-radius: $base-border-radius;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
+  font-family: "Lato";
   font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -20,7 +20,7 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
+    background-color: shade(lightgrey, 20%);
     color: #fff;
   }
 
