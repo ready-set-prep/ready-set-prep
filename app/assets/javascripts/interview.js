@@ -9,6 +9,7 @@ $( ".fashionable").on("click", function() {
     }) .done(function(json) {
         $('.category-function-bar-items').append('<li id="fashionable">'+ json + '</li>');
 
+
    $.each(json.data, function(index,item) {
        $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
   });
