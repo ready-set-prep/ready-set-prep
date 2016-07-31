@@ -7,5 +7,4 @@ class Search
     @id = result["id"]
     @image = result["image"].first[1]["url"]
   end
-
 end
