@@ -37,6 +37,7 @@ button:focus {
 .section{
   width: 100%;
   background-color:lightgrey;
+
 }
 
 
@@ -81,36 +82,25 @@ button:focus {
 /**************************************************/
 /** WRAPPER FOR COMPANY, POSITION AND PREP AREA **/
 .searchform {
-  background-color: #f2f0f4;
+  // background-color: #f2f0f4;
   opacity: 0.8;
   padding: 10px;
   width: 37%;
-  height: 37%;
+  height: 30%;
   left:30%;
   position: relative;
-  border-radius: 6px;
   padding-left: 80px;
   padding:10px;
   color: black;
   font-weight: bold;
+  margin: 50px;
+  border-style: solid;
+  border-color: #f2f0f4;
+  text-align: center;
 }
 
 /**********************************/
 /** DROP-DOWN MENU **/
-
-/***  positions title **/
-.positions{
-  text-align: left;
-  font-weight: bold;
-	color: black;
-	font-size: 18px;
-	cursor: pointer;
-  &:hover{
-    border-radius:5px;
-    background-color:  lightgrey;
-  }
-}
-
 
 /***  unordered list**/
 .jobcat{
