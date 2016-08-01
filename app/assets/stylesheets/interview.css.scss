@@ -394,11 +394,8 @@ color: white;
 background-color: rgba(51, 51, 51, 0.7);
 // border-radius: 5px;
 text-align: center;
-width: 96px;
-position: relative;
-left: 870px;
-top: -55px;
 }
+
 .hide{
 display: none;
 margin: 10px;
@@ -407,12 +404,8 @@ color: white;
 background-color: rgba(51, 51, 51, 0.7);
 // border-radius: 5px;
 text-align: center;
-width: 96px;
-position: relative;
-left: 870px;
-top: -55px;
-
 }
+
 .hide:hover {
   cursor: pointer;
 }
@@ -502,4 +495,8 @@ top: -55px;
 
 .searchdiv:hover {
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
