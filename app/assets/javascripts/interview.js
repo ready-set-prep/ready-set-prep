@@ -1,3 +1,30 @@
+// show button
+$(document).ready(function(){
+
+$(".show").on("click",function(){
+  console.log("test");
+
+  // $('.category-function-bar-items').addClass('animated slideInDown');
+  $(".category-function-bar-items").slideDown(300);
+
+  $(".show").css("display", "none");
+  $(".hide").css("display", "block");
+  });
+
+  $(".hide").on("click",function(){
+    console.log("again");
+    // $('.category-function-bar-items').addClass('animated slideOutUp');
+    $(".category-function-bar-items").slideUp(300);
+    $(".hide").css("display", "none");
+    $(".show").css("display", "block");
+  });
+
+});
+
+function refresh() {
+    location.reload();
+}
+
 //fashion
 $(document).ready(function(){
 
@@ -5,14 +32,14 @@ $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
   console.log(search)
   $(".defaultShop").hide();
-
+  $(".shopajax").hide();
 $.ajax({
   dataType: "json",
   url: "http://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
   method: "GET"
 }) .done(function(json) {
   $.each(json.products, function(index,item){
-    $(".shop").append("<figure class='ajaxcalls'><a href=" + item.pageUrl + "><img src=" + item.image.sizes.Best.url + "></img></a><figcaption>" + item.priceLabel + item.brandedName + item.description + "</figcaption></figure>")
+    $(".shop").append("<figure class='shopajax'><a href=" + item.pageUrl + "><img src=" + item.image.sizes.Best.url + "></img></a><figcaption>" + item.priceLabel + item.brandedName + item.description + "</figcaption></figure>")
   });
 });
 });
