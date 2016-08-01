@@ -26,9 +26,8 @@
       <a href="/"><li>Home</li></a>
       <a href="/aboutus"><li>About</li></a>
         <% if current_user%>
-        <a href="/users/sign_out"><li>Sign Out</li></a>
+        <a ><li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li></a>
         <a href="/savedinterviews"><li>Saved Interviews</li></a>
-      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, :class => "buttonTo" %>
       <% else %>
       <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
