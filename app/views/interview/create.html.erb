@@ -1,8 +1,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <ul class="tabs">
   <li class="active">Company Info</li>
-  <li>Attire Ideas</li>
-  <li>Shop Clothes</li>
+  <li>Attire</li>
   <li>Interview Questions</li>
 </ul>
 
@@ -75,25 +74,12 @@
 
       <%# render partial: "/shared/amazon_info" %>
   <p class="chosencompany">
-    The category that we chose for you is <u><%= @category.upcase %></u>, but feel free to choose from any category.
+    The category that we chose for you is <u><%= @category.upcase %></u>, but feel free to choose from any Category
   </p>
-
-
       <%= render partial: "/shared/pintrest_widgets" %>
       <%= render partial: "/shared/pintrest_data" %>
-
-
               </li>
-      <!-- </div> -->
-    <!-- </li> -->
 
-<!--shop  -->
-    <li>
-      <div class="shop">
-        <%= render partial: "/shared/shop" %>
-
-      </div>
-    </li>
     <li>
       <%= render partial: "/shared/interviewquestions" %>
     </li>
