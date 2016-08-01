@@ -1,5 +1,22 @@
 //fashion
 $(document).ready(function(){
+
+$("#search_submit").on("click", function(){
+  var search = $("#search").val().trim().replace(/\s/g, '+')
+  console.log(search)
+  // $(".defaultShop").hide();
+
+$.ajax({
+  dataType: "json",
+  url: "http://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
+  method: "GET"
+}) .done(function(json) {
+  $.each(json.products, function(index,item){
+    $(".shop").append("<figure><a href=" + item.pageUrl + "><img src=" + item.image.sizes.Best.url + "></img></a><figcaption>" + item.priceLabel + item.brandedName + item.description + "</figcaption></figure>")
+  });
+});
+});
+
 $( ".fashionable").on("click", function() {
   console.log("button 1")
   $(".rubydiv").hide();

@@ -1,15 +1,13 @@
-
-
-
 <div id="wrap">
-  <form action="" autocomplete="on">
-  <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
-  </form>
+  <input id="search" name="search" type="text" placeholder="What're we looking for ?">
+  <button id="search_submit" type="submit">Search!</button>
 </div>
 
 
 
 <div id="columns">
+  <div class="shop"></div>
+  <div class="defaultShop">
   <% if @shop %>
   <% @shop.each do |p| %>
   <figure>
@@ -20,4 +18,5 @@
   </figure>
   <% end %>
   <% end %>
+</div>
 </div>
