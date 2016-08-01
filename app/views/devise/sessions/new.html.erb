@@ -3,20 +3,20 @@
 
 
 <!-- SIGN-IN PAGE -->
-<div class="form-wrapper">
-<!-- <div id="amazon-root"></div>
-<script type="text/javascript">
+<!-- <div class="form-wrapper"> -->
+<!-- <div id="sign-in"></div> -->
 
-  window.onAmazonLoginReady = function() {
-    amazon.Login.setClientId("amzn1.application-oa2-client.a5c727db89be45f995a54d3f291d0e43");
-  };
-  (function(d) {
-    var a = d.createElement('script'); a.type = 'text/javascript';
-    a.async = true; a.id = 'amazon-login-sdk';
-    a.src = 'https://api-cdn.amazon.com/sdk/login1.js';
-    d.getElementById('amazon-root').appendChild(a);
-  })(document);
-</script> -->
+
+
+
+
+  <!-- // (function(d) {
+  //   var a = d.createElement('script'); a.type = 'text/javascript';
+  //   a.async = true; a.id = 'amazon-login-sdk';
+  //   a.src = 'https://api-cdn.amazon.com/sdk/login1.js';
+  //   d.getElementById('amazon-root').appendChild(a);
+  // })(document); -->
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -41,7 +41,6 @@
   </div>
 <% end %>
 </div>
-
 
 <!-- <div class="amazon-wrapper">
 <a href="#" id="LoginWithAmazon">
