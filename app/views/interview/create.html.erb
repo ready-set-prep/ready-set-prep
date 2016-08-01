@@ -1,8 +1,9 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <ul class="tabs">
   <li class="active">Company Info</li>
-  <li>Outfit Inspiration</li>
+  <li>Attire Ideas</li>
   <li>Shop Clothes</li>
+  <li>Interview Questions</li>
 </ul>
 
   <ul class="tab__content">
@@ -73,8 +74,8 @@
 
 
       <%# render partial: "/shared/amazon_info" %>
-  <p>
-    The category that we chose for you is: <%= @category %>, but feel free to choose from any category.
+  <p class="chosencompany">
+    The category that we chose for you is <u><%= @category.upcase %></u>, but feel free to choose from any category.
   </p>
 
 
@@ -92,6 +93,8 @@
         <%= render partial: "/shared/shop" %>
 
       </div>
+    </li>
+    <li>
     </li>
 
 </ul>
