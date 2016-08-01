@@ -19,13 +19,16 @@ $(".show").on("click",function(){
     $(".show").css("display", "block");
   });
 
+$(".searchdiv").on("click", function(){
+  $(".searchbar").toggle()
+});
 
 //fashion
 
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
   console.log(search)
-  $(".defaultShop").hide();
+
 
 $.ajax({
   dataType: "json",
