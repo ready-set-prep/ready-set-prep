@@ -5,6 +5,7 @@
   $dark-gray: #333 !default;
   $large-screen: 53.75em !default;
   $base-font-color: $dark-gray !default;
+  margin-top: 10%;
 
   display: inline-block;
 
@@ -51,4 +52,6 @@
   }
 }
 
-// Based on code by http://codepen.io/xmark/
+.spacing {
+  height: 20%;
+}
