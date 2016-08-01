@@ -307,7 +307,7 @@ button:focus {
     z-index: 99999999999;
 
     @include media($large-screen) {
-      padding-top: 10em;
+      // padding-top: 10em;
     }
 
     .modal-bg {
@@ -348,12 +348,12 @@ button:focus {
     border-radius: $base-border-radius;
     margin: auto;
     margin-top: 0;
-    max-height: 95%;
+    max-height: 100%;
     overflow: auto;
     padding: $modal-padding / 2;
     position: relative;
     transition: opacity 0.25s ease;
-    width: 95%;
+    width: 100%;
 
     @include media($medium-screen) {
       max-height: 100%;/** height of the model **/
