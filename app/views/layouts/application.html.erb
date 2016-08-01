@@ -25,7 +25,7 @@
     <ul id="menu">
       <a href="/"><li>Home</li></a></br>
       <a href="/aboutus"><li>About</li></a>
-      <a href="interview prep"><li>Interview Prep</li></a>
+      <a href="/interviewprep"><li>Interview Prep</li></a>
         <% if current_user%>
       <a ><li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li></a>
       <a href="/savedinterviews"><li>Saved Interviews</li></a>
