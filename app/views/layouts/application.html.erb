@@ -12,7 +12,31 @@
 
 
 <%#this is the navbar!!!  %>
-    <ul class="section">
+
+<nav role="navigation">
+  <div id="menuToggle">
+
+    <input type="checkbox" />
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+      <a href="/"><li>Home</li></a>
+      <a href="/aboutus"><li>About</li></a>
+        <% if current_user%>
+        <a href="/users/sign_out"><li>Sign Out</li></a>
+        <a href="/savedinterviews"><li>Saved Interviews</li></a>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, :class => "buttonTo" %>
+      <% else %>
+      <li class="signin"><a href="/users/sign_in">Log In</a></li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
+    <!-- <ul class="section">
       <li><a class="active" href="/">
         <%= image_tag "smallinsig.png" %>
       </a></li>
@@ -29,16 +53,13 @@
       <% else %>
       <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
-    </ul>
+    </ul> -->
 <%# this is the end of the navbar!!! %>
-
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
+    <div class="flashmessage">
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: name %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
-
-  <!--this is the footer  -->
-
-    <!-- <footer><p>Here i am. Ready to use me for navigation lists or other content.</p></footer> -->
 </html>

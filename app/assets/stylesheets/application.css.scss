@@ -80,6 +80,10 @@
    text-decoration: none;
  }
 
+ .flashmessage {
+text-align: center;
+ }
+
  @import "landing-page";
  @import "sign-in";
  @import "aboutus";
@@ -89,3 +93,4 @@
  @import "shop";
  @import "footer";
  @import "dropdownmenu";
+ @import "navbar";
