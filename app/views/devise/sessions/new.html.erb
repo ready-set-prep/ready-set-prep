@@ -4,7 +4,7 @@
 
 <!-- SIGN-IN PAGE -->
 <div class="form-wrapper">
-<div id="amazon-root"></div>
+<!-- <div id="amazon-root"></div>
 <script type="text/javascript">
 
   window.onAmazonLoginReady = function() {
@@ -16,7 +16,7 @@
     a.src = 'https://api-cdn.amazon.com/sdk/login1.js';
     d.getElementById('amazon-root').appendChild(a);
   })(document);
-</script>
+</script> -->
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -43,7 +43,7 @@
 </div>
 
 
-<div class="amazon-wrapper">
+<!-- <div class="amazon-wrapper">
 <a href="#" id="LoginWithAmazon">
   <img border="0" alt="Login with Amazon"
     src="https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png"
@@ -58,17 +58,17 @@
   };
 
 </script>
-
+ -->
 
 
 <%= render "devise/shared/links" %>
 <% if current_user %>
     <%= button_to 'Sign out', destroy_user_session_path, method: :delete%>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       document.getElementById('Logout').onclick = function() {
         amazon.Login.logout();
     };
-    </script>
+    </script> -->
 <% else %>
 
 <% end %>
