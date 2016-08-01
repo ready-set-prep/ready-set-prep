@@ -28,14 +28,13 @@
         <% if current_user%>
         <a ><li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li></a>
         <a href="/savedinterviews"><li>Saved Interviews</li></a>
-        <%= image_tag("smallinsig.png", class:"logo") %>
       <% else %>
       <li class="signin"><a href="/users/sign_in">Log In</a></li>
       <% end %>
 
     </ul>
   </div>
-
+  <%= image_tag("smallinsig.png", class:"logo") %>
 </nav>
 
 <%# this is the end of the navbar!!! %>
