@@ -156,6 +156,7 @@ footer{
 	width: 100%;
 	-webkit-transform: translateY(5px);
 	transform: translateY(5px);
+  margin-top: 5%;
 
 	li{
 		transition-duration: .25s;
@@ -336,7 +337,7 @@ div#columns figure {
 	margin: 0 2px 15px;
 	padding: 15px;
 	padding-bottom: 10px;
-	transition: opacity .4s ease-in-out;
+	// transition: opacity .4s ease-in-out;
   display: inline-block;
   column-break-inside: avoid;
 }
@@ -368,7 +369,7 @@ div#columns small a {
 }
 
 div#columns:hover figure:not(:hover) {
-	opacity: 0.4;
+	// opacity: 0.4;
 }
 
 @media screen and (max-width: 750px) {
@@ -479,8 +480,8 @@ text-align: center;
 }
 
 .save {
-  float: right;
-  margin-right: 20px;
+  margin-top: 5px;
+  margin-left: 2.5%;
 }
 
 .chosencompany {

@@ -2,7 +2,6 @@
 <ul class="tabs">
   <li class="active">Company Info</li>
   <li>Attire</li>
-  <li>Interview Questions</li>
 </ul>
 
   <ul class="tab__content">
@@ -16,7 +15,7 @@
       <%= form_tag("/savedinterviews", method: "post") do %>
         <input type="hidden" name="company" value=<%= @name %>>
         <input type="hidden" name="position" value="<%= params[:positions] %>">
-        <button class="save" type="submit" value="Submit"> Save </button>
+        <button class="save" type="submit" value="Submit"> Click to Save this company <br> and position for later </button>
       <% end %>
 
       <div class="grid grid-pad">
@@ -82,8 +81,5 @@
       <%= render partial: "/shared/pintrest_data" %>
               </li>
 
-    <li>
-      <%= render partial: "/shared/interviewquestions" %>
-    </li>
 
 </ul>

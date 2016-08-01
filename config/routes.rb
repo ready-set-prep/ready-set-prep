@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :pintrestselections
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/aboutus'   => 'aboutus#index'
+  get '/interviewprep' => 'interviewprep#index'
 end
