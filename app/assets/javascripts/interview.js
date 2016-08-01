@@ -29,12 +29,10 @@ function refresh() {
 //fashion
 $(document).ready(function(){
 
-<<<<<<< HEAD
-=======
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
   console.log(search)
-  // $(".defaultShop").hide();
+  $(".defaultShop").hide();
 
 $.ajax({
   dataType: "json",
@@ -42,16 +40,15 @@ $.ajax({
   method: "GET"
 }) .done(function(json) {
   $.each(json.products, function(index,item){
-    $(".shop").append("<figure><a href=" + item.pageUrl + "><img src=" + item.image.sizes.Best.url + "></img></a><figcaption>" + item.priceLabel + item.brandedName + item.description + "</figcaption></figure>")
+    $(".shop").append("<figure class='ajaxcalls'><a href=" + item.pageUrl + "><img src=" + item.image.sizes.Best.url + "></img></a><figcaption>" + item.priceLabel + item.brandedName + item.description + "</figcaption></figure>")
   });
 });
 });
 
->>>>>>> b90b0e1d125b23582fc6e145aef76af41bd50cc6
 $( ".fashionable").on("click", function() {
-
   console.log("button 1")
   $(".rubydiv").hide();
+  $(".ajaxcalls").hide();
   $.ajax({
      dataType: "json",
       url: "https://api.pinterest.com/v1/boards/readysetprep/fashionable-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
@@ -61,17 +58,16 @@ $( ".fashionable").on("click", function() {
 
 
    $.each(json.data, function(index,item) {
-       $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
-     });
-
+       $(".pintrestStuff").append("<figure class='ajaxcalls'><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
+  });
   });
 });
 
 $(".conservative").on("click", function() {
-
 //conservative
   console.log("button 2")
-<
+  $(".rubydiv").hide();
+  $(".ajaxcalls").hide();
      $.ajax({
          dataType: "json",
          url: "https://api.pinterest.com/v1/boards/readysetprep/conservative-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
@@ -79,19 +75,17 @@ $(".conservative").on("click", function() {
        }) .done(function(json) {
            $('.category-function-bar-items').append('<li id="conservative">' + json + '</li>');
 
-       $.each(json.data, function(index,item) {
-          $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
+           $.each(json.data, function(index,item) {
+             $(".pintrestStuff").append("<figure class='ajaxcalls'><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
            });
-
     });
 });
 
-
 $(".bizcas").on("click", function() {
-
 //business casual
   console.log("button 3")
   $(".rubydiv").hide();
+  $(".ajaxcalls").hide();
    $.ajax({
       dataType: "json",
        url: "https://api.pinterest.com/v1/boards/readysetprep/business-casual-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
@@ -100,18 +94,16 @@ $(".bizcas").on("click", function() {
          $('.category-function-bar-items').append('<li id="bizcas">' + json + '</li>');
 
          $.each(json.data, function(index,item) {
-           $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
+           $(".pintrestStuff").append("<figure class='ajaxcalls'><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
          });
-    });
+  });
 });
 
-
-
 $(".casual").on("click", function() {
-
 //casual
   console.log("button 4")
   $(".rubydiv").hide();
+  $(".ajaxcalls").hide();
  $.ajax({
     dataType: "json",
      url: "https://api.pinterest.com/v1/boards/readysetprep/casual-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
@@ -122,9 +114,6 @@ $(".casual").on("click", function() {
         $.each(json.data, function(index,item) {
           $(".pintrestStuff").append("<figure><a href=" + item.url + "><img src=" + item.image.original.url + "></img></a><figcaption>" + item.note + "</figcaption></figure>")
         });
-
-      });
-
-  });
-
-});// end of ajax document.ready //
+});
+});
+});
