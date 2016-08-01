@@ -19,15 +19,8 @@ $(".show").on("click",function(){
     $(".show").css("display", "block");
   });
 
-});
-
-function refresh() {
-    location.reload();
-}
-
 
 //fashion
-$(document).ready(function(){
 
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
@@ -35,7 +28,7 @@ $("#search_submit").on("click", function(){
   $(".defaultShop").hide();
 
 $.ajax({
-  dataType: "json",
+  dataType: "jsonp",
   url: "http://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
   method: "GET"
 }) .done(function(json) {
@@ -50,7 +43,7 @@ $( ".fashionable").on("click", function() {
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
   $.ajax({
-     dataType: "json",
+     dataType: "jsonp",
       url: "https://api.pinterest.com/v1/boards/readysetprep/fashionable-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
       method: 'GET',
     }) .done(function(json) {
@@ -69,7 +62,7 @@ $(".conservative").on("click", function() {
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
      $.ajax({
-         dataType: "json",
+         dataType: "jsonp",
          url: "https://api.pinterest.com/v1/boards/readysetprep/conservative-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
          method: 'GET',
        }) .done(function(json) {
@@ -87,7 +80,7 @@ $(".bizcas").on("click", function() {
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
    $.ajax({
-      dataType: "json",
+      dataType: "jsonp",
        url: "https://api.pinterest.com/v1/boards/readysetprep/business-casual-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
        method: 'GET',
      }) .done(function(json) {
@@ -105,7 +98,7 @@ $(".casual").on("click", function() {
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
  $.ajax({
-    dataType: "json",
+    dataType: "jsonp",
      url: "https://api.pinterest.com/v1/boards/readysetprep/casual-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
      method: 'GET',
    }) .done(function(json) {
