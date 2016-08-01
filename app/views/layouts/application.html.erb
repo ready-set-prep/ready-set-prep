@@ -33,8 +33,11 @@
       <% end %>
 
     </ul>
+    <% if current_user %>
   </div>
   <%= image_tag("smallinsig.png", class:"logo") %>
+  <% else %>
+  <% end %>
 </nav>
 
 <%# this is the end of the navbar!!! %>

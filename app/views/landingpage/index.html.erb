@@ -1,8 +1,8 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <div class="searchform">
 
-    <% if current_user %>
+<% if current_user %>
+  <div class="searchform">
     <%= form_tag('/interview', method: :post) %>
        Company<br>
        <input type="text" name="q">
@@ -15,22 +15,21 @@
 
     <button type="submit" value="Submit">Submit</button>
 
-
-</div><!--  end of searchform  -->
-<% if current_user %>
+  </div><!--  end of searchform  -->
   <% @reviews.each do |f| %>
   <%= button_to "#{f.position}, #{f.company}", {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post  %>
   <%= button_to 'x', {:controller => "savedinterviews", :id => f.id, :action => "destroy" }, {:method => :delete} %>
   <% end %>
-<% end %>
 <!--Login Page  -->
 <% else %>
-<h1 class="maintitle"> ReadySetPrep </h1>
-  <form action="/users/sign_in", method="GET">
+
+<%= image_tag("maintitle.png", class:"maintitle") %>
+<!-- <h1 class="maintitle"> ReadySetPrep </h1> -->
+  <!-- <form action="/users/sign_in", method="GET">
     <button class="loginbutton"> LOGIN </button>
-  </form>
+  </form> -->
 
 
-
-    <p class="blurbtitle"> Welcome to Ready Set PreP</p>
+<!--
+    <p class="blurbtitle"> Welcome to Ready Set PreP</p> -->
   <% end %>
