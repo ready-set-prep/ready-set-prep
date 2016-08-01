@@ -16,7 +16,7 @@
       <%= form_tag("/savedinterviews", method: "post") do %>
         <input type="hidden" name="company" value=<%= @name %>>
         <input type="hidden" name="position" value="<%= params[:positions] %>">
-        <button class="save" type="submit" value="Submit"> Save </button>
+        <button class="save" type="submit" value="Submit"> Click to Save this company <br> and position for later </button>
       <% end %>
 
       <div class="grid grid-pad">
@@ -74,7 +74,9 @@
 
       <%# render partial: "/shared/amazon_info" %>
   <p class="chosencompany">
-    The category that we chose for you is <u><%= @category.upcase %></u>, but feel free to choose from any Category
+    Because you searched for <u><%= @name.upcase %></u> with <u><%= @amazonparams.upcase %></u>, the clothing category is <u><%= @category.upcase %></u>, but feel free to choose from any
+    <button class="show">Category</button>
+    <button class="hide">Category</button>
   </p>
       <%= render partial: "/shared/pintrest_widgets" %>
       <%= render partial: "/shared/pintrest_data" %>

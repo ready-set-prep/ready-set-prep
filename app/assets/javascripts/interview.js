@@ -8,7 +8,7 @@ $(".show").on("click",function(){
   $(".category-function-bar-items").slideDown(300);
 
   $(".show").css("display", "none");
-  $(".hide").css("display", "block");
+  $(".hide").css("display", "inline");
   });
 
   $(".hide").on("click",function(){
@@ -16,7 +16,7 @@ $(".show").on("click",function(){
     // $('.category-function-bar-items').addClass('animated slideOutUp');
     $(".category-function-bar-items").slideUp(300);
     $(".hide").css("display", "none");
-    $(".show").css("display", "block");
+    $(".show").css("display", "inline");
   });
 
 $(".searchdiv").on("click", function(){
@@ -50,6 +50,7 @@ $( ".fashionable").on("click", function() {
       url: "https://api.pinterest.com/v1/boards/readysetprep/fashionable-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
       method: 'GET',
     }) .done(function(json) {
+      console.log()
         $('.category-function-bar-items').append('<li id="fashionable"></li>');
 
 
