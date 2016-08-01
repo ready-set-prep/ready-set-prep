@@ -27,7 +27,7 @@ function refresh() {
 
 
 //fashion
-$(document).ready(function(e){
+$(document).ready(function(){
 
 $( ".fashionable").on("click", function() {
 
