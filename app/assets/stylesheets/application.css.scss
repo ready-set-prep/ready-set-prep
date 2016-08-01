@@ -66,7 +66,7 @@
  }
 
  .glassdoorContent {
-   background-color: #e6e5e7;
+  //  background-color: #e6e5e7;
    margin-bottom: 7px;
    padding: 10px;
    border-radius: 2px;
@@ -80,6 +80,12 @@
    text-decoration: none;
  }
 
+ .flashmessage {
+   text-align: center;
+   background-color: lightgray;
+   width: 100%;
+ }
+
  @import "landing-page";
  @import "sign-in";
  @import "aboutus";
@@ -89,3 +95,4 @@
  @import "shop";
  @import "footer";
  @import "dropdownmenu";
+ @import "navbar";

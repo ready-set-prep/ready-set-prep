@@ -20,6 +20,9 @@ label {
 input,
 select,
 textarea {
+  margin-left: auto;
+display: block;
+margin-right: auto;
   display: block;
   font-family: $base-font-family;
   font-size: $base-font-size;
