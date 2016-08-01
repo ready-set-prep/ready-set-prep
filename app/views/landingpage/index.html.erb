@@ -13,26 +13,21 @@
 
     <%= render partial: "/shared/dropdownmenu" %>
 
-    <button type="submit" value="Submit">Submit</button>
+    <button type="submit" value="Submit">Prep!</button>
 
   </div><!--  end of searchform  -->
   <% @reviews.each do |f| %>
   <%= button_to "#{f.position}, #{f.company}", {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post  %>
   <%= button_to 'x', {:controller => "savedinterviews", :id => f.id, :action => "destroy" }, {:method => :delete} %>
   <% end %>
-<!--Login Page  -->
-<% else %>
 
-<%= image_tag("maintitle.png", class:"maintitle") %>
+<% else %>
+  <!--Login Page  -->
+  <%= image_tag("maintitle.png", class:"maintitle") %>
 
   <a><%= link_to "Sign Up", new_user_registration_path, :method => :get, class:"signup" %></a>
   <a><%= link_to "Log In",user_session_path, :method => :get, class:"login" %></a>
-<!-- <h1 class="maintitle"> ReadySetPrep </h1> -->
-  <!-- <form action="/users/sign_in", method="GET">
-    <button class="loginbutton"> LOGIN </button>
-  </form> -->
 
 
-<!--
-    <p class="blurbtitle"> Welcome to Ready Set PreP</p> -->
+
   <% end %>
