@@ -26,6 +26,13 @@
    font-weight: normal;
    src: asset-url('Aquatico-Regular.otf') format("opentype");
  }
+
+ @font-face {
+   font-family: 'Apprillia';
+   font-style: normal;
+   font-weight: normal;
+   src: asset-url('Aprillia-Script_TEST.otf') format("opentype");
+ }
  .buttonsInNavBar {
    display: inline-block;
    float: right;
