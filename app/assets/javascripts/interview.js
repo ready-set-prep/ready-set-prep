@@ -28,7 +28,7 @@ $("#search_submit").on("click", function(){
   $(".defaultShop").hide();
 
 $.ajax({
-  dataType: "jsonp",
+  dataType: "json",
   url: "http://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
   method: "GET"
 }) .done(function(json) {
