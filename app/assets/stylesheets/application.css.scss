@@ -16,9 +16,9 @@
  @import "neat";
  @import "base/base";
 
-// body {
-//   background-image: image("smallinsig.png");
-// }
+body {
+  background-color: #FCFDFD;
+}
 
  @font-face{
    font-family: 'Aquatico';
@@ -28,7 +28,7 @@
  }
 
  @font-face {
-   font-family: 'Apprillia';
+   font-family: 'Aprillia';
    font-style: normal;
    font-weight: normal;
    src: asset-url('Aprillia-Script_TEST.otf') format("opentype");
