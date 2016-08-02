@@ -1,22 +1,22 @@
 // show button
 $(document).ready(function(){
 
-$(".show").on("click",function(){
+$(".myButton").on("click",function(){
   console.log("test");
 
-  // $('.category-function-bar-items').addClass('animated slideInDown');
+
   $(".category-function-bar-items").slideDown(300);
 
-  $(".show").css("display", "none");
-  $(".hide").css("display", "inline");
+  $(".category-function-bar-items").css("display", "inline-flex");
+
   });
 
-  $(".hide").on("click",function(){
+  $(".myOtherBtn").on("click",function(){
     console.log("again");
-    // $('.category-function-bar-items').addClass('animated slideOutUp');
+
     $(".category-function-bar-items").slideUp(300);
-    $(".hide").css("display", "none");
-    $(".show").css("display", "inline");
+    // $(".category-function-bar-items").css("display", "none");
+    // $(".show").css("display", "inline");
   });
 
 $(".searchdiv").on("click", function(){
