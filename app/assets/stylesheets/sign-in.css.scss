@@ -60,3 +60,11 @@
   margin-left: 60%;
   margin-top: -55px;
 }
+
+.behindtitle {
+  position: absolute;
+  width: 75%;
+  top: -2px;
+  left: 160px;
+  z-index: -1;
+}

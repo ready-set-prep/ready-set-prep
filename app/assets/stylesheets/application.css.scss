@@ -16,10 +16,6 @@
  @import "neat";
  @import "base/base";
 
-// body {
-//   background-image: image("smallinsig.png");
-// }
-
  @font-face{
    font-family: 'Aquatico';
    font-style: normal;
@@ -60,7 +56,7 @@
  }
 
  li a {
-     display: block;
+     display: inline;
     //  color: #666;
      text-align: center;
      padding: 14px 16px;
@@ -69,6 +65,7 @@
  }
 
  li a:hover {
+
      background-color: #ddd;
  }
 

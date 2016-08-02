@@ -26,7 +26,7 @@ html, body {
   $dark-gray: #333 !default;
   $light-gray: #DDD !default;
   $base-font-color: $dark-gray !default;
-  $flex-box-border-color: $light-gray;
+  $flex-box-border-color: #52a494;
   $flex-box-border: 1px solid $flex-box-border-color;
   $flex-box-background: lighten($light-gray, 10%);
   $flex-box-gutter: 0.4em;
@@ -62,7 +62,7 @@ html, body {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     border: solid;
-    color: lightgray;
+    color: #52a494;
 
     @for $i from 1 to 7 { // assign colors from $flex-box-top-colors list
       &:nth-child(#{$i}) {
@@ -71,7 +71,7 @@ html, body {
     }
 
     .flex-title {
-      color: $flex-box-color;
+      color: #606c73;
       font-size: 1.2em;
       margin-bottom: 0.5em;
     }
@@ -80,7 +80,7 @@ html, body {
       // color: transparentize($flex-box-color, 0.1);
       line-height: 1.5em;
       margin: auto;
-      color: rgba(51, 51, 51, 0.7);
+      color: #606c73;
       // border: solid;
       // color: black;
       text-align: left;
@@ -157,13 +157,15 @@ footer{
 	-webkit-transform: translateY(5px);
 	transform: translateY(5px);
   margin-top: 5%;
+  border-bottom: solid;
+  border-color: #52a494;
 
 	li{
 		transition-duration: .25s;
 		display: table-cell;
 		list-style: none;
 		text-align: left;
-		padding: 5px 5px 1px 20px;
+		padding: 20px 20px 25px 20px;
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
@@ -178,7 +180,7 @@ footer{
 			height: 120%;
 			top: 0;
 			left: 0;
-			background-color: white;
+			background-color: #FCFDFD;
 			-webkit-transform: translateY(100%);
 			transform: translateY(100%);
 			transition-duration: .25s;
@@ -194,11 +196,11 @@ footer{
 		}
 
 		&.active{
-			color: #800000;
+			color: #F7F8F8;
 
 			&:before{
 				transition-duration: .5s;
-				background-color: #f6f9ff;
+				background-color: #52a494;
 				-webkit-transform: translateY(0);
 				transform: translateY(0);
 			}
@@ -215,7 +217,7 @@ footer{
 .accordion-tabs {
   $base-border-color: #dcdcdc !default;
   $base-border-radius: 3px !default;
-  $base-background-color: #fff !default;
+  $base-background-color: #DDF8F1 !default;
   $base-spacing: 1.5em !default;
   $action-color: #477dca !default;
   $dark-gray: #333 !default;
@@ -319,7 +321,6 @@ footer{
  src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
 }
 body {
-	background: url(//subtlepatterns.com/patterns/scribble_light.png);
   font-family: Calluna, Arial, sans-serif;
   min-height: 1000px;
 }
@@ -511,11 +512,11 @@ text-align: center;
 // button
 
 .myButton {
-	background-color:#d3552e;
+	background-color:#298373;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
-	border:1px solid #e5b03a;
+	border:1px solid #343e44;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -526,9 +527,13 @@ text-align: center;
 	text-shadow:0px 1px 0px #2f6627;
 }
 .myButton:hover {
-	background-color:#e5b03a;
+	background-color:#52a494;
 }
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.tabtext {
+  font-family: 'Arial';
 }
