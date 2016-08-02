@@ -1,7 +1,8 @@
 button {
-  background: #333;
+  background: #132B3E;
   color: #fff;
   font-weight: bold;
+  border-radius: 5%;
   // padding: 1em 14.3em;
 }
 button:hover {
@@ -20,7 +21,7 @@ button:focus {
 }
 
 .buttonTo {
-  background: #333;
+  background: #132B3E;
   color: #fff;
   font-weight: bold;
   // border-radius: 5px;
@@ -172,7 +173,7 @@ button:focus {
 .bullets {
   $base-line-height: 1.5em !default;
   $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
+  $dark-gray: #132B3E !default;
   $base-font-color: $dark-gray !default;
   $icon-bullet-size: 3.5em;
 
@@ -259,7 +260,7 @@ button:focus {
   $base-font-size: 1em !default;
   $base-line-height: 1.5em !default;
   $action-color: #477dca !default;
-  $dark-gray: #333 !default;
+  $dark-gray: #132B3E !default;
   $light-gray: #ddd !default;
   $medium-screen: 40em !default;
   $large-screen: 53.75em !default;
@@ -290,8 +291,8 @@ button:focus {
   .modal-trigger {
     margin: 10px;
     color: white;
-    // border-radius: 5px;
     text-align: center;
+    width: 95%;
   }
 
   .modal-fade-screen { // overlay
@@ -462,4 +463,8 @@ button:focus {
 
 .styled-select {
   margin-top: 8px;
+}
+
+.widthheight {
+  width: 350px;
 }

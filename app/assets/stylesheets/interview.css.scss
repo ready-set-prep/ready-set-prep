@@ -268,7 +268,7 @@ footer{
     background-color: $tab-inactive-color;
     border-top: $tab-border;
     color: $dark-gray;
-    // display: block;
+    display: block;
     font-weight: bold;
     padding: ($base-spacing / 2) ($gutter / 2);
     text-decoration: none;
@@ -509,7 +509,7 @@ text-align: center;
 // button
 
 .myButton {
-	background-color:#298373;
+	background-color:#132B3E;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
@@ -522,6 +522,7 @@ text-align: center;
 	padding:16px 31px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
+  margin-top: 40px;
 }
 .myButton:hover {
 	background-color:#52a494;

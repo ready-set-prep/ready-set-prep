@@ -20,10 +20,8 @@
     Your most recent saved reviews are:
   </h1>
   <% @reviews.each do |f| %>
-  <div id="columns" class="top5SavedReviews">
-    <figure>
-    <%= button_to "#{f.position}, #{f.company}", {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post  %>
-  </figure>
+  <div class="top5SavedReviews">
+    <%= button_to "#{f.position}, #{f.company}", {:controller => "interview", :action => "create", :positions => f.position, :q=> f.company} , :method=>:post, :class => "myButton widthheight"  %>
 </div>
     <% end %>
 
