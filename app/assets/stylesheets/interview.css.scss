@@ -163,11 +163,12 @@ footer{
 		display: table-cell;
 		list-style: none;
 		text-align: left;
-		padding: 20px 20px 25px 20px;
+		padding: 5px 5px 1px 20px;
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
 		color: black;
+    font-size: 30px;
 
 		&:before{
 			z-index: -1;
@@ -422,8 +423,8 @@ text-align: center;
 .category-function-bar-items{
   width: 100%;
   height: 6em;
-  border-bottom: 2px solid black;
   display: none;
+  align-items: center;
 }
 
 // .btn-nav-bar{
@@ -487,6 +488,7 @@ text-align: center;
 .chosencompany {
   text-align: center;
   font-size: 20px;
+  margin-top: 1em;
 }
 
 .searchdiv {
@@ -509,11 +511,11 @@ text-align: center;
 // button
 
 .myButton {
-	background-color:#44c767;
+	background-color:#d3552e;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
-	border:1px solid #18ab29;
+	border:1px solid #e5b03a;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -524,7 +526,7 @@ text-align: center;
 	text-shadow:0px 1px 0px #2f6627;
 }
 .myButton:hover {
-	background-color:#5cbf2a;
+	background-color:#e5b03a;
 }
 .myButton:active {
 	position:relative;
