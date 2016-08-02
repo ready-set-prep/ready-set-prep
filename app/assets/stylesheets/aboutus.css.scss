@@ -445,8 +445,12 @@ ul#demo3 li:hover a {
 
 .aboutustitle{
   // margin-top: 6%;
-  padding-bottom: 8%;
-  font-size: 2em;
-  font-family: 'Aprillia', Verdana, sans-serif;
-  letter-spacing: 9.1px;
+  font-size: 3.5em;
+  text-align: center;
+  font-family: "Lato";
+  // letter-spacing: 9.1px;
+}
+
+.aboutimage {
+  border-radius: 50%;
 }
