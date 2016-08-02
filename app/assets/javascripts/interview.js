@@ -8,7 +8,7 @@ $(".show").on("click",function(){
   $(".category-function-bar-items").slideDown(300);
 
   $(".show").css("display", "none");
-  $(".hide").css("display", "inline");
+  $(".hide").css("display", "inline-block");
   });
 
   $(".hide").on("click",function(){
@@ -16,7 +16,7 @@ $(".show").on("click",function(){
     // $('.category-function-bar-items').addClass('animated slideOutUp');
     $(".category-function-bar-items").slideUp(300);
     $(".hide").css("display", "none");
-    $(".show").css("display", "inline");
+    $(".show").css("display", "inline-block");
   });
 
 $(".searchdiv").on("click", function(){
