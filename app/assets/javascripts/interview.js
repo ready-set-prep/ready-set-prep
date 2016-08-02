@@ -24,15 +24,15 @@ $(".searchdiv").on("click", function(){
 });
 
 //fashion
-
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
   console.log(search)
-
+  
+$(".ajaxcalls").hide()
 
 $.ajax({
   dataType: "json",
-  url: "//api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
+  url: "https://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
   method: "GET"
 }) .done(function(json) {
   $.each(json.products, function(index,item){
