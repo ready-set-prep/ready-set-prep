@@ -23,14 +23,17 @@
     <span></span>
 
     <ul id="menu">
-      <a href="/"><li>Home</li></a></br>
-      <a href="/aboutus"><li>About</li></a>
-      <a href="/interviewprep"><li>Interview Prep</li></a>
         <% if current_user%>
-      <a ><li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li></a>
-      <a href="/savedinterviews"><li>Saved Interviews</li></a>
+        <a href="/"><li><p>Home</p></li></a>
+        <a href="/aboutus"><li><p>About</p></li></a>
+        <a href="/interviewprep"><li><p>Interview Prep</li></a>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <a href="/savedinterviews"><li><p>Saved Interviews</p></li></a>
         <% else %>
-      <a href="/users/sign_in"><li>Log In</li></a>
+        <a href="/"><li><p>Home</p></li></a>
+        <a href="/aboutus"><li><p>About</p></li></a>
+        <a href="/interviewprep"><li><p>Interview Prep</li></a>
+      <a href="/users/sign_in"><li><p>Log In</p></li></a>
         <% end %>
 
     </ul>
