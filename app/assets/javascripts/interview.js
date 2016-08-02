@@ -27,7 +27,7 @@ $(".searchdiv").on("click", function(){
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
   console.log(search)
-  
+
 $(".ajaxcalls").hide()
 
 $.ajax({
