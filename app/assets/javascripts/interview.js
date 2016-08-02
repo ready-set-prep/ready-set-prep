@@ -5,19 +5,14 @@ $(".myButton").on("click",function(){
   console.log("test");
 
 
-  $(".category-function-bar-items").slideDown(300);
+  $(".category-function-bar-items").slideToggle(300);
 
   $(".category-function-bar-items").css("display", "inline-flex");
 
+
   });
 
-  $(".myOtherBtn").on("click",function(){
-    console.log("again");
 
-    $(".category-function-bar-items").slideUp(300);
-    // $(".category-function-bar-items").css("display", "none");
-    // $(".show").css("display", "inline");
-  });
 
 $(".searchdiv").on("click", function(){
   $(".searchbar").toggle()
