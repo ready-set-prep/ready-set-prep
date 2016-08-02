@@ -1,10 +1,4 @@
-// img{
-//   width: 3.5em;
-//   height: 3.5em;
-// }
-// ul{
-//   display:inline-block;
-// }
+
 
 /****   wrapper ******/
 .aboutus-wrapper{
@@ -388,27 +382,27 @@ ul.social-buttons li a {
   // color: white;
 }
 
-// ul.social-buttons li a.brandico-twitter-bird {
-//   background-color: #4099FF;
+ul.social-buttons li a.brandico-twitter-bird {
+  background-color: #4099FF;
+}
+
+// ul.social-buttons li a  {
+//   background-color: #D4C9DE ;
 // }
-//
-// ul.social-buttons li a.brandico-facebook {
-//   background-color: #3B5998;
-// }
-//
-// ul.social-buttons li a.brandico-instagram {
+
+// ul.social-buttons li  {
 //   background-color: #3f729b;
 // }
 //
-// ul.social-buttons li a.brandico-vimeo {
+// ul.social-buttons li  {
 //   background-color: #4EBBFF;
 // }
 //
-// ul.social-buttons li a.brandico-linkedin {
+// ul.social-buttons li  {
 //   background-color: #0e76a8;
 // }
 //
-// ul.social-buttons li a.brandico-github {
+// ul.social-buttons li  {
 //   background-color: #0e76a8;
 // }
 
@@ -420,6 +414,7 @@ ul#demo1 li a {
 
 ul#demo1 li:hover a {
   transform: translateY(-10px);
+  color: #857891;
 }
 
 /*Demo 2*/
@@ -449,5 +444,9 @@ ul#demo3 li:hover a {
 }
 
 .aboutustitle{
-  margin-top: 8%;
+  // margin-top: 6%;
+  padding-bottom: 8%;
+  font-size: 2em;
+  font-family: 'Aprillia', Verdana, sans-serif;
+  letter-spacing: 9.1px;
 }
