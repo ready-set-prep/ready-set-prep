@@ -1,9 +1,8 @@
+
+<h1 class="savedinterviewheader">Here are some positions that you were interested in</h1>
 <div id="columns">
   <% @companies.each do |p| %>
-  <figure>
-    <%= button_to "#{p.position}, #{p.company}", {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company} , :method=>:post  %>
+    <%= button_to "#{p.position}, #{p.company}", {:controller => "interview", :action => "create", :positions => p.position, :q=> p.company}, :method=>:post, :class => "myButton widthheight"  %>
     <%= button_to 'x', {:controller => "savedinterviews", :id => p.id, :action => "destroy" }, {:method => :delete} %>
-  </figure>
   <% end %>
-
 </div>

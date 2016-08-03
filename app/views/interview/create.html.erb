@@ -1,6 +1,8 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 <ul class="tabs">
-  <li class="active"><p class="tabtext">Company Info</p></li>
+  <li class="active"><p class="tabtext">Company Info
+    <button class="save" type="submit" value="Submit"> Click to Save this company <br> and position for later </button>
+  </p></li>
   <li><p class="tabtext">Attire</p></li>
 </ul>
 
@@ -15,7 +17,6 @@
       <%= form_tag("/savedinterviews", method: "post") do %>
         <input type="hidden" name="company" value=<%= @name %>>
         <input type="hidden" name="position" value="<%= params[:positions] %>">
-        <button class="save" type="submit" value="Submit"> Click to Save this company <br> and position for later </button>
       <% end %>
 
       <div class="grid grid-pad">

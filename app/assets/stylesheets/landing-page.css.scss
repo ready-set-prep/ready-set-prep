@@ -15,9 +15,8 @@ button:focus {
 /***  SIGN OUT BUTTON **/
 .button_to{
   // text-align: right;
-  padding-right: 2em;
-  padding-top: 0.5em;
-
+  width: 350px;
+  display: inline;
 }
 
 .buttonTo {
@@ -467,4 +466,6 @@ button:focus {
 
 .widthheight {
   width: 350px;
+  margin-top: 2%;
+
 }
