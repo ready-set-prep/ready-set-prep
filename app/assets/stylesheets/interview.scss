@@ -50,9 +50,7 @@ html, body {
 
   .flex-box {
     align-self: stretch;
-    // background: $flex-box-background;
     border-radius: $base-border-radius;
-    // box-shadow: inset 0 0 1px $flex-box-border-color, 0 2px 4px darken($base-background-color, 10%);
     display: block;
     flex: 2 2 15em;
     margin: $flex-box-gutter;
@@ -77,12 +75,9 @@ html, body {
     }
 
     p {
-      // color: transparentize($flex-box-color, 0.1);
       line-height: 1.5em;
       margin: auto;
       color: #606c73;
-      // border: solid;
-      // color: black;
       text-align: left;
     }
   }
@@ -339,7 +334,6 @@ div#columns figure {
 	margin: 0 2px 15px;
 	padding: 15px;
 	padding-bottom: 10px;
-	// transition: opacity .4s ease-in-out;
   display: inline-block;
   column-break-inside: avoid;
 }
@@ -382,11 +376,9 @@ div#columns:hover figure:not(:hover) {
 /** PINTREST STYLING **/
 .pinwrapper {/**  board-name-wrapper **/
   margin: 15px;
-  // height: 360px;
   width: 100%;
   display: -webkit-box;
-  // padding: 10px;
-  // display:inline;
+
 
 }
 
@@ -396,9 +388,7 @@ margin: 10px;
 padding: 0.8em 1em;
 color: white;
 background-color: rgba(51, 51, 51, 0.7);
-// border-radius: 5px;
 text-align: center;
-// display: inline;
 }
 
 .hide{
@@ -407,7 +397,6 @@ margin: 10px;
 padding: 0.8em 1em;
 color: white;
 background-color: rgba(51, 51, 51, 0.7);
-// border-radius: 5px;
 text-align: center;
 }
 
@@ -463,10 +452,6 @@ text-align: center;
   position: relative;
   padding: 2%;
 }
-
-// .myOtherBtn{
-//   color: pink;
-// }
 
 .savedinterviews {
   top: -45px;

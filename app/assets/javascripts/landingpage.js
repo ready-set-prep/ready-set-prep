@@ -17,7 +17,6 @@ $(".jobcat").on("click", ".kinds-of", function(){
       return clone;
 
       $(".chosen-catagory").on("click", function(event){
-          // event.stopPropagation();
         $(".chosen-catagory").val("");
     });
 

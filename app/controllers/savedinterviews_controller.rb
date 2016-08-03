@@ -10,7 +10,6 @@ class SavedinterviewsController < ApplicationController
       position: params[:position]
       )
     flash[:success] = "Saved!"
-    redirect_to landingpage_index_path
     # authorize r
     @info.save!
   end
@@ -22,6 +21,6 @@ class SavedinterviewsController < ApplicationController
       r.first.destroy
     end
     flash[:success] = "Deleted!"
-    redirect_to landingpage_index_path
+    redirect_to savedinterviews_path
   end
 end

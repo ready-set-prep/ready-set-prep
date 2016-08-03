@@ -47,9 +47,7 @@ a:hover
   -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
+
 #menuToggle span
 {
   display: block;
@@ -80,10 +78,7 @@ a:hover
   transform-origin: 0% 100%;
 }
 
-/*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+
 #menuToggle input:checked ~ span
 {
   opacity: 1;
@@ -91,43 +86,32 @@ a:hover
   background: #232323;
 }
 
-/*
- * But let's hide the middle one.
- */
+
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
+
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
 #menu
 {
-  // position: absolute;
   width:300px;
   margin: -100px 0 0 -50px;
   padding: 43px;
 
-  // padding-top: 125px;
-  // float: right;
+
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
 
   transform-origin: 0% 0%;
-  // transform: translate(-100%, 0);
   display: none;
 
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -141,12 +125,9 @@ a:hover
   margin-left: 2.5em;
 }
 
-/*
- * And let's fade it in from the left
- */
+
 #menuToggle input:checked ~ ul
 {
-  // transform: scale(1.0, 1.0);
   opacity: 1;
   z-index: -1;
   display: inline-block;
