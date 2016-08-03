@@ -4,7 +4,7 @@
     <div class="glassdoorContent">
     <p>Industry:   <%= @industry %></p>
     <p>Sector:  <%= @sector %></p>
-    <% unless @total_rating %>
+    <% unless @total_rating == nil %>
       <p>Total Rating:</p>
       <p class="ratings"><%= show_stars @total_rating %></p>
     <% end %>
