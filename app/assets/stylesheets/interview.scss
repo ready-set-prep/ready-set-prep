@@ -268,7 +268,7 @@ footer{
     background-color: $tab-inactive-color;
     border-top: $tab-border;
     color: $dark-gray;
-    // display: block;
+    display: block;
     font-weight: bold;
     padding: ($base-spacing / 2) ($gutter / 2);
     text-decoration: none;
@@ -479,8 +479,9 @@ text-align: center;
 }
 
 .save {
-  margin-top: 15px;
-  margin-left: 2.5%;
+  font-size: 16px;
+  float: right;
+  padding: $small-spacing $base-spacing;
 }
 
 .chosencompany {
@@ -490,11 +491,14 @@ text-align: center;
 }
 
 .searchdiv {
-  margin: 10px;
-  padding: 0.8em 1em;
-  color: white;
-  background-color: rgba(51, 51, 51, 0.7);
-  text-align: center;
+  width: 50%;
+    margin: 10px;
+    padding: 0.8em 1em;
+    color: white;
+    background-color: #48535b;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .searchdiv:hover {
@@ -508,8 +512,13 @@ text-align: center;
 
 // button
 
+<<<<<<< HEAD:app/assets/stylesheets/interview.css.scss
 .myButton {/** used to toggle categories button **/
 	background-color:#298373;
+=======
+.myButton {
+	background-color:#132B3E;
+>>>>>>> f43a3a4006a91f2ed778c0b3c6322fac72b17552:app/assets/stylesheets/interview.scss
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
@@ -522,6 +531,7 @@ text-align: center;
 	padding:16px 31px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
+
 }
 .myButton:hover {
 	background-color:#52a494;
@@ -533,4 +543,57 @@ text-align: center;
 
 .tabtext {
   font-family: 'Arial';
+}
+
+.prep {
+  background-color:#132B3E;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #343e44;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  padding:16px 31px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+  margin-top: 40px;
+}
+
+.companyresearch {
+  width: 120px;
+  padding: 15px;
+  border: solid;
+  border-width: 1px;
+  display: -webkit-inline-box;
+  margin-top: 6%;
+  margin-left: 12%;
+}
+
+.attire {
+  width: 100%;
+  padding: 15px;
+  border-width: 1px;
+  margin-top: 3%;
+  display: -webkit-inline-box;
+  margin-left: 61%;
+  font-size: larger;
+}
+
+.interviewprep {
+  width: 154px;
+  padding: 15px;
+  border: solid;
+  border-width: 1px;
+  margin-top: 6%;
+  display: -webkit-inline-box;
+  margin-left: 18%;
+}
+#search {
+  width: 50%;
+}
+#search_submit {
+  margin-left: 25%;
 }

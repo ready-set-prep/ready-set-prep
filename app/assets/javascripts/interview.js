@@ -3,31 +3,28 @@ $(document).ready(function(){
 
 $(".myButton").on("click",function(){
   console.log("test");
-
-
-  $(".category-function-bar-items").slideToggle(300);
-
-  $(".category-function-bar-items").css("display", "inline-flex");
-
-
+$(".category-function-bar-items").slideToggle(300);
+$(".category-function-bar-items").css("display", "inline-flex");
   });
 
-
+$(".save").on("click", function(){
+  $(".save").html("<p>Saved!</p>")
+})
 
 $(".searchdiv").on("click", function(){
   $(".searchbar").toggle()
 });
 
 //fashion
-
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
   console.log(search)
 
+$(".ajaxcalls").hide()
 
 $.ajax({
   dataType: "json",
-  url: "http://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
+  url: "https://api.shopstyle.com/api/v2/products?pid=uid7524-34690218-36&fts=" + search + "&offset=0&limit=30",
   method: "GET"
 }) .done(function(json) {
   $.each(json.products, function(index,item){

@@ -27,8 +27,8 @@
         <a href="/"><li><p>Home</p></li></a>
         <a href="/aboutus"><li><p>About</p></li></a>
         <a href="/interviewprep"><li><p>Interview Prep</li></a>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       <a href="/savedinterviews"><li><p>Saved Interviews</p></li></a>
+        <p><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></p>
         <% else %>
         <a href="/"><li><p>Home</p></li></a>
         <a href="/aboutus"><li><p>About</p></li></a>
@@ -39,13 +39,14 @@
     </ul>
   </div>
   <% if current_user %>
-  <%= image_tag("smallinsig.png", class:"logo") %>
+  <%= image_tag("newtitle.png", class:"logo") %>
+  <%= image_tag("WATERCOLORfull.png", class:"watercolor") %>
   <% else %>
   <% end %>
 </nav>
 
 <%# this is the end of the navbar!!! %>
-    <div class="flashmessage">
+    <div id="flash">
       <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: name %>
       <% end %>

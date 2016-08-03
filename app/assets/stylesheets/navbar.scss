@@ -10,7 +10,7 @@ a
 
 a:hover
 {
-  color: tomato;
+  color: #857891;
 }
 
 #menuToggle
@@ -32,7 +32,7 @@ a:hover
 #menuToggle input
 {
   display: block;
-  width: 40%;
+  width: 3%;
 
   height: 32px;
   position: absolute;
@@ -158,9 +158,16 @@ a:hover
   top: 20px;
   right: 20px;
   z-index: 2;
+  width: 30%
 }
-
-
+.watercolor {
+  position: absolute;
+  top: 10px;
+  right: 4px;
+  z-index: 1;
+  opacity: 0.7;
+  width: 40%;
+  }
 
 
 

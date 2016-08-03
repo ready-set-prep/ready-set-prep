@@ -62,7 +62,7 @@
 
  li a:hover {
 
-     background-color: #ddd;
+    //  background-color: #ddd;
  }
 
  .glassdoorContent {
@@ -80,11 +80,16 @@
    text-decoration: none;
  }
 
- .flashmessage {
+ .flash {
    text-align: center;
-   background-color: lightgray;
-   width: 100%;
+   background-color:#DDF8F1;
+   width: 30%;
  }
+
+.sign-out {
+
+}
+
 
  @import "landing-page";
  @import "sign-in";
@@ -97,3 +102,4 @@
  @import "dropdownmenu";
  @import "navbar";
  @import "interviewquestions";
+ @import "saved-interview";
