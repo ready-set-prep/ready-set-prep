@@ -421,6 +421,7 @@ text-align: center;
 
 
 .category-function-bar-items{
+
   display: none;
   width: 100%;
   height: 6em;
@@ -444,7 +445,7 @@ text-align: center;
 }
 
 #fashionable {
-  margin-left: 2em;
+  margin-left: 20em;
   position: relative;
   padding: 2%;
 
@@ -512,13 +513,10 @@ text-align: center;
 
 // button
 
-<<<<<<< HEAD:app/assets/stylesheets/interview.css.scss
+
 .myButton {/** used to toggle categories button **/
-	background-color:#298373;
-=======
-.myButton {
 	background-color:#132B3E;
->>>>>>> f43a3a4006a91f2ed778c0b3c6322fac72b17552:app/assets/stylesheets/interview.scss
+
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
