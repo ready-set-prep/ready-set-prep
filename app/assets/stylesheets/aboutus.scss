@@ -4,14 +4,10 @@
 .aboutus-wrapper{
   margin-left: 1em;
   margin-right: 1em;
-  // padding-top: 0.5em;
-  // padding-bottom: 1em;
   background-color: #DEDEDE;
-  // border-radius: 5px;
 
 .alyssa{
   margin-left: 10em;
-  // margin-top: 0.2em;
 
     h2{
       font-size: 2em;
@@ -30,7 +26,6 @@
 
 .mary{
   margin-left: 20em;
-  // margin-top: 4em;
   h3{
     font-size: 2em;
     font-weight: lighter;
@@ -47,7 +42,6 @@
 
 .rhonda{
   margin-left: 30em;
-  // margin-top: 3em;
 
   h4{
     font-size: 2em;
@@ -64,14 +58,6 @@
 
   }
 }
-
-
-/*
-  Simple Grid
-  Project Page - http://thisisdallas.github.com/Simple-Grid/
-  Author - Dallas Bass
-  Site - http://dallasbass.com
-*/
 
 
 [class*='grid'],
@@ -386,26 +372,6 @@ ul.social-buttons li a.brandico-twitter-bird {
   background-color: #4099FF;
 }
 
-// ul.social-buttons li a  {
-//   background-color: #D4C9DE ;
-// }
-
-// ul.social-buttons li  {
-//   background-color: #3f729b;
-// }
-//
-// ul.social-buttons li  {
-//   background-color: #4EBBFF;
-// }
-//
-// ul.social-buttons li  {
-//   background-color: #0e76a8;
-// }
-//
-// ul.social-buttons li  {
-//   background-color: #0e76a8;
-// }
-
 
 /*Demo 1*/
 ul#demo1 li a {
@@ -444,13 +410,17 @@ ul#demo3 li:hover a {
 }
 
 .aboutustitle{
-  // margin-top: 6%;
+  margin-top: 4%;
   font-size: 3.5em;
   text-align: center;
-  font-family: "Lato";
+  font-family: "helvetica";
   // letter-spacing: 9.1px;
+
 }
 
 .aboutimage {
   border-radius: 50%;
+}
+.name {
+  font-family: "helvetica";
 }
