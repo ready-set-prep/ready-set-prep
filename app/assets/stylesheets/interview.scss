@@ -158,7 +158,8 @@ footer{
 	transform: translateY(5px);
   margin-top: 5%;
   border-bottom: solid;
-  border-color: #52a494;
+  border-color: #77BFC7;
+  font-family: "Lato";
 
 	li{
 		transition-duration: .25s;
@@ -180,7 +181,7 @@ footer{
 			height: 120%;
 			top: 0;
 			left: 0;
-			background-color: #FCFDFD;
+			background-color: #48CCCD;
 			-webkit-transform: translateY(100%);
 			transform: translateY(100%);
 			transition-duration: .25s;
@@ -200,7 +201,7 @@ footer{
 
 			&:before{
 				transition-duration: .5s;
-				background-color: #52a494;
+				background-color: #77BFC7;
 				-webkit-transform: translateY(0);
 				transform: translateY(0);
 			}
@@ -537,7 +538,7 @@ text-align: center;
 }
 
 .tabtext {
-  font-family: 'Arial';
+  // font-family: 'Arial';
 }
 
 .prep {

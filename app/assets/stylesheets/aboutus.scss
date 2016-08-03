@@ -444,13 +444,16 @@ ul#demo3 li:hover a {
 }
 
 .aboutustitle{
-  // margin-top: 6%;
+  margin-top: 4%;
   font-size: 3.5em;
   text-align: center;
-  font-family: "Lato";
+  font-family: "helvetica";
   // letter-spacing: 9.1px;
 }
 
 .aboutimage {
   border-radius: 50%;
+}
+.name {
+  font-family: "helvetica";
 }
