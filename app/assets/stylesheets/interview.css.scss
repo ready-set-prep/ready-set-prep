@@ -491,11 +491,14 @@ text-align: center;
 }
 
 .searchdiv {
-  margin: 10px;
-  padding: 0.8em 1em;
-  color: white;
-  background-color: rgba(51, 51, 51, 0.7);
-  text-align: center;
+  width: 50%;
+    margin: 10px;
+    padding: 0.8em 1em;
+    color: white;
+    background-color: #48535b;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .searchdiv:hover {
@@ -554,7 +557,38 @@ text-align: center;
   margin-top: 40px;
 }
 
-.savedinterviewheader {
-  text-align: center;
-  margin-top: 10%;
+.companyresearch {
+  width: 120px;
+  padding: 15px;
+  border: solid;
+  border-width: 1px;
+  display: -webkit-inline-box;
+  margin-top: 6%;
+  margin-left: 12%;
+}
+
+.attire {
+  width: 100%;
+  padding: 15px;
+  border-width: 1px;
+  margin-top: 3%;
+  display: -webkit-inline-box;
+  margin-left: 61%;
+  font-size: larger;
+}
+
+.interviewprep {
+  width: 154px;
+  padding: 15px;
+  border: solid;
+  border-width: 1px;
+  margin-top: 6%;
+  display: -webkit-inline-box;
+  margin-left: 18%;
+}
+#search {
+  width: 50%;
+}
+#search_submit {
+  margin-left: 25%;
 }
