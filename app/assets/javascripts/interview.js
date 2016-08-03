@@ -3,16 +3,13 @@ $(document).ready(function(){
 
 $(".myButton").on("click",function(){
   console.log("test");
-
-
-  $(".category-function-bar-items").slideToggle(300);
-
-  $(".category-function-bar-items").css("display", "inline-flex");
-
-
+$(".category-function-bar-items").slideToggle(300);
+$(".category-function-bar-items").css("display", "inline-flex");
   });
 
-
+$(".save").on("click", function(){
+  $(".save").html("<p>Saved!</p>")
+})
 
 $(".searchdiv").on("click", function(){
   $(".searchbar").toggle()

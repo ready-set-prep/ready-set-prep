@@ -45,10 +45,8 @@ class InterviewController < ApplicationController
       @pins = Pintrestclass.new.search("casual-interview-attire")
     elsif params == "business_casual"
       @pins = Pintrestclass.new.search("business-casual-interview-attire")
-    elsif params == "conservative"
+    else params == "conservative"
       @pins = Pintrestclass.new.search("conservative-interview-attire")
-    else
-      #you did not put in valid things
     end
     return @pins
   end
