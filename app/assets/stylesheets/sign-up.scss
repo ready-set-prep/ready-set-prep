@@ -12,14 +12,14 @@
     background-color: #52a494;
     margin-left: auto;
     margin-right: auto;
-    width: 25em
-
+    width: 25em;
+    border-radius: 5px;
   }
   label{
     margin-top: 2em;
     display: inline-block;
     font-size: 20px;
-    color: #47494A;
+    color: white;
     line-height: 1;
 }
 
@@ -37,8 +37,8 @@
 }
 #user_password_confirmation{
   margin: 0 auto;
-  width: 13em;
-  height: 1.5em;
+  width: 20em;
+  height: 2em;
   outline: none;
 }
 
@@ -46,7 +46,6 @@
   padding-top: 0.5em;
 }
 #ama-links{
-
   text-align: center;
 }
 
@@ -58,4 +57,33 @@
   display: block;
   margin-left: 30%;
   margin-right: auto;
+}
+
+.login-button {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: white;
+  color: #52a494;
+  font-size: 20px;
+}
+.login-button:hover {
+  background-color: red;
+}
+
+.sign--up{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: white;
+  color: #52a494;
+  font-size: 20px;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
+.sign--up:hover{
+  background-color:red;
 }
