@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :interview
   resources :reviews
   resources :user_info
-  resources :amazoncart
   resources :interviewreviews
   resources :savedinterviews
   resources :pintrestselections

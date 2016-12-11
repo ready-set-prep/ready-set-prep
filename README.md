@@ -6,13 +6,10 @@ Ready-Set-Prep is your one stop shop for job interviews.
 
 ## Logging in
 
-To log in with Ready set prep you have two options. You can create and account and log in the traditional way, or you can log in through amazon. If a user is not signed in  they will not be able to search for companies or for clothes. Thank you for signing up with Ready-Set-Prep!
+To log in with Ready set prep you have two options. You can create and account and log in the traditional way. If a user is not signed in  they will not be able to search for companies or for clothes. Thank you for signing up with Ready-Set-Prep!
 
 ### Traditional log in method
 Initially you will be directed to a sign in page. To sign up, click the button below the form labeled "sign up". That button will direct you to the sign up page. In the sign up page you need to fill out all the fields. If you do not fill out all the fields, you will not be able to create an account. Once you have filled out the fields, click the sign up button on the page. You will be directed to the log in page. Put in your newly created account information into the email and password fields and you are good to go!
-
-### Logging in with amazon
-Logging in with amazon is a special feature that we are proud to offer you. To log in with amazon, click on the button labeled "Amazon!" below the sign in fields. You will be redirected to sign in with your amazon account. You must put in an amazon account to be able to use this feature. Once you have put in your amazon account information, click on the sign in button that amazon provides to you and you will be signed in! Don't worry, we do not keep you amazon credentials. Logging in with Amazon is used to allow users to access items from the amazon store. In addition, a user that is logged in with Amazon can add items that they want to their cart from our webpage.
 
 ## The navigation bar
 The navigation bar is there for your ease of access. It will allow a user to navigate the different pages of ready set prep without having to press the back button of manipulate the URL. The nav bar gives access to the home pages, the about us page, and the sign out(or sign in if a user is not signed in) button so that the user can easily log out of their account.
