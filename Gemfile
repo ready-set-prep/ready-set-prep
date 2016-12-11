@@ -30,7 +30,6 @@ gem 'bitters'
 gem 'refills'
 gem 'rollbar'
 
-
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'simplecov'

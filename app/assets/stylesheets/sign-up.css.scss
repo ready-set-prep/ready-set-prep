@@ -9,25 +9,30 @@
   .field{
     text-align: center;
     padding-top: 0.5em;
+    background-color: #52a494;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em
 
   }
   label{
+    margin-top: 2em;
+    display: inline-block;
     font-size: 20px;
     color: #47494A;
-    opacity: 0.8;
-
+    line-height: 1;
 }
 
 #user_email{
   margin: 0 auto;
-  width: 13em;
-  height: 1.5em;
+  width: 20em;
+  height: 2em;
   outline: none;
 }
 #user_password{
   margin: 0 auto;
-  width: 13em;
-  height: 1.5em;
+  width: 20em;
+  height: 2em;
   outline: none;
 }
 #user_password_confirmation{
