@@ -1,6 +1,4 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end -%>
+
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to "Sign up",  new_registration_path(resource_name), class: 'sign-up' %><br />
@@ -17,7 +15,3 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
-
-<!-- <%- if devise_mapping.omniauthable? %>
-  <%= link_to "Amazon!", user_amazon_omniauth_authorize_path %><br />
-<% end -%> -->

@@ -24,7 +24,7 @@ function initMap() {
         var selectedMode = document.getElementById('mode').value;
         directionsService.route({
           origin: {lat: pos.lat, lng: pos.lng},
-          destination: {lat: 35.994, lng: -78.898},
+          destination: {lat: 35.227, lng: -80.8422},
           travelMode: google.maps.TravelMode[selectedMode]
         }, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {

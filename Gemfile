@@ -17,11 +17,7 @@ gem 'devise'
 gem 'pry-rails'
 gem 'pundit'
 gem 'httparty'
-gem 'omniauth-amazon'
 gem 'omniauth'
-gem 'aws-sdk', '~> 2'
-gem 'aws-sdk-rails'
-gem 'amazon-ecs'
 gem 'geocoder'
 gem 'vacuum'
 gem 'bourbon'
@@ -29,7 +25,6 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 gem 'rollbar'
-
 
 group :development, :test do
   gem 'byebug', platform: :mri

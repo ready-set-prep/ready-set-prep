@@ -1,0 +1,90 @@
+.sign-up-wrapper{
+  text-align: center;
+}
+
+  #new_user{
+    text-align: center;
+    padding-top: 1em;
+  }
+  .field{
+    text-align: center;
+    padding-top: 0.5em;
+    background-color: #52a494;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em;
+    border-radius: 5px;
+  }
+  label{
+    margin-top: 2em;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    line-height: 1;
+}
+
+#user_email{
+  margin: 0 auto;
+  width: 20em;
+  height: 2em;
+  outline: none;
+}
+#user_password{
+  margin: 0 auto;
+  width: 20em;
+  height: 2em;
+  outline: none;
+}
+#user_password_confirmation{
+  margin: 0 auto;
+  width: 20em;
+  height: 2em;
+  outline: none;
+}
+
+.actions{
+  padding-top: 0.5em;
+}
+
+#ama-links{
+  text-align: center;
+}
+
+.signup{
+  width: 90px;
+  padding: 15px;
+  border: solid;
+  border-width: 1px;
+  display: block;
+  margin-left: 30%;
+  margin-right: auto;
+}
+
+.login-button {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: white;
+  color: #52a494;
+  font-size: 20px;
+}
+.login-button:hover {
+  background-color: red;
+}
+
+.sign--up{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: white;
+  color: #52a494;
+  font-size: 20px;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
+.sign--up:hover{
+  background-color:red;
+}

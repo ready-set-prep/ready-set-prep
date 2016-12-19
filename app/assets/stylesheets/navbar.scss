@@ -4,7 +4,6 @@ a
   display: inline;
   text-decoration: none;
   color: #232323;
-
   transition: color 0.3s ease;
 }
 
@@ -17,6 +16,8 @@ a:hover
 {
   display: block;
   position: relative;
+  margin-top: 1em;
+  margin-left: 1em;
   top: 24px;
   left: 30px;
 
@@ -33,7 +34,6 @@ a:hover
 {
   display: block;
   width: 3%;
-
   height: 32px;
   position: absolute;
   top: -7px;
@@ -103,9 +103,8 @@ a:hover
 #menu
 {
   width:300px;
-  margin: -100px 0 0 -50px;
+  margin: -110px 0 0 -40px;
   padding: 43px;
-
 
   background: #ededed;
   list-style-type: none;

@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 $(".myButton").on("click",function(){
   console.log("test");
-$(".category-function-bar-items").slideToggle("slow","swing");
+$(".category-function-bar-items").slideToggle("swing");
 $(".category-function-bar-items").css("display", "inline-flex");
   });
 

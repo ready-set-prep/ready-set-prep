@@ -2,18 +2,18 @@
   <a href="javascript:void(0)" class="flex-box">
     <h1 class="flex-title"><%= @name %></h1>
     <div class="glassdoorContent">
-    <p>Industry:   <%= @industry %></p>
-    <p>Sector:  <%= @sector %></p>
+    <p class="boldme">Industry</p><p>  <%= @industry %></p>
+    <p class="boldme">Sector</p><p>  <%= @sector %></p>
     <% unless @total_rating == nil %>
-      <p>Total Rating</p>
+      <p class="boldme">Total Rating</p>
       <p class="ratings"><%= show_stars @total_rating %></p>
     <% end %>
     <% unless @balance_rating == nil %>
-      <p>Work Life Balance Rating</p>
+      <p class="boldme">Work Life Balance Rating</p>
       <p class="ratings"><%= show_stars @balance_rating %></p>
     <% end %>
     <% unless @benefits_rating == nil %>
-      <p>Health Benefits Rating</p>
+      <p class="boldme">Health Benefits Rating</p>
       <p class="ratings"><%= show_stars @total_rating %></p>
     <% end %>
   </div>

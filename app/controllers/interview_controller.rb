@@ -3,20 +3,16 @@ class InterviewController < ApplicationController
   def create
     if params[:q] && params[:positions] != ""
       @params = params[:q].strip.gsub(/\s/,'+') #company #glassdoor
-      @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       glassdoor_api_call
       glassdoor_data
       query_shop
-      # @items = Amazonclass.new(@amazonparams).search
       @category = PositionCategory.where(position: params[:positions].strip).first.category
       params_for_pintrest(@category)
     elsif params[:positions] == ""
-      @amazonparams = params[:positions].strip.gsub(/\s/,'+') #position #amazon
       @category = PositionCategory.where(position: params[:positions].strip).first.category
       glassdoor_api_call
       glassdoor_data
     else
-      # @items = Amazonclass.new(@amazonparams).search
       @category = PositionCategory.where(position: params[:positions].strip).first.category #this will work once the params[:posiitons] is changed to a string and not to a int.
     end
   end
