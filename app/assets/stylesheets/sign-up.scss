@@ -2,31 +2,34 @@
   text-align: center;
 }
 
-  #new_user{
-    text-align: center;
-    padding-top: 1em;
-  }
-  .field{
-    text-align: center;
-    padding-top: 0.5em;
-    background-color: #52a494;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25em;
-    border-radius: 5px;
-  }
-  label{
-    margin-top: 2em;
-    display: inline-block;
-    font-size: 20px;
-    color: white;
-    line-height: 1;
-  }
+#new_user{
+  text-align: center;
+  padding-bottom: 1em;
+}
+.field{
+  text-align: center;
+  padding-top: 0.5em;
+  background-color: #52a494;
+  margin-left: auto;
+  margin-right: auto;
+  width: 24em;
+  border-radius: 5px;
+}
+label{
+  margin-top: 2em;
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  line-height: 1;
+}
+.email {
+  margin-top: 1em;
+}
 
-  .remember_me_label {
-    margin-top: 0.5em;
-    margin-bottom: 2em;
-  }
+.remember_me_label {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
 
 #user_email{
   margin: 0 auto;
@@ -65,7 +68,7 @@
   height: 2em;
   outline: none;
 }
-#user_password_confirmation {
+#user_password_confirmation:hover {
   border-bottom: 3px solid white;
   width: 21em;
 }
@@ -94,7 +97,10 @@
   padding-left: 1em;
   padding-right: 1em;
   background-color: white;
+  font-family: 'Aquatico';
   color: #52a494;
+  border-radius: 3px;
+  margin-bottom: 1em;
   font-size: 20px;
 }
 .login-button:hover {
@@ -102,17 +108,27 @@
 }
 
 .sign--up{
+  border-radius: 5px;
   padding-top: 0.5em;
+  font-family: 'Aquatico';
   padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
   background-color: white;
   color: #52a494;
   font-size: 20px;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   margin-top: 1em;
 }
 
 .sign--up:hover{
   background-color:red;
+}
+
+.white_text {
+  color: white;
+}
+
+.white_hover:hover {
+  color: white;
 }

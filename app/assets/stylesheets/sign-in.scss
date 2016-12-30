@@ -68,6 +68,10 @@
 
 .sign-up {
   margin-left: auto;
-    margin-right: auto;
-    display: block;
+  margin-right: auto;
+  line-height: 5px;
+  display: block;
+}
+.sign-up:hover {
+  color: white;
 }
