@@ -21,25 +21,53 @@
     font-size: 20px;
     color: white;
     line-height: 1;
-}
+  }
+
+  .remember_me_label {
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+  }
 
 #user_email{
   margin: 0 auto;
   width: 20em;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: inherit;
   height: 2em;
   outline: none;
 }
+#user_email:hover {
+  border-bottom: 3px solid white;
+  width: 21em;
+}
+
 #user_password{
   margin: 0 auto;
   width: 20em;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: inherit;
   height: 2em;
   outline: none;
+}
+
+#user_password:hover{
+  border-bottom: 3px solid white;
+  width: 21em;
 }
 #user_password_confirmation{
   margin: 0 auto;
   width: 20em;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: inherit;
   height: 2em;
   outline: none;
+}
+#user_password_confirmation {
+  border-bottom: 3px solid white;
+  width: 21em;
 }
 
 .actions{
