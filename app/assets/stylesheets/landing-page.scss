@@ -71,15 +71,15 @@ button:focus {
   // background-color: #f2f0f4;
   opacity: 0.8;
   padding: 10px;
-  width: 37%;
-  height: 30%;
-  left:30%;
-  position: relative;
-  padding-left: 80px;
-  padding:10px;
+  width: 24em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  display: block;
+  padding-top: 1em;
+  padding-bottom: 2em;
   color: black;
   font-weight: bold;
-  margin: 50px;
   border-style: solid;
   border-color: #f2f0f4;
   text-align: center;
@@ -413,24 +413,24 @@ button:focus {
 //
 
 /*******  Media query for searchform landingpage area  ***/
-@media (min-width: 320px) and (max-width: 749px) {
+// @media (min-width: 320px) and (max-width: 749px) {
+//
+//   .searchform {
+//     width: 250px;
+//   }
+// }
 
-  .searchform {
-    width: 250px;
-  }
-}
-
-@media (min-width: 750px) and (max-width: 1024px) {
-  .searchform {
-    width: 300px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .searchform {
-    width: 350px;
-  }
-}
+// @media (min-width: 750px) and (max-width: 1024px) {
+//   .searchform {
+//     width: 300px;
+//   }
+// }
+//
+// @media (min-width: 1025px) {
+//   .searchform {
+//     width: 350px;
+//   }
+// }
 
 .boldme {
   font-weight: bolder;
