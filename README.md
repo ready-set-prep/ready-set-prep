@@ -6,7 +6,7 @@ Ready-Set-Prep is your one stop shop for job interviews.
 
 ## Logging in
 
-To log in with Ready set prep you have two options. You can create and account and log in the traditional way. If a user is not signed in  they will not be able to search for companies or for clothes. Thank you for signing up with Ready-Set-Prep!
+Sign up for Ready-Set-Prep! You can create and account and log in the traditional way. If a user is not signed in  they will not be able to search for companies or for clothes. Thank you for signing up with Ready-Set-Prep!
 
 ### Traditional log in method
 Initially you will be directed to a sign in page. To sign up, click the button below the form labeled "sign up". That button will direct you to the sign up page. In the sign up page you need to fill out all the fields. If you do not fill out all the fields, you will not be able to create an account. Once you have filled out the fields, click the sign up button on the page. You will be directed to the log in page. Put in your newly created account information into the email and password fields and you are good to go!
