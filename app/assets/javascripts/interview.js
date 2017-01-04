@@ -2,7 +2,6 @@
 $(document).ready(function(){
 
 $(".myButton").on("click",function(){
-  console.log("test");
 $(".category-function-bar-items").slideToggle("swing");
 $(".category-function-bar-items").css("display", "inline-flex");
   });
@@ -18,8 +17,6 @@ $(".searchdiv").on("click", function(){
 //fashion
 $("#search_submit").on("click", function(){
   var search = $("#search").val().trim().replace(/\s/g, '+')
-  console.log(search)
-
 $(".ajaxcalls").hide()
 
 $.ajax({
@@ -34,7 +31,6 @@ $.ajax({
 });
 
 $( ".fashionable").on("click", function() {
-  console.log("button 1")
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
   $.ajax({
@@ -42,7 +38,6 @@ $( ".fashionable").on("click", function() {
       url: "https://api.pinterest.com/v1/boards/readysetprep/fashionable-interview-attire/pins?access_token=AWpsFBiCHYAcu15mAxj6h2h-BkWhFGSLUnqXuFFDRdlMEeBA0gAAAAA&fields=id%2Clink%2Cnote%2Curl%2Cimage%2Cboard%2Coriginal_link",
       method: 'GET',
     }) .done(function(json) {
-      console.log()
         $('.category-function-bar-items').append('<li id="fashionable"></li>');
 
 
@@ -54,7 +49,6 @@ $( ".fashionable").on("click", function() {
 
 $(".conservative").on("click", function() {
 //conservative
-  console.log("button 2")
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
      $.ajax({
@@ -72,7 +66,6 @@ $(".conservative").on("click", function() {
 
 $(".bizcas").on("click", function() {
 //business casual
-  console.log("button 3")
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
    $.ajax({
@@ -90,7 +83,6 @@ $(".bizcas").on("click", function() {
 
 $(".casual").on("click", function() {
 //casual
-  console.log("button 4")
   $(".rubydiv").hide();
   $(".ajaxcalls").hide();
  $.ajax({

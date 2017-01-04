@@ -3,12 +3,10 @@ $( document ).ready(function() {
 
 
 $(".positions").click(function(){
-  console.log("test");
   $(".jobcat").toggle();
   });
 
 $(".jobcat").on("click", ".kinds-of", function(){
-    console.log($(this).text());
     var clone = ($(this).text());
 
 
@@ -21,7 +19,6 @@ $(".jobcat").on("click", ".kinds-of", function(){
     });
 
     });
-    console.log("yes");
 
 
   });// end of click function  //

@@ -39,6 +39,7 @@ label{
 }
 #user_email:hover {
   border-bottom: 3px solid white;
+  border-radius: none;
   width: 21em;
 }
 
@@ -54,6 +55,7 @@ label{
 
 #user_password:hover{
   border-bottom: 3px solid white;
+  border-radius: none;
   width: 21em;
 }
 #user_password_confirmation{
@@ -67,6 +69,7 @@ label{
 }
 #user_password_confirmation:hover {
   border-bottom: 3px solid white;
+  border-radius: none;
   width: 21em;
 }
 
