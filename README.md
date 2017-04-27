@@ -4,6 +4,8 @@
 ## About
 Ready-Set-Prep is your one stop shop for job interviews.
 
+
+Ready-Set-Prep is located at "http://readysetprep.herokuapp.com/"!
 ## Logging in
 
 Sign up for Ready-Set-Prep! You can create and account and log in the traditional way. If a user is not signed in  they will not be able to search for companies or for clothes. Thank you for signing up with Ready-Set-Prep!
